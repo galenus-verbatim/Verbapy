@@ -9,7 +9,5 @@ xp_p = "xpath"  #the Xpath we are targeting
 tree = etree.parse("file.xml")
 
 div = tree.xpath(xp_p, namespaces=namespaces)
-
-text = ' '.join(x.strip() for x in par.xpath('.//text()'))
-print(text) # string file containing all the text within the XML element
-
+for par in div
+    text = ' '.join(x.strip() for x in par.xpath('.//text()')
