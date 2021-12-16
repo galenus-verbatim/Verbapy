@@ -1,2 +1,2 @@
-lxml==4.6.4
-pie_extended==0.0.39
+LXML==4.6.4
+PIE-EXTENDED==0.0.39
