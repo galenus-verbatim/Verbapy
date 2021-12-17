@@ -14,7 +14,7 @@ div=soup.div.getText(separator=' ', strip=True)
 sentences: List[str] = [div]
 
  
-# if you havent downlowaded the model change to "True"
+# if you havent downloaded the model change to "True"
 do_download = False
 if do_download:
     for dl in download("grc"):
