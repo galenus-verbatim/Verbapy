@@ -50,9 +50,6 @@ iterator, processor = get_iterator_and_processor()
 for text in corpus:
     toks, starts, ends = Verbatoks.listing(text)
     vert = "\n".join(toks)
-    print("=====================")
-    print(vert)
-    print("=====================")
     i = 0
     count = len(toks)
     for form in tagger.tag_str(
@@ -61,9 +58,6 @@ for text in corpus:
         processor=processor, 
         no_tokenizer=True
     ):
-        # last 
-        if (i > count):
-            break
         print(
             str(i)
             +"\t"+str(starts[i])
