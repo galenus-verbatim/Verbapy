@@ -14,4 +14,3 @@ logging.basicConfig(
 
 # directory from which resolve path to resources like xsl
 home =  os.path.dirname(__file__)
-
