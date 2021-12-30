@@ -1,0 +1,5 @@
+# commentaires et lignes vides OK
+
+# dummy error
+..\..\First1KGreek\data\tlg0057\tlg*\DUMDUM*.xml
+..\..\First1KGreek\data\tlg0057\tlg05*\tlg*.xml

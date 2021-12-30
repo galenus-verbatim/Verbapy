@@ -8,11 +8,12 @@ Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 import argparse
 import glob
 import json
-import logging 
+import logging
+from typing import List 
 from lxml import etree
 import os
-import sys
 import shutil
+import sys
 # local
 import config
 
@@ -33,77 +34,96 @@ etree.set_default_parser(
         huge_tree=True,
     )
 )
-# the default dir where to output files, set by a json conf
-dst_dir = None
+# the default dir where to output files
+html_dir = None
 
-def corpus(json_file: str):
-    """Load a json config file to get list of files, and process them"""
-    global dst_dir
-    json_dir = os.path.dirname(json_file)
-    if not os.path.isabs(json_dir):
-        json_dir = os.path.abspath(json_dir)
-    logging.debug("json_dir="+json_dir)
-    with open(json_file) as json_handle:
-        data = json.load(json_handle)
-    if not 'dst_dir' in data:
-        logging.fatal("\"" + json_file + "\" (json key required)" 
-            +"\n\"dst_dir\" = \"destination/directory/\"" 
-            + "\nDirectory where to split your XML files, absolute or relative to json file")
-        exit()
-    dst_dir = data['dst_dir']
-    if not os.path.isabs(dst_dir):
-        dst_dir =  os.path.join(json_dir, dst_dir)
+def corpus(paths_file: str, todo_dir = None):
+    """Load a file with a list of paths, and process them"""
+    global html_dir
+    # will cry if not a file
+    paths = open(paths_file, 'r').readlines()
+    paths_dir = os.path.dirname(paths_file)
+    if not os.path.isabs(paths_dir):
+        paths_dir = os.path.abspath(paths_dir)
+    logging.debug("paths_dir="+paths_dir)
+    paths_name = os.path.splitext(os.path.basename(paths_file))[0]
+
+    # prepare html destination directory
+    if todo_dir is None:
+        todo_dir = os.path.join(paths_dir, paths_name)
+    elif todo_dir is List:
+        todo_dir = todo_dir[0]
+    if not os.path.isabs(todo_dir):
+        todo_dir = os.path.abspath(todo_dir)
     # libxml do not like windows filepath
-    dst_dir = dst_dir.replace('\\', '/').rstrip('/') + '/'
-    logging.info(dst_dir + " (Destination directory)")
-    # after logging, try to delete dst_dir and recreate it
-    shutil.rmtree(dst_dir, ignore_errors=True)
-    os.makedirs(dst_dir, exist_ok=True)
-    if not 'src_glob' in data:
-        logging.fatal("\"" + json_file + "\" (json key required)" 
-        + "\n\"src_glob\" = ["
-        + "\n  \"../../First1KGreek/data/tlg0057/*/*.xml\","
-        + "\n  \"../../First1KGreek/data/tlg0022/*/*.xml\""
-        + "\n]"
-        + "\nFile paths or globs, absolute or relative to json file")
-        exit()
-    for src_glob in data['src_glob']:
-        src_glob = src_glob.replace('\\', '/').rstrip('/')
-        if not os.path.isabs(src_glob):
-            src_glob = os.path.join(json_dir, src_glob)
-        src_glob = os.path.normpath(src_glob)
-        src_list = glob.glob(src_glob)
-        if len(src_list) < 1:
-            logging.warning("No file found for pattern "+src_glob)
-            continue
-        logging.info(src_glob + " (crawl)")
-        for src_file in src_list:
-            split(src_file)
+    html_dir = todo_dir.replace('\\', '/').rstrip('/') + '/'
+    logging.info(html_dir + " (html destination directory)")
+    # after logging, try to delete html_dir and recreate it
+    shutil.rmtree(html_dir, ignore_errors=True)
+    os.makedirs(html_dir, exist_ok=True)
 
-def split(src_file: str):
-    global dst_dir
-    src_name_ext = os.path.basename(src_file)
-    src_name = os.path.splitext(src_name_ext)[0]
+
+
+    for cts_glob in paths:
+        cts_glob = cts_glob.strip()
+        if not cts_glob:
+            continue
+        if cts_glob[0] == '#':
+            continue
+        cts_glob = cts_glob.replace('\\', '/').rstrip('/')
+        if not os.path.isabs(cts_glob):
+            cts_glob = os.path.join(paths_dir, cts_glob)
+        cts_glob = os.path.normpath(cts_glob)
+        cts_list = glob.glob(cts_glob)
+        if len(cts_list) < 1:
+            logging.warning("No file found for pattern "+cts_glob)
+            continue
+        logging.info(cts_glob + " (crawl)")
+        for cts_file in cts_list:
+            split(cts_file)
+
+def split(cts_file: str):
+    global html_dir
+    cts_name = os.path.splitext(os.path.basename(cts_file))[0]
     # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
-    os.makedirs(os.path.join(dst_dir, src_name), exist_ok=True)    
-    logging.info(src_name + " {:.0f} kb".format(os.path.getsize(src_file) / 1024))
-    src_dom = etree.parse(src_file)
+    os.makedirs(os.path.join(html_dir, cts_name), exist_ok=True)    
+    logging.info(cts_name + " {:.0f} kb".format(os.path.getsize(cts_file) / 1024))
+    cts_dom = etree.parse(cts_file)
     dst_dom = xslt(
-        src_dom,
-        # libxml do not like windows paths
+        cts_dom,
+        # libxml do not like windows paths starting C:
         dst_dir = etree.XSLT.strparam( 
-           (dst_dir, "file:///"+dst_dir)[os.path.sep == '\\']
+           (html_dir, "file:///"+html_dir)[os.path.sep == '\\']
         ),
-        src_name = etree.XSLT.strparam(src_name)
+        src_name = etree.XSLT.strparam(cts_name)
     )
     """
     logging.debug("xslt")
     print(etree.tounicode(dst_dom, pretty_print=True))
     """
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Process an XML greek corpus ')
-    parser.add_argument('json', type=str, nargs=1,
-                    help='a json file with parameters')
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description='Process an XML/cts greek corpus to produce a folder of displayable HTML files',
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument('paths_file', nargs=1, type=str,
+        help="""ex: ../tests/galenus.txt
+a file with a list of file/glob path of xml files to process, one per line:
+../../First1KGreek/data/tlg0052/*/tlg*.xml
+../../First1KGreek/data/tlg0057/*/tlg*.xml
+(relative paths resolved from the file they come from)
+"""
+    )
+    parser.add_argument('html_dir', nargs='?', type=str,
+        help="""ex: ../work/galenus/
+A folder where to project generated html files.
+Default is a folder with the name of the file with paths.
+"""
+    )
     args = parser.parse_args()
-    corpus(args.json[0])
+    corpus(args.paths_file[0], args.html_dir)
+
+
+if __name__ == '__main__':
+    sys.exit(main())
