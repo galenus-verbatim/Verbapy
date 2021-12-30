@@ -1,0 +1,9 @@
+{
+    "src_glob": [
+        "..\\..\\First1KGreek\\data\\tlg0057\\tlg*\\tlg*.xml"
+    ],
+    "exclude": [
+
+    ],
+    "dst_dir": "out/galenus"
+}
