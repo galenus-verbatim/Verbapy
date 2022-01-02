@@ -62,8 +62,6 @@ def corpus(paths_file: str, todo_dir = None):
     shutil.rmtree(html_dir, ignore_errors=True)
     os.makedirs(html_dir, exist_ok=True)
 
-
-
     for cts_glob in paths:
         cts_glob = cts_glob.strip()
         if not cts_glob:
@@ -97,10 +95,9 @@ def split(cts_file: str):
         ),
         src_name = etree.XSLT.strparam(cts_name)
     )
-    """
-    logging.debug("xslt")
-    print(etree.tounicode(dst_dom, pretty_print=True))
-    """
+    infile = etree.tounicode(dst_dom, method='text', pretty_print=True)
+    outfile = open(os.path.join(html_dir, cts_name, cts_name+".json"), 'a', encoding="utf-8")
+    outfile.write(infile)
 
 def main() -> int:
     parser = argparse.ArgumentParser(

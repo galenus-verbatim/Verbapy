@@ -175,9 +175,11 @@ TODO : prev / next and lots of other item metadata
   </xsl:template>
   
   <xsl:template match="tei:pb">
-    <xsl:text>[</xsl:text>
-    <xsl:value-of select="@n"/>
-    <xsl:text>]</xsl:text>
+    <span class="pb">
+      <xsl:text>[</xsl:text>
+      <xsl:value-of select="@n"/>
+      <xsl:text>]</xsl:text>
+    </span>
   </xsl:template>
   
   <xsl:template match="tei:q">

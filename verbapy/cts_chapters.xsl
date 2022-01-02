@@ -18,7 +18,7 @@ TODO : prev / next and lots of other item metadata
   exclude-result-prefixes="tei"
 >
   <xsl:import href="cts_html.xsl"/>
-  <xsl:output indent="yes" encoding="UTF-8" method="xml" />
+  <xsl:output encoding="UTF-8" method="text"/>
   <!-- Required, folder where to project the generated files -->
   <xsl:param name="dst_dir"/>
   <!-- Source file name (without extension) -->
@@ -36,9 +36,19 @@ TODO : prev / next and lots of other item metadata
     <xsl:if test="count(//tei:div[@type='edition']) != 1">
       <xsl:message terminate="yes">[cts_chapter.xsl] 0 or more than one &lt;div type="edition"&gt;, not expected</xsl:message>
     </xsl:if>
-    <root>
-      <xsl:apply-templates select="//tei:div[@type='edition']"/>
-    </root>
+    <!-- first dic, file meta, and ordered array of chapters -->
+    <root xml:space="preserve">[
+    {
+        "identifier": "<xsl:value-of select="$src_name"/>",
+        "title": "<xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"/>",
+        "editor": "<xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:editor"/>",
+        "vol": "<xsl:value-of    select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='vol']"/>",
+        "from": "<xsl:value-of   select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@from"/>",
+        "to": "<xsl:value-of     select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@to"/>",
+        "date": "<xsl:value-of   select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date"/>"
+    }<xsl:apply-templates select="//tei:div[@type='edition']"/>
+]
+</root>
   </xsl:template>
 
   <!-- chaptering -->
@@ -87,28 +97,85 @@ TODO : prev / next and lots of other item metadata
       <xsl:if test="position() != last()">.</xsl:if>
     </xsl:for-each>
   </xsl:template>
+  
+  <xsl:template name="text-before">
+    <xsl:param name="before"/>
+    <xsl:for-each select="node()">
+      <xsl:choose>
+        <xsl:when test="count($before|.) = 1"/>
+        <xsl:otherwise>
+          <xsl:value-of select="normalize-space(.)"/>
+          <xsl:call-template name="text-before">
+            <xsl:with-param name="before" select="$before"/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:value-of select="n"/>
+    </xsl:for-each>
+  </xsl:template>
 
   <!-- Output a document -->
   <xsl:template name="document">
+    <xsl:param name="dst_name">
+      <xsl:call-template name="dst_name"/>
+    </xsl:param>
     <!-- The file path to output -->
     <xsl:param name="href">
       <xsl:value-of select="$dst_dir"/>
       <xsl:value-of select="$src_name"/>
       <xsl:text>/</xsl:text>
-      <xsl:call-template name="dst_name"/>
+      <xsl:value-of select="$dst_name"/>
       <xsl:value-of select="$ext"/>
     </xsl:param>
+    <!-- get text before first page break in section -->
+    <xsl:variable name="text-before">
+      <xsl:call-template name="text-before">
+        <xsl:with-param name="before" select="(.//tei:pb)[1]"/>
+      </xsl:call-template>
+    </xsl:variable>
+    <xsl:variable name="from">
+      <xsl:choose>
+        <!-- section is starting in middle of a page -->
+        <xsl:when test="$text-before != ''">
+          <xsl:value-of select="preceding::tei:pb[1]/@n"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="(.//tei:pb)[1]/@n"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <chapter xml:space="preserve">,
+    {
+        "identifier": "<xsl:value-of select="$dst_name"/>",
+        "from": "<xsl:value-of select="$from"/>",
+        "to": "<xsl:value-of select="(.//tei:pb)[last()]/@n"/>",
+        "title": "<xsl:choose xml:space="default">
+          <xsl:when test=".//tei:head">
+            <xsl:value-of select="normalize-space(.//tei:head)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:variable name="str" select="normalize-space(.)"/>
+            <xsl:value-of select="substring($str, 1, 50)"/>
+            <xsl:value-of select="substring-before(substring($str, 50), ' ')"/>
+            <xsl:text> […]</xsl:text>
+          </xsl:otherwise>
+    </xsl:choose>"
+    }</chapter>
     <xsl:document 
       href="{$href}" 
       omit-xml-declaration="yes" 
       encoding="UTF-8" 
-      indent="no"
+      indent="yes"
       >
       <article>
+        <xsl:if test="$text-before != ''">
+          <xsl:apply-templates select="(preceding::tei:pb)[1]"/>
+        </xsl:if>
         <xsl:apply-templates/>
       </article>
     </xsl:document>
   </xsl:template>
+  
   
   <!-- For debug, a linear xpath for an element -->
   <xsl:template name="idpath">
