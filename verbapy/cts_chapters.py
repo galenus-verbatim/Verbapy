@@ -22,7 +22,7 @@ import config
 """
 
 # compile xsl here, one time is enough
-xsl_file = os.path.join(config.home, 'cts_chapters.xsl')
+xsl_file = os.path.join(os.path.dirname(__file__), 'cts_chapters.xsl')
 xsl_dom = etree.parse(xsl_file)
 xslt = etree.XSLT(xsl_dom)
 # libxml options for dom document load
@@ -58,10 +58,11 @@ def corpus(paths_file: str, todo_dir = None):
     # libxml do not like windows filepath
     html_dir = todo_dir.replace('\\', '/').rstrip('/') + '/'
     logging.info(html_dir + " (html destination directory)")
-    # after logging, try to delete html_dir and recreate it
-    shutil.rmtree(html_dir, ignore_errors=True)
+    # do not delete html_dir, let user, keep lemma
+    # shutil.rmtree(html_dir, ignore_errors=True)
     os.makedirs(html_dir, exist_ok=True)
 
+    # TODO, parse the path config for exclude files
     for cts_glob in paths:
         cts_glob = cts_glob.strip()
         if not cts_glob:

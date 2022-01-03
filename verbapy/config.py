@@ -9,8 +9,6 @@ import logging
 logging.basicConfig(
     # for dev, logging level: debug
     level=logging.DEBUG,
-    format='%(module)s %(relativeCreated)d ms. %(levelname)s — %(message)s'
+    format='%(module)s %(asctime)s %(levelname)s — %(message)s',
+    datefmt='%H:%M:%S'
 )
-
-# directory from which resolve path to resources like xsl
-home =  os.path.dirname(__file__)

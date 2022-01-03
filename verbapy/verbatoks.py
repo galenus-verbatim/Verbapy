@@ -12,12 +12,14 @@ import re
 
 Output a verticalize list of tokens, with offsets
 """
+NUM = 'NUM'
+SENT = 'SENT'
 WORD = 'WORD'
 XML = 'XML'
-SENT = 'SENT'
 XMLENT = 'XMLENT'
 token_specification = [
     (WORD,      r'\w+'),         # letters
+    (NUM,       r'\d+'),         # numbers, ex: page
     (XMLENT,    r'&\w+;'),       # xml entiy &amp;
     (XML,       r'<[^>]+>'),     # <xml tag="blah">
     (SENT,      r'[\.?!]'),      # should break on sentence
@@ -36,6 +38,9 @@ def listing(text) :
         if (match.lastgroup == XML):
             continue
         if (match.lastgroup == XMLENT):
+            continue
+        # filter numbers
+        if (match.lastgroup == NUM):
             continue
         # break sentences for pie
         if (match.lastgroup == SENT):
