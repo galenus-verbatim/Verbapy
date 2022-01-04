@@ -97,7 +97,7 @@ INSERT INTO doc(
         filesize = os.path.getsize(html_file)
         with open(html_file, mode="r", encoding="utf-8") as f:
             html = f.read()
-            # works with php gzuncompress($html), but is not a real economy
+            # works with php php:gzuncompress($html), but is not a real economy
             # html = zlib.compress(bytes(html, 'utf-8'), level=9) 
         chapter = json_doc['title']
         pagefrom = json_doc['from']
