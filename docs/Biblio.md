@@ -1,6 +1,6 @@
 
 # structure de données 
-tlg0057.tlg045.1st1K-grc1.xml  De differentiis febrium Karl Gottlob Kühn 7 273-405 1824
+tlg0057.tlg045.1st1K-grc1.xml: De differentiis febrium, Karl Gottlob Kühn, 7, 273-405, 1824.
 
 # affichage sur la page
 De differentiis febrium Kühn, Vol. 7, p. 273-405.
