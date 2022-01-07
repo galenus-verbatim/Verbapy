@@ -12,8 +12,6 @@ Exemple : Galien, In Hippocratis De fracturis (In Hipp. Fract.), 1.20 (18b.364.2
 urn:cts:greekLit:tlg0057.tlg100.1st1K-grc1:1.20
 
 # ref biblio 
-2) Référence bibliographique complète
-
 C.G. **espace insécable (&nbsp;)** Kühn, Galeni Opera Omnia, vol. **espace insécable (&nbsp;)** numéro de volume,  Leipzig **espace insécable (&nbsp;)* : Car. Cnoblochii, date du volume.
 
 Exemple: C.G. Kühn, Galeni Opera Omnia, vol. 18b, Leipzig : Car. Cnoblochii, 1830.
