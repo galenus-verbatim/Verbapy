@@ -7,11 +7,13 @@ Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 
 import argparse
 import glob
+import io
 import json
 import logging
 from typing import List 
 from lxml import etree
 import os
+import re
 import shutil
 import sys
 # local
@@ -37,7 +39,7 @@ etree.set_default_parser(
 # the default dir where to output files
 html_dir = None
 
-def corpus(paths_file: str, todo_dir = None):
+def corpus(paths_file: str, todo_dir=None, force=True):
     """Load a file with a list of paths, and process them"""
     global html_dir
     # will cry if not a file
@@ -59,7 +61,8 @@ def corpus(paths_file: str, todo_dir = None):
     html_dir = todo_dir.replace('\\', '/').rstrip('/') + '/'
     logging.info(html_dir + " (html destination directory)")
     # do not delete html_dir, let user, keep lemma
-    # shutil.rmtree(html_dir, ignore_errors=True)
+    if force:
+        shutil.rmtree(html_dir, ignore_errors=True)
     os.makedirs(html_dir, exist_ok=True)
 
     # TODO, parse the path config for exclude files
@@ -77,7 +80,6 @@ def corpus(paths_file: str, todo_dir = None):
         if len(cts_list) < 1:
             logging.warning("No file found for pattern "+cts_glob)
             continue
-        logging.info(cts_glob + " (crawl)")
         for cts_file in cts_list:
             split(cts_file)
 
@@ -87,7 +89,17 @@ def split(cts_file: str):
     # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
     os.makedirs(os.path.join(html_dir, cts_name), exist_ok=True)    
     logging.info(cts_name + " {:.0f} kb".format(os.path.getsize(cts_file) / 1024))
-    cts_dom = etree.parse(cts_file)
+    with open(cts_file, 'r', encoding="utf-8") as f:
+        xml = f.read()
+    xml = re.sub(r"\s+", ' ', xml)
+
+    """
+    debug = os.path.join(html_dir, cts_name + ".xml")
+    with open(debug, 'w', encoding="utf-8") as f:
+        f.write(xml)
+    """
+
+    cts_dom = etree.XML(bytes(xml, encoding='utf-8'))
     dst_dom = xslt(
         cts_dom,
         # libxml do not like windows paths starting C:
@@ -119,8 +131,10 @@ A folder where to project generated html files.
 Default is a folder with the name of the file with paths.
 """
     )
+    parser.add_argument('-f', '--force', action='store_true',
+        help='force deletion of html_dir')
     args = parser.parse_args()
-    corpus(args.paths_file[0], args.html_dir)
+    corpus(args.paths_file[0], args.html_dir, args.force)
 
 
 if __name__ == '__main__':

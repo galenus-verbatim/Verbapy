@@ -165,13 +165,15 @@ TODO : prev / next and lots of other item metadata
       href="{$href}" 
       omit-xml-declaration="yes" 
       encoding="UTF-8" 
-      indent="yes"
       >
       <article>
         <xsl:if test="$text-before != ''">
-          <xsl:apply-templates select="(preceding::tei:pb)[1]"/>
+          <xsl:apply-templates select="(preceding::tei:pb)[last()]">
+            <xsl:with-param name="class">pbprev</xsl:with-param>
+          </xsl:apply-templates>
         </xsl:if>
         <xsl:apply-templates/>
+        <xsl:text>&#10;</xsl:text>
       </article>
     </xsl:document>
   </xsl:template>
