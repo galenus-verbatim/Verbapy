@@ -7,11 +7,9 @@ Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 
 import argparse
 import json
-from typing import List 
-import logging 
+from typing import List
+import logging
 import os
-import sqlite3
-import shutil
 import sys
 # local
 import config
@@ -23,7 +21,7 @@ import verbatoks
 # shared pie-extended objects, import as late as possible (takes time)
 tagger = iterator = processor = None
 
-def crawl(html_dir: str):
+def crawl(html_dir: str, torch: bool=False):
     """Recursive crawl of an html folder of greek texts"""
 
     # the global variables to set here
@@ -35,7 +33,11 @@ def crawl(html_dir: str):
     from pie_extended.cli.utils import get_tagger, get_model, download
     from pie_extended.models.grc.imports import get_iterator_and_processor
     model_name = "grc"
-    tagger = get_tagger(model_name, batch_size=256, device="cpu", model_path=None)
+    if torch:
+        device = 'cuda'
+    else:
+        device = 'cpu'
+    tagger = get_tagger(model_name, batch_size=256, device=device, model_path=None)
     iterator, processor = get_iterator_and_processor()
 
     for root, dirs, files in os.walk(html_dir):
@@ -60,9 +62,9 @@ def lemmatize(html_file: str):
     i = -1
     count = len(toks)
     for word in tagger.tag_str(
-        vert, 
-        iterator=iterator, 
-        processor=processor, 
+        vert,
+        iterator=iterator,
+        processor=processor,
         no_tokenizer=True
     ):
         i = i + 1
@@ -85,9 +87,12 @@ def main() -> int:
         description='Lemmatize and ingest an html folder of greek texts in an sqlite base'
     )
     parser.add_argument('html_dir', nargs=1,
-        help='a directory of html files of structure corpus/book/chapter.html ')
+        help='a directory of html files of structure corpus/book/chapter.html')
+    parser.add_argument('-t', '--torch', action='store_true',
+        help='use GPU for tagging, much more efficient')
+
     args = parser.parse_args()
-    crawl(args.html_dir[0])
+    crawl(args.html_dir[0], args.torch)
     return 0
 
 if __name__ == '__main__':
