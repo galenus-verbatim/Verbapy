@@ -22,5 +22,3 @@ Exemple: C.G. Kühn, Galeni Opera Omnia, vol. 18b, Leipzig : Car. Cnoblochii, 18
 C.G. espace insécable (&nbsp;) Kühn, Galeni Opera Omnia, vol. espace insécable (&nbsp;) numéro de volume,  Leipzig espace insécable (&nbsp;) : Car. Cnoblochii, date du volume.
 
 Exemple: C.G. Kühn, Galeni Opera Omnia, vol. 18b, Leipzig : Car. Cnoblochii, 1830.
-
-"ἐφεξῆς δὲ ὅσοι τούτων ἐπιμνησθέντες ἀνέμιξαν" dans _De differentiis febrium_, tlg0057.tlg045, Kühn, Vol. 7, p. 274.
