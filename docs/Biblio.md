@@ -3,7 +3,7 @@
 * Je ne vois pas dans quelle page de l’application telle ou telle chose doit sortir.
 * «**parenthèse fermante virgule**» est beaucoup moins clair que «),»
 * _In Hippocratis De fracturis_ n’est pas le meilleur exemple, on peut croire que _In_ est un introducteur bibliographique
-* Le titre abrégé n’est pas connu dans les fichiers XML, il faut le donner dans une forme qu’un programme peut parser (~~pas Excel~~) pour alimenter la basde, cf. un début [galenus.csv](https://github.com/galenus-verbatim/verbapy/blob/main/docs/galenus.csv)
+* Le titre abrégé n’est pas connu dans les fichiers XML, il faut le donner dans une forme qu’un programme peut parser (~~pas Excel~~) pour alimenter la bas de données, cf. un début [galenus.csv](https://github.com/galenus-verbatim/verbapy/blob/main/docs/galenus.csv)
 * Le numéro de ligne n’est pas encore dans la base, un casse-tête, mais une solution sera trouvée
 * Je n’ai trouvé qu’seul fichier avec des sections [tlg0057.tlg073.1st1K-grc2](https://github.com/OpenGreekAndLatin/First1KGreek/blob/master/data/tlg0057/tlg073/tlg0057.tlg073.1st1K-grc2.xml#L104), faut-il alourdir le modèle pour ce seul cas ?
 
