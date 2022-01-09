@@ -1,7 +1,7 @@
 # type of data
 
-<milestone unit="ed2page"> = ed. Chartier 
-<milestone unit="ed1page"> = ed. Bâle
+**milestone unit="ed2page"** = _ed. Chartier_ 
+**milestone unit="ed1page"** = _ed. Bâle_
 
 # volume change Bâle
 **Kühn Vol. 1, 2, 3, 4, 5** = **Bâle Vol.1** (Volume change Kühn Vol.5 p. 806)  
