@@ -18,7 +18,7 @@
 **Kühn Vol. 2** (from 1 to 214), 4 (from 367 to 511 then 652 to 702 from 757 to 822), 5 (149 to 805, 18a (from 158 to 181) = **Chart Vol. 5**  
 **Kühn Vol. 4** (736 to 756), 5(1 to 103 then 806_end_ ), 6 (1 to 835), 15 (from 174 to 417) = **Chart Vol. 6**  
 **Kühn Vol. 6** (836 to_end), 7, 8(1 to 452 then to 574 (possible mistake in impression need to check)602 886 ), 9(16) = **Chart Vol. 7**  
-**Kühn Vol. 8** (from 453 to 573 then 575 to 601 and again to 603 and 885 and then 887_end_), 9(1 to 15 then 17 to _end_), 14 ( from 599 to 673), 16, 18a(1 to 7 from 497 to 642), 18b (from 1 to 317) = Chart Vol. 8  
+**Kühn Vol. 8** (from 453 to 573 then 575 to 601 and again to 603 and 885 and then 887_end_), 9(1 to 15 then 17 to _end_), 14 ( from 599 to 673), 16, 18a(1 to 7 from 497 to 642), 18b (from 1 to 317) = **Chart Vol. 8**  
 **Kühn Vol. 17a**, **17b, 19** (1 to 299) = **Chart Vol. 9**  
 **Kühn Vol. 10**, **11**(from 1 to 378 ), **14** (311 to 581), **18a** (from 643 to 720) = **Chart Vol. 10**  
 **Kühn Vol. 15** (from 418 to _end_), **18a** (182 to 211)  = **Chart Vol. 11**  
