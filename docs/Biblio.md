@@ -1,5 +1,6 @@
 [FG 2022-01-09] this comment should disapear as soon as possible
-* Pardon, je ne comprends pas grand chose à ce qu’il faut programmer.
+
+* Pardon, je ne comprends pas grand chose. Je m’attendais à ce que Cahal transpose les exigences philologiques en consignes programmables. Il ne s’agit absolument pas que cela prenne plus de temps, au contraire, normalement la chaîne de la réflexion doit rendre l’information de plus en plus digérée de tête en tête pour arriver à un informaticien idiot, et à la machine qui est encore plus idiote (la machine n’a pas de corps, donc pas d’expérience, donc pas de (bon) sens. Les médiévaux le voyait clairement : «ledit Pierre, par impatience, fragilité ou diminution de son corps et de sa Sensualité, est devenu tout ydiote».)
 * Je ne vois pas dans quelle page de l’application telle ou telle chose doit sortir.
 * «**parenthèse fermante virgule**» est beaucoup moins clair que «),»
 * _In Hippocratis De fracturis_ n’est pas le meilleur exemple, on peut croire que _In_ est un introducteur bibliographique
@@ -24,6 +25,10 @@ Galien **virgule** titre du traité en italiques **parenthèse ouvrante** abrév
 
 
 # CTS
+
+* [FG 2022-01-09] Le ':' a un statut particulier dans la spécification des uri [rfc3986](https://www.rfc-editor.org/rfc/rfc3986#section-2.2), on ne peut pas l’utiliser comme séparateur pour une partie qui doit apparaître dans une url qui répond sur l’internet. Le ':' est strictement limité à http://. http://galenus-verbatim.huma-num.fr/verbatim/tlg0057.tlg100.1st1K-grc1.1.20
+
+
 urn:cts:greekLit:tlg0057.tlg100.1st1K-grc1:1.20
 
 # ref biblio 
