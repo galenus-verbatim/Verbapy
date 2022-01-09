@@ -1,6 +1,6 @@
 # type of data
 
-**milestone unit="ed2page"** = _ed. Chartier_ 
+**milestone unit="ed2page"** = _ed. Chartier_   
 **milestone unit="ed1page"** = _ed. Bâle_
 
 # volume change Bâle
