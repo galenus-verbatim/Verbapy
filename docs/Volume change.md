@@ -4,10 +4,10 @@
 <milestone unit="ed1page"> = ed. Bâle
 
 # volume change Bâle
-**Kühn Vol. 1, 2, 3, 4, 5** = Bâle Vol.1 (Volume change Kühn Vol.5 p. 806)  
+**Kühn Vol. 1, 2, 3, 4, 5** = **Bâle Vol.1** (Volume change Kühn Vol.5 p. 806)  
+**Kühh Vol. 11**, (first page 323 last page 356 then page 379 to 892 ), **12, 13, 14** ( no ref to Bâle from page 390 to 581) = **Bâle Vol. 2**  
+**Kühn Vol. 6, 7** (vol. 7 no ref to Bâle from page 643 to 665 ), 8, 9 (vol.9 no ref to Bâle from page 430 to  549 ), **14** (from page 599), **18a** (from page from 1 to 7 then page 158 to 181 no ref to Bâle from 182 to 221 then 222 to 345  ) = **Bâle Vol. 3**  
 **Kühn Vol. 5, 6, 10, 11, 14** (from page 582 to 598 then page 674 to 797), **18** (from page 8 to 60 then from 574 to 601 then no ref to Bâle from 602 to 642 then 643 to 720 then no ref to Bâle from 721 to 747 ) = **Bâle Vol. 4** (Volume change p. 832)  
-**Kühn Vol. 6, 7** (vol. 7 no ref to Bâle from page 643 to 665 ), 8, 9 (vol.9 no ref to Bâle from page 430 to  549 ), **14** (from page 599), **18a** (from page from 1 to 7 then page 158 to 181 no ref to Bâle from 182 to 221 then 222 to 345  ) = **Bâle Vol. 3**   
-**Kühh Vol. 11**, (first page 323 last page 356 then page 379 to 892 ), **12, 13, 14** ( no ref to Bâle from page 390 to 581) = **Bâle Vol. 2**
 **Kühn Vol. 15** (no ref to Bâle from page 224 to 417), **16**(ref to Bâle starts page 488 ), **17a**(no ref to Bâle from page 305 to 479), **18a** (ref ro Bâle starts page 72 to 157 then to 346 no ref to Bâle from 485 to 573), **18b** (ref to Bâle end at 925),  **19**(no ref to Bâle from 767 to the end) =  **Bâle Vol. 5**
 
 # volume change Chartier
