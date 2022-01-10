@@ -65,16 +65,6 @@ def lemmatize(html_file: str):
 
     toks, starts, ends, pages, lines = verbatoks.listing(html)
     count = len(toks)
-    """ for debug, verify verbatoks
-    for i in range(1, count):
-        line = (toks[i]
-          + "\t" + str(starts[i])
-          + "\t" + str(ends[i])
-          + "\t" + str(pages[i])
-          + "\t" + str(lines[i])
-        )
-        print(line)
-    """
     vert = "\n".join(toks)
     i = -1
     csv = "orth\toffset\tlength\tcat\tlem\tpage\tline\n"

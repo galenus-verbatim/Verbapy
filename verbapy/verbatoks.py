@@ -5,7 +5,9 @@ MIT License https://opensource.org/licenses/mit-license.php
 Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 """
 
+import argparse
 import re
+import sys
 
 
 """Tokenizer for languages with roman alphabet punctuation
@@ -82,6 +84,33 @@ def listing(text) :
     toks[-1] = toks[-1].strip()
     return toks, starts, ends, pages, lines
 
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description='Process an ML file (with <tag>), show tokenized words between tags, for search or linguistic',
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument('ml_file', nargs='+', type=str,
+        help="""One or mor *.ml file"""
+    )
+    args = parser.parse_args()
+    for ml_file in args.ml_file:
+        print(ml_file)
+        with open(ml_file, mode="r", encoding="utf-8") as f:
+            ml = f.read()
+            toks, starts, ends, pages, lines = listing(ml)
+            count = len(toks)
+            for i in range(0, count):
+                line = (toks[i].strip()
+                  + "\t" + str(starts[i])
+                  + "\t" + str(ends[i])
+                  + "\t" + str(pages[i])
+                  + "\t" + str(lines[i])
+                )
+                print(line)
+
+
+if __name__ == '__main__':
+    sys.exit(main())
 
 
 

@@ -37,7 +37,7 @@ def crawl(html_dir: str, sqlite_file=None):
         sqlite_file = html_dir.rstrip('/') + ".db"
     else:
         sqlite_file = os.path.abspath(sqlite_file).replace('\\', '/')
-    # for now, no incremental insert
+    # for now, not incremental insert
     try:
         os.remove(sqlite_file)
     except OSError:
@@ -54,7 +54,7 @@ def crawl(html_dir: str, sqlite_file=None):
     cur.executescript(sql)
     con.commit()
     # for each TEI/CTS file, a json file has been generated to keep the order of chapters to ingest
-    json_list = sorted(glob.glob(html_dir + '*/*.json'))
+    json_list = sorted(glob.glob(html_dir + '**/*.json', recursive=True))
     if len(json_list) < 1:
         raise Exception("No json file found in directory:\n\"" + html_dir + "\"")
     for json_file in json_list:
@@ -161,25 +161,32 @@ INSERT INTO doc(
 def toks(tsv_path: str, doc_id: int):
     """Parse a verticalized tsv list of tokens with positions"""
     with open(tsv_path, 'r', encoding="utf-8") as f:
-        tsv_reader = csv.reader(f, delimiter="\t")
+        tsv_reader = csv.reader(f, delimiter="\t", quoting=csv.QUOTE_NONE)
         # orth	offset	length	cat	lem
         # ὧν	178 	2   	p	ὅς
+        i = 0
         for row in tsv_reader:
+            i = i + 1
             tok_sql = """
             INSERT INTO tok
                 (doc, orth, offset, length, cat, lem, page, line)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?)
             """
-            orth = row[0]
-            if orth.isdigit(): # page numbers have been tokenized, bad
-                continue
-            offset = row[1]
-            length = row[2]
-            cat = row[3]
-            lem = row[4]
-            page = row[5]
-            line = row[6]
+            try:
+                orth = row[0]
+                if orth.isdigit(): # page numbers have been tokenized, bad
+                  continue
+                offset = row[1]
+                length = row[2]
+                cat = row[3]
+                lem = row[4]
+                page = row[5]
+                line = row[6]
+            except IndexError:
+                print("Column not found in \"" + tsv_path + "\" l." + str(i))
+                print(row)
+                raise
             # get lem_id
             if not lem:
                 lem_id = 0
