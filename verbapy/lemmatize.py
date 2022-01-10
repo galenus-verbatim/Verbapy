@@ -35,9 +35,12 @@ def crawl(html_dir: str, torch: bool=False):
     model_name = "grc"
     if torch:
         device = 'cuda'
+        batch_size = 64
     else:
         device = 'cpu'
-    tagger = get_tagger(model_name, batch_size=256, device=device, model_path=None)
+        batch_size = 64
+        
+    tagger = get_tagger(model_name, batch_size=batch_size, device=device, model_path=None)
     iterator, processor = get_iterator_and_processor()
 
     for root, dirs, files in os.walk(html_dir):
