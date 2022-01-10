@@ -9,8 +9,8 @@ import argparse
 import csv
 import glob
 import json
-from typing import List 
-import logging 
+from typing import List
+import logging
 import os
 import sqlite3
 import sys
@@ -24,7 +24,7 @@ import config
 # shared sqlite3 objects
 con = cur = None
 # dictionnaries of form ids
-orth_dic = lem_dic = {} 
+orth_dic = lem_dic = {}
 
 def crawl(html_dir: str, sqlite_file=None):
     """Recursive crawl of folder of greek texts"""
@@ -53,8 +53,8 @@ def crawl(html_dir: str, sqlite_file=None):
         sql = f.read()
     cur.executescript(sql)
     con.commit()
-    # for each TEI/CTS file, un json file has been generated to keep the order of chapters to ingest
-    json_list = glob.glob(html_dir + '*/*.json')
+    # for each TEI/CTS file, a json file has been generated to keep the order of chapters to ingest
+    json_list = sorted(glob.glob(html_dir + '*/*.json'))
     if len(json_list) < 1:
         raise Exception("No json file found in directory:\n\"" + html_dir + "\"")
     for json_file in json_list:
@@ -66,45 +66,94 @@ def crawl(html_dir: str, sqlite_file=None):
 def docs(json_file: str):
     """Insert a record for a file"""
     logging.info(json_file)
-    sql = """
-INSERT INTO doc(
-    identifier,
-    filemtime, 
-    filesize, 
-    html,
-    title,
+    opus_sql = """
+INSERT INTO opus(
 
-    chapter,
-    edition,
-    volume, 
-    pagefrom, 
+    identifier,
+    filemtime,
+    filesize,
+    title,
+    toc,
+
+    author,
+    issued,
+    editor,
+    volume,
+    pagefrom,
     pageto
+
 ) VALUES
-(?, ?, ?, ?, ?,   ?, ?, ?, ?, ?)
+(?, ?, ?, ?, ?,    ?, ?, ?, ?, ?, ?)
     """
     json_dir = os.path.dirname(json_file)
     with open(json_file, 'r', encoding="utf-8") as fread:
         data = json.load(fread)
-    json_opus = data[0]
-    title = json_opus['title']
-    edition = json_opus['editor']
-    volume = json_opus['vol']
+    opus_json = data[0]
+    toc_file = os.path.join(json_dir, "toc.html")
+    toc = None
+    if os.path.isfile(toc_file):
+        with open(toc_file, mode="r", encoding="utf-8") as f:
+            toc = f.read()
+    cur.execute(opus_sql, (
+        opus_json['identifier'],
+        os.path.getmtime(json_file),
+        os.path.getsize(json_file),
+        opus_json['title'],
+        toc,
+
+        opus_json.get('author'),
+        opus_json.get('issued'),
+        opus_json.get('editor'),
+        opus_json.get('volume'),
+        opus_json.get('pagefrom'),
+        opus_json.get('pageto'),
+    ))
+    opus_id = cur.lastrowid
+
+
+    doc_sql = """
+INSERT INTO doc(
+    identifier,
+    html,
+    opus,
+
+    prev,
+    next,
+    pagefrom,
+    pageto,
+    book,
+    chapter
+
+) VALUES
+(?, ?, ?,  ?, ?, ?, ?, ?, ?)
+    """
     for i in range(1, len(data)):
-        json_doc = data[i]
-        identifier = json_doc['identifier']
+        doc_json = data[i]
+        identifier = doc_json['identifier']
         html_file = os.path.join(json_dir, identifier + ".html")
-        filemtime = os.path.getmtime(html_file)
-        filesize = os.path.getsize(html_file)
         with open(html_file, mode="r", encoding="utf-8") as f:
             html = f.read()
             # works with php php:gzuncompress($html), but is not a real economy
-            # html = zlib.compress(bytes(html, 'utf-8'), level=9) 
-        chapter = json_doc['title']
-        pagefrom = json_doc['from']
-        pageto = json_doc['to']
-        cur.execute(sql, 
-            (identifier, filemtime, filesize, html, title, chapter, edition, volume, pagefrom, pageto)
-        )
+            # html = zlib.compress(bytes(html, 'utf-8'), level=9)
+
+        prev = None
+        if i > 1:
+            prev = data[i-1]['identifier']
+        next = None
+        if i < len(data)-2:
+            next = data[i+1]['identifier']
+
+        cur.execute(doc_sql, (
+            identifier,
+            html,
+            opus_id,
+            prev,
+            next,
+            doc_json.get('pagefrom'),
+            doc_json.get('pageto'),
+            doc_json.get('book'),
+            doc_json.get('chapter')
+        ))
         doc_id = cur.lastrowid
         toks( os.path.join(json_dir, identifier + ".csv"), doc_id)
 
@@ -117,9 +166,9 @@ def toks(tsv_path: str, doc_id: int):
         # ὧν	178 	2   	p	ὅς
         for line in tsv_reader:
             tok_sql = """
-            INSERT INTO tok 
-                (doc, orth, offset, length, cat, lem) 
-            VALUES 
+            INSERT INTO tok
+                (doc, orth, offset, length, cat, lem)
+            VALUES
                 (?, ?, ?, ?, ?, ?)
             """
             orth = line[0]

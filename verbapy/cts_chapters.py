@@ -10,7 +10,7 @@ import glob
 import io
 import json
 import logging
-from typing import List 
+from typing import List
 from lxml import etree
 import os
 import re
@@ -87,7 +87,7 @@ def split(cts_file: str):
     global html_dir
     cts_name = os.path.splitext(os.path.basename(cts_file))[0]
     # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
-    os.makedirs(os.path.join(html_dir, cts_name), exist_ok=True)    
+    os.makedirs(os.path.join(html_dir, cts_name), exist_ok=True)
     logging.info(cts_name + " {:.0f} kb".format(os.path.getsize(cts_file) / 1024))
     with open(cts_file, 'r', encoding="utf-8") as f:
         xml = f.read()
@@ -103,13 +103,13 @@ def split(cts_file: str):
     dst_dom = xslt(
         cts_dom,
         # libxml do not like windows paths starting C:
-        dst_dir = etree.XSLT.strparam( 
+        dst_dir = etree.XSLT.strparam(
            (html_dir, "file:///"+html_dir)[os.path.sep == '\\']
         ),
         src_name = etree.XSLT.strparam(cts_name)
     )
     infile = etree.tounicode(dst_dom, method='text', pretty_print=True)
-    outfile = open(os.path.join(html_dir, cts_name, cts_name+".json"), 'a', encoding="utf-8")
+    outfile = open(os.path.join(html_dir, cts_name, cts_name+".json"), 'w', encoding="utf-8")
     outfile.write(infile)
 
 def main() -> int:

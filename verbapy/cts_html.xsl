@@ -17,7 +17,9 @@ TODO : prev / next and lots of other item metadata
   xmlns:tei="http://www.tei-c.org/ns/1.0"
   exclude-result-prefixes="tei"
 >
-  <xsl:output indent="yes" encoding="UTF-8" method="xml" />
+  <xsl:output indent="yes" encoding="UTF-8" method="html" />
+  <!-- A handle on each line breaks by its page to count lines -->
+  <xsl:key name="line-by-page" match="tei:item|tei:l|tei:lb|tei:p" use="generate-id(preceding::tei:pb[1])"/>
 
   <xsl:template match="tei:*">
     <xsl:message terminate="yes">
@@ -81,7 +83,29 @@ TODO : prev / next and lots of other item metadata
 
   <xsl:template match="tei:lb">
     <xsl:text>&#10;</xsl:text>
-    <br class="cts"/>
+    <span class="lb">
+      <xsl:call-template name="data-line"/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template name="data-line">
+    <!-- Count lines from the last page break. If not…? not predicted -->
+    <xsl:variable name="pb" select="generate-id(preceding::tei:pb[1])"/>
+    
+    <xsl:variable name="id" select="generate-id()"/>
+    <!-- Seems not efficient but is well compiled and do not fall in hyperspace like some weird xpath -->
+    <xsl:variable name="n">
+      <xsl:for-each select="key('line-by-page', $pb)">
+        <xsl:if test="generate-id(.) = $id">
+          <xsl:value-of select="position()"/>
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+    <xsl:if test="number($n) &gt; 0">
+      <xsl:attribute name="data-line">
+        <xsl:value-of select="$n + 1"/>
+      </xsl:attribute>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="tei:l">
@@ -175,7 +199,7 @@ TODO : prev / next and lots of other item metadata
   </xsl:template>
   
   <xsl:template match="tei:milestone">
-    <wbr>
+    <span>
       <xsl:attribute name="class">
         <xsl:value-of select="normalize-space(concat('milestone ', @unit))"/>
       </xsl:attribute>
@@ -189,7 +213,7 @@ TODO : prev / next and lots of other item metadata
           <xsl:value-of select="@unit"/>
         </xsl:attribute>
       </xsl:if>
-    </wbr>
+    </span>
   </xsl:template>
   
 
@@ -207,36 +231,28 @@ TODO : prev / next and lots of other item metadata
   <xsl:template match="tei:p">
     <xsl:text>&#10;</xsl:text>
     <p>
+      <xsl:call-template name="data-line"/>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
   
   <xsl:template match="tei:pb">
     <xsl:param name="class"/>
-    <xsl:choose>
-      <xsl:when test="$class = 'pbprev'">
-        <wbr class="pb pbprev">
-          <xsl:if test="@n">
-            <xsl:attribute name="data-n">
-              <xsl:value-of select="@n"/>
-            </xsl:attribute>
-          </xsl:if>
-        </wbr>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:text>&#10;</xsl:text>
-        <br class="pb">
-          <xsl:attribute name="class">
-            <xsl:value-of select="normalize-space(concat('pb ', $class))"/>
-          </xsl:attribute>
-          <xsl:if test="@n">
-            <xsl:attribute name="data-n">
-              <xsl:value-of select="@n"/>
-            </xsl:attribute>
-          </xsl:if>
-        </br>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:text>&#10;</xsl:text>
+    <span class="pb">
+      <xsl:attribute name="class">
+        <xsl:value-of select="normalize-space(concat('pb ', $class))"/>
+      </xsl:attribute>
+      <xsl:if test="@n">
+        <xsl:attribute name="data-page">
+          <xsl:value-of select="@n"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="$class = ''">
+        <xsl:attribute name="data-line">1</xsl:attribute>
+      </xsl:if>
+    </span>
+    <xsl:text>&#10;</xsl:text>
   </xsl:template>
   
   <xsl:template match="tei:q">

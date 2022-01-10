@@ -6,33 +6,46 @@ PRAGMA foreign_keys = 0; -- W. for efficiency
 -- PRAGMA journal_mode = OFF; -- W. Dangerous, no roll back, maybe efficient
 -- PRAGMA synchronous = OFF; -- W. Dangerous, but no parallel write check
 
+DROP TABLE IF EXISTS opus;
+CREATE table opus (
+-- Source XML file
+    id          INTEGER, -- rowid auto
+    -- must, file infos and content
+    identifier  TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
+    filemtime   INTEGER NOT NULL,     -- ! modified time
+    filesize    INTEGER NOT NULL,     -- ! filesize
+    title       TEXT NOT NULL,        -- ! title of Opus
+    toc         BLOB,                 -- ? html toc if more than one chapter
+    -- should, bibliographic info
+    author      TEXT,    -- ? name of an editor
+    editor      TEXT,    -- ? name of an editor
+    volume      TEXT,    -- ? volume
+    issued      INTEGER, -- ? publication year of the text
+    pagefrom    INTEGER, -- ? page from
+    pageto      INTEGER, -- ? page to
+    edition     TEXT,    -- ? code for an edittion
+    titleshort  TEXT,    -- ? title abbreviated
+    created     INTEGER, -- ? creation year of the text
+    PRIMARY KEY(id ASC)
+);
+
+
 -- Schema to store lemmatized texts
 DROP TABLE IF EXISTS doc;
 CREATE table doc (
 -- an indexed HTML document
     id          INTEGER, -- rowid auto
     -- must, file infos and content
-    identifier  TEXT UNIQUE NOT NULL,   -- ! source filename without extension, unique for base
-    filemtime   INTEGER NOT NULL, -- ! modified time
-    filesize    INTEGER NOT NULL, -- ! filesize
-    html        BLOB NOT NULL,    -- ! html text ready to display
+    identifier  TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
+    html        BLOB NOT NULL,        -- ! html text ready to display
+    opus        INTEGER NOT NULL,     -- ! link to the opus
+    prev        INTEGER, -- ? page to
+    next        INTEGER, -- ? page to
     -- should, bibliographic info
-    title       TEXT NOT NULL,    -- ! html, for a structured short result
-    chapter     TEXT,             -- ? analytic, 
-    edition     TEXT,             -- ? name of edition of a text
-    volume      TEXT,             -- ? volume
-    pagefrom    INTEGER,          -- ? page from
-    pageto      INTEGER,          -- ? page to
-    -- may, other field info
-    byline      TEXT,    -- ? authors… text, searchable
-    date        INTEGER, -- ? favorite date for chronological sort
-    start       INTEGER, -- ? creation, start year, when chronological queries are relevant
-    end         INTEGER, -- ? creation, end year, when chronological queries are relevant
-    issued      INTEGER, -- ? publication year of the text
-    bibl        TEXT,    -- ? A prepared bibliographic line for the text
-    source      TEXT,    -- ? URL of source file (ex: XML/TEI)
-    editby      TEXT,    -- ? editors
-    publisher   TEXT,    -- ? Name of the original publisher of the file in case of compilation
+    pagefrom    INTEGER, -- ? page from
+    pageto      INTEGER, -- ? page to
+    book        TEXT,    -- ? analytic,
+    chapter     TEXT,    -- ? analytic,
     PRIMARY KEY(id ASC)
 );
 CREATE UNIQUE INDEX IF NOT EXISTS doc_identifier ON doc(identifier);
@@ -48,6 +61,8 @@ CREATE TABLE tok (
     lem         INTEGER NOT NULL,  -- ! lemma form id
     offset      INTEGER NOT NULL,  -- ! start offset in source file, utf8 chars
     length      INTEGER NOT NULL,  -- ! size of token, utf8 chars
+    page        INTEGER,           -- ? page number
+    line        INTEGER,           -- ? line number
     PRIMARY KEY(id ASC)
 );
  -- search an orthographic form in all or some documents

@@ -41,11 +41,12 @@ TODO : prev / next and lots of other item metadata
     {
         "identifier": "<xsl:value-of select="$src_name"/>",
         "title": "<xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"/>",
+        "author": "<xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author"/>",
         "editor": "<xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:editor"/>",
-        "vol": "<xsl:value-of    select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='vol']"/>",
-        "from": "<xsl:value-of   select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@from"/>",
-        "to": "<xsl:value-of     select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@to"/>",
-        "date": "<xsl:value-of   select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date"/>"
+        "issued": "<xsl:value-of   select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:biblStruct/tei:monogr/tei:imprint/tei:date"/>",
+        "volume": "<xsl:value-of    select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='vol']"/>",
+        "pagefrom": "<xsl:value-of   select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@from"/>",
+        "pageto": "<xsl:value-of     select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@to"/>"
     }<xsl:apply-templates select="//tei:div[@type='edition']"/>
 ]
 </root>
@@ -54,33 +55,109 @@ TODO : prev / next and lots of other item metadata
   <!-- chaptering -->
   <xsl:template match="tei:div[@type='edition']">
     <xsl:choose>
-      <xsl:when test="tei:div[@type='textpart'][@subtype='work']">
-        <xsl:for-each select="tei:div[@type='textpart'][@subtype='work']">
-          <xsl:call-template name="document"/>
-        </xsl:for-each>
-      </xsl:when>
       <!-- chapters may be children of book -->
-      <xsl:when test=".//tei:div[@type='textpart'][@subtype='chapter']">
+      <xsl:when test="count(.//tei:div[@type='textpart'][@subtype='chapter']) &gt; 1">
+        <xsl:call-template name="toc"/>
         <xsl:for-each select=".//tei:div[@type='textpart'][@subtype='chapter']">
           <xsl:call-template name="document"/>
         </xsl:for-each>
       </xsl:when>
-      <xsl:when test="tei:div[@type='textpart'][@subtype='section'][@n]">
+      <!-- sections seems to work like chapters -->
+      <xsl:when test="count(tei:div[@type='textpart'][@subtype='section'][@n]) &gt; 1">
+        <xsl:call-template name="toc"/>
         <xsl:for-each select="tei:div">
+          <xsl:call-template name="document"/>
+        </xsl:for-each>
+      </xsl:when>
+      <!-- Only one div -->
+      <xsl:when test="count(tei:div) = 1 and tei:div[@type='textpart'][@subtype='work' or @subtype='book' or @subtype='chapter']">
+        <xsl:for-each select="tei:div[@type='textpart']">
           <xsl:call-template name="document"/>
         </xsl:for-each>
       </xsl:when>
       <!-- A book with no chapters -->
-      <xsl:when test="tei:div[not(tei:div)][@n]">
-        <xsl:for-each select="tei:div">
-          <xsl:call-template name="document"/>
-        </xsl:for-each>
-      </xsl:when>
       <xsl:otherwise>
-        <xsl:message terminate="yes">No chapters found</xsl:message>
+        <xsl:message terminate="yes">No chapters found in <xsl:value-of select="$src_name"/></xsl:message>
       </xsl:otherwise>
     </xsl:choose>
     
+  </xsl:template>
+  
+  <!-- Generate a toc when relevant  -->
+  <xsl:template name="toc">
+    <xsl:param name="href">
+      <xsl:value-of select="$dst_dir"/>
+      <xsl:value-of select="$src_name"/>
+      <xsl:text>/</xsl:text>
+      <xsl:text>toc</xsl:text>
+      <xsl:value-of select="$ext"/>
+    </xsl:param>
+    <xsl:document 
+      href="{$href}" 
+      omit-xml-declaration="yes"
+      indent="yes"
+      encoding="UTF-8" 
+      >
+      <nav>
+        <ul>
+          <xsl:apply-templates select="tei:div" mode="toc"/>
+        </ul>
+      </nav>
+    </xsl:document>
+  </xsl:template>
+  
+  <xsl:template match="tei:div" mode="toc">
+    <xsl:choose>
+      <xsl:when test="@n and tei:div[@type='textpart'][@subtype='chapter']">
+        <li>
+          <span>Livre <xsl:value-of select="@n"/></span>
+          <ul>
+            <xsl:apply-templates select="tei:div[@type='textpart'][@subtype='chapter']" mode="toc"/>
+          </ul>
+        </li>
+      </xsl:when>
+      <xsl:when test="@type='textpart' and @subtype='chapter' and @n">
+        <li>
+          <a>
+            <xsl:attribute name="href">
+              <xsl:call-template name="dst_name"/>
+            </xsl:attribute>
+            <xsl:choose>
+              <xsl:when test="number(@n) &gt; 0">
+                <xsl:text>Chapitre </xsl:text>
+                <xsl:value-of select="@n"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="@n"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </a>
+        </li>
+      </xsl:when>
+      <xsl:when test="@type='textpart' and @subtype='section' and @n">
+        <li>
+          <a>
+            <xsl:attribute name="href">
+              <xsl:call-template name="dst_name"/>
+            </xsl:attribute>
+            <xsl:choose>
+              <xsl:when test="number(@n) &gt; 0">
+                <xsl:text>Section </xsl:text>
+                <xsl:value-of select="@n"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="@n"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </a>
+        </li>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:message terminate="yes">
+          <xsl:value-of select="$src_name"/>
+        </xsl:message>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- Calculate the destination file name of a chapter, maybe used for  -->
@@ -139,17 +216,17 @@ TODO : prev / next and lots of other item metadata
         <xsl:when test="$text-before != ''">
           <xsl:value-of select="preceding::tei:pb[1]/@n"/>
         </xsl:when>
+        <!-- small section with no <pb> -->
+        <xsl:when test="not(.//tei:pb)">
+          <xsl:value-of select="preceding::tei:pb[1]/@n"/>
+        </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="(.//tei:pb)[1]/@n"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <chapter xml:space="preserve">,
-    {
-        "identifier": "<xsl:value-of select="$dst_name"/>",
-        "from": "<xsl:value-of select="$from"/>",
-        "to": "<xsl:value-of select="(.//tei:pb)[last()]/@n"/>",
-        "title": "<xsl:choose xml:space="default">
+    <!-- title is not relevant here
+              "title": "<xsl:choose xml:space="default">
           <xsl:when test=".//tei:head">
             <xsl:value-of select="normalize-space(.//tei:head)"/>
           </xsl:when>
@@ -160,14 +237,34 @@ TODO : prev / next and lots of other item metadata
             <xsl:text> […]</xsl:text>
           </xsl:otherwise>
     </xsl:choose>"
-    }</chapter>
+    -->
+    <xsl:text>,
+    {</xsl:text>
+    <xsl:if test="true()">
+        "identifier": "<xsl:value-of select="$dst_name"/>"</xsl:if>
+    <xsl:if test=".//tei:pb">,
+        "pagefrom": "<xsl:value-of select="$from"/>",
+        "pageto": "<xsl:value-of select="(.//tei:pb)[last()]/@n"/>"</xsl:if>
+    <xsl:if test="ancestor-or-self::tei:div[@subtype='book']/@n">,
+        "book": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='book'][1]/@n"/>"</xsl:if>
+    <xsl:if test="ancestor-or-self::tei:div[@subtype='chapter']/@n">,
+        "chapter": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='chapter'][1]/@n"/>"</xsl:if>
+    <xsl:if test="ancestor-or-self::tei:div[@subtype='section']/@n">,
+        "chapter": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='section'][1]/@n"/>"</xsl:if>
+    <xsl:text>
+    }</xsl:text>
+    <!-- 
+    method html is needed to have <span></span> (and not <span/>)
+    -->
     <xsl:document 
-      href="{$href}" 
+      href="{$href}"
+      indent="yes"
+      method="html"
       omit-xml-declaration="yes" 
       encoding="UTF-8" 
       >
       <article>
-        <xsl:if test="$text-before != ''">
+        <xsl:if test="$text-before != '' or not(.//tei:pb)">
           <xsl:apply-templates select="(preceding::tei:pb)[last()]">
             <xsl:with-param name="class">pbprev</xsl:with-param>
           </xsl:apply-templates>
