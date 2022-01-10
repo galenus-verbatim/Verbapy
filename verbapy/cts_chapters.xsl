@@ -25,6 +25,8 @@ TODO : prev / next and lots of other item metadata
   <xsl:param name="src_name"/>
   <!-- file extension to output -->
   <xsl:variable name="ext">.html</xsl:variable>
+  <!-- Output page numbers, if we have the -->
+  <xsl:variable name="pb" select="count(.//pb)"/>
   
   <xsl:template match="/*">
     <xsl:if test="normalize-space($dst_dir) = ''">
@@ -242,7 +244,7 @@ TODO : prev / next and lots of other item metadata
     {</xsl:text>
     <xsl:if test="true()">
         "identifier": "<xsl:value-of select="$dst_name"/>"</xsl:if>
-    <xsl:if test=".//tei:pb">,
+    <xsl:if test="$pb &gt;= 0">,
         "pagefrom": "<xsl:value-of select="$from"/>",
         "pageto": "<xsl:value-of select="(.//tei:pb)[last()]/@n"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='book']/@n">,

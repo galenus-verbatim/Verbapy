@@ -164,20 +164,22 @@ def toks(tsv_path: str, doc_id: int):
         tsv_reader = csv.reader(f, delimiter="\t")
         # orth	offset	length	cat	lem
         # ὧν	178 	2   	p	ὅς
-        for line in tsv_reader:
+        for row in tsv_reader:
             tok_sql = """
             INSERT INTO tok
-                (doc, orth, offset, length, cat, lem)
+                (doc, orth, offset, length, cat, lem, page, line)
             VALUES
-                (?, ?, ?, ?, ?, ?)
+                (?, ?, ?, ?, ?, ?, ?, ?)
             """
-            orth = line[0]
-            if orth.isdigit(): # page numbers have been tokenized
+            orth = row[0]
+            if orth.isdigit(): # page numbers have been tokenized, bad
                 continue
-            offset = line[1]
-            length = line[2]
-            cat = line[3]
-            lem = line[4]
+            offset = row[1]
+            length = row[2]
+            cat = row[3]
+            lem = row[4]
+            page = row[5]
+            line = row[6]
             # get lem_id
             if not lem:
                 lem_id = 0
@@ -204,7 +206,7 @@ def toks(tsv_path: str, doc_id: int):
                 orth_id = orth_dic[orth]
 
             cur.execute(tok_sql,
-                (doc_id, orth_id, offset, length, cat, lem_id)
+                (doc_id, orth_id, offset, length, cat, lem_id, page, line)
             )
 
 def main() -> int:
