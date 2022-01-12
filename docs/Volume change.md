@@ -22,5 +22,5 @@
 **Kühn Vol. 17a**, **17b, 19** (1 to 299) = **Chart Vol. 9**  
 **Kühn Vol. 10**, **11**(from 1 to 378 ), **14** (311 to 581), **18a** (from 643 to 720) = **Chart Vol. 10**  
 **Kühn Vol. 15** (from 418 to _end_), **18a** (182 to 211)  = **Chart Vol. 11**  
-**Kühn Vol. 19** (from 212 to), **18b** (318 to 95 then no ref to Chartier until _end_)  = **Chart Vol. 12**  
+**Kühn Vol. 19** (from 212 to), **18b** (318 to 925 then no ref to Chartier until _end_)  = **Chart Vol. 12**  
 **Kühn Vol. 11** (from 379 to _end_), **12**, **13**, **14** (from 1 to 310), **18a** (from 721 to 781) = **Chart Vol. 13**  
