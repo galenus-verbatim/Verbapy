@@ -38,10 +38,8 @@ def crawl(html_dir: str, sqlite_file=None):
     else:
         sqlite_file = os.path.abspath(sqlite_file).replace('\\', '/')
     # for now, not incremental insert
-    try:
+    if os.path.isfile(sqlite_file):
         os.remove(sqlite_file)
-    except OSError:
-        pass
 
     logging.info(html_dir + " => " + sqlite_file)
     con = sqlite3.connect(sqlite_file)
@@ -69,18 +67,18 @@ def docs(json_file: str):
     opus_sql = """
 INSERT INTO opus(
 
-    identifier,
-    filemtime,
-    filesize,
-    title,
-    toc,
+    clavis,
+    epoch,
+    octets,
+    titulus,
+    nav,
 
-    author,
-    issued,
+    auctor,
     editor,
-    volume,
-    pagefrom,
-    pageto
+    annuspub,
+    volumen,
+    pagde,
+    pagad
 
 ) VALUES
 (?, ?, ?, ?, ?,    ?, ?, ?, ?, ?, ?)
@@ -90,72 +88,75 @@ INSERT INTO opus(
         data = json.load(fread)
     opus_json = data[0]
     toc_file = os.path.join(json_dir, "toc.html")
-    toc = None
+    nav = None
     if os.path.isfile(toc_file):
         with open(toc_file, mode="r", encoding="utf-8") as f:
-            toc = f.read()
+            nav = f.read()
     cur.execute(opus_sql, (
-        opus_json['identifier'],
+        opus_json['clavis'],
         os.path.getmtime(json_file),
         os.path.getsize(json_file),
-        opus_json['title'],
-        toc,
+        opus_json['titulus'],
+        nav,
 
-        opus_json.get('author'),
-        opus_json.get('issued'),
+        opus_json.get('auctor'),
         opus_json.get('editor'),
-        opus_json.get('volume'),
-        opus_json.get('pagefrom'),
-        opus_json.get('pageto'),
+        opus_json.get('annuspub'),
+        opus_json.get('volumen'),
+        opus_json.get('pagde'),
+        opus_json.get('pagad'),
     ))
     opus_id = cur.lastrowid
 
 
     doc_sql = """
 INSERT INTO doc(
-    identifier,
+    clavis,
     html,
     opus,
 
-    prev,
-    next,
-    pagefrom,
-    pageto,
-    book,
-    chapter
-
+    ante,
+    post,
+    pagde,
+    pagad,
+    volumen,
+    liber,
+    capitulum,
+    sectio
 ) VALUES
-(?, ?, ?,  ?, ?, ?, ?, ?, ?)
+(?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?)
     """
     for i in range(1, len(data)):
         doc_json = data[i]
-        identifier = doc_json['identifier']
-        html_file = os.path.join(json_dir, identifier + ".html")
+        clavis = doc_json['clavis']
+        html_file = os.path.join(json_dir, clavis + ".html")
         with open(html_file, mode="r", encoding="utf-8") as f:
             html = f.read()
             # works with php php:gzuncompress($html), but is not a real economy
             # html = zlib.compress(bytes(html, 'utf-8'), level=9)
 
-        prev = None
+        ante = None
         if i > 1:
-            prev = data[i-1]['identifier']
-        next = None
+            ante = data[i-1]['clavis']
+        post = None
         if i < len(data)-2:
-            next = data[i+1]['identifier']
+            post = data[i+1]['clavis']
 
         cur.execute(doc_sql, (
-            identifier,
+            clavis,
             html,
             opus_id,
-            prev,
-            next,
-            doc_json.get('pagefrom'),
-            doc_json.get('pageto'),
-            doc_json.get('book'),
-            doc_json.get('chapter')
+            ante,
+            post,
+            doc_json.get('pagde'),
+            doc_json.get('pagad'),
+            doc_json.get('volumen'),
+            doc_json.get('liber'),
+            doc_json.get('capitulum'),
+            doc_json.get('sectio')
         ))
         doc_id = cur.lastrowid
-        toks( os.path.join(json_dir, identifier + ".csv"), doc_id)
+        toks( os.path.join(json_dir, clavis + ".csv"), doc_id)
 
 
 def toks(tsv_path: str, doc_id: int):
@@ -169,20 +170,20 @@ def toks(tsv_path: str, doc_id: int):
             i = i + 1
             tok_sql = """
             INSERT INTO tok
-                (doc, orth, offset, length, cat, lem, page, line)
+                (doc, orth, charde, charad, cat, lem, pag, linea)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?)
             """
             try:
                 orth = row[0]
-                if orth.isdigit(): # page numbers have been tokenized, bad
+                if orth.isdigit(): # page numbers may have been tokenized
                   continue
-                offset = row[1]
-                length = row[2]
+                charde = row[1]
+                charad = row[2]
                 cat = row[3]
                 lem = row[4]
-                page = row[5]
-                line = row[6]
+                pag = row[5]
+                linea = row[6]
             except IndexError:
                 print("Column not found in \"" + tsv_path + "\" l." + str(i))
                 print(row)
@@ -200,9 +201,7 @@ def toks(tsv_path: str, doc_id: int):
             else:
                 lem_id = lem_dic[lem]
             # get orth_id
-            if not orth:
-                orth_id = 0
-            elif orth not in orth_dic:
+            if orth not in orth_dic:
                 cur.execute(
                     "INSERT INTO orth (form, cat, lem) VALUES (?, ?, ?)",
                     (orth, cat, lem_id)
@@ -213,7 +212,7 @@ def toks(tsv_path: str, doc_id: int):
                 orth_id = orth_dic[orth]
 
             cur.execute(tok_sql,
-                (doc_id, orth_id, offset, length, cat, lem_id, page, line)
+                (doc_id, orth_id, charde, charad, cat, lem_id, pag, linea)
             )
 
 def main() -> int:

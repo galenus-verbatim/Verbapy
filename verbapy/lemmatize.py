@@ -39,7 +39,7 @@ def crawl(html_dir: str, torch: bool=False):
     else:
         device = 'cpu'
         batch_size = 64
-        
+
     tagger = get_tagger(model_name, batch_size=batch_size, device=device, model_path=None)
     iterator, processor = get_iterator_and_processor()
 
@@ -68,7 +68,7 @@ def lemmatize(html_file: str):
     vert = "\n".join(toks)
     i = -1
     csv = "orth\toffset\tlength\tcat\tlem\tpage\tline\n"
-    
+
     # here we should handle better exceptions for torch
     for word in tagger.tag_str(
         vert,
@@ -77,10 +77,6 @@ def lemmatize(html_file: str):
         no_tokenizer=True
     ):
         i = i + 1
-        offset = starts[i]
-        length = ends[i] - starts[i]
-        page = pages[i]
-        line = lines[i]
 
         """ json.dumps(word, ensure_ascii=False)
         {"form": "πλήθει", "case": "-", "degree": "-", "gend": "-", "lemma": "πλῆθος", "mood": "-", "num": "s", "pers": "-", "pos": "n", "tense": "-", "voice": "-", "treated": "πλήθει"}
@@ -91,12 +87,12 @@ def lemmatize(html_file: str):
         lem = word['lemma']
         csv += (
             orth.strip()
-            + "\t" + str(offset)
-            + "\t" + str(length)
+            + "\t" + str(starts[i])
+            + "\t" + str(ends[i])
             + "\t" + cat
             + "\t" + lem.strip()
-            + "\t" + str(page)
-            + "\t" + str(line)
+            + "\t" + str(pages[i])
+            + "\t" + str(lines[i])
         + "\n")
     # write at the end, to be sure to not produce incomplete file
     with open(csv_file, 'w', encoding="utf-8") as f:

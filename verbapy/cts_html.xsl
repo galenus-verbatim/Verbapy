@@ -8,8 +8,6 @@ MIT License https://opensource.org/licenses/mit-license.php
 
 Split a single TEI file in a multi-pages site
 
-TODO : prev / next and lots of other item metadata
-
 -->
 <xsl:transform version="1.1"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

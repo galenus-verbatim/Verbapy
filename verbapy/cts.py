@@ -98,14 +98,19 @@ def split(cts_file: str):
     with open(debug, 'w', encoding="utf-8") as f:
         f.write(xml)
     """
-
-    cts_dom = etree.XML(bytes(xml, encoding='utf-8'))
+    # do not forget base_url, to resolve xslt document() for __cts__.xml
+    cts_dom = etree.XML(bytes(xml, encoding='utf-8'), base_url=cts_file)
+    if os.path.isfile(os.path.join(os.path.dirname(cts_file), '__cts__.xml')):
+        __cts__ = 'true'
+    else:
+        __cts__ = ''
     dst_dom = xslt(
         cts_dom,
         # libxml do not like windows paths starting C:
         dst_dir = etree.XSLT.strparam(
            (html_dir, "file:///"+html_dir)[os.path.sep == '\\']
         ),
+        __cts__ = etree.XSLT.strparam(__cts__),
         src_name = etree.XSLT.strparam(cts_name)
     )
     infile = etree.tounicode(dst_dom, method='text', pretty_print=True)

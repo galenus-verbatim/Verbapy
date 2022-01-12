@@ -11,23 +11,24 @@ CREATE table opus (
 -- Source XML file
     id          INTEGER, -- rowid auto
     -- must, file infos and content
-    identifier  TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
-    filemtime   INTEGER NOT NULL,     -- ! modified time
-    filesize    INTEGER NOT NULL,     -- ! filesize
-    title       TEXT NOT NULL,        -- ! title of Opus
-    toc         BLOB,                 -- ? html toc if more than one chapter
+    clavis      TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
+    epoch       INTEGER NOT NULL,     -- ! file modified time
+    octets      INTEGER NOT NULL,     -- ! filesize
+    titulus     TEXT NOT NULL,        -- ! title of Opus
+    nav         BLOB,                 -- ? html table of centents if more than one chapter
     -- should, bibliographic info
-    author      TEXT,    -- ? name of an editor
+    auctor      TEXT,    -- ? name of an author
     editor      TEXT,    -- ? name of an editor
-    volume      TEXT,    -- ? volume
-    issued      INTEGER, -- ? publication year of the text
-    pagefrom    INTEGER, -- ? page from
-    pageto      INTEGER, -- ? page to
-    edition     TEXT,    -- ? code for an edittion
-    titleshort  TEXT,    -- ? title abbreviated
-    created     INTEGER, -- ? creation year of the text
+    editio      TEXT,    -- ? code for an edittion
+    volumen     TEXT,    -- ? volume
+    annuspub    INTEGER, -- ? publication year of the edition
+    pagde       INTEGER, -- ? page from
+    pagad       INTEGER, -- ? page to
+    titulbrev   TEXT,    -- ? title abbreviated
+    annuscrea   INTEGER, -- ? creation year
     PRIMARY KEY(id ASC)
 );
+CREATE UNIQUE INDEX IF NOT EXISTS opus_code ON opus(clavis);
 
 
 -- Schema to store lemmatized texts
@@ -36,19 +37,22 @@ CREATE table doc (
 -- an indexed HTML document
     id          INTEGER, -- rowid auto
     -- must, file infos and content
-    identifier  TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
+    clavis      TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
     html        BLOB NOT NULL,        -- ! html text ready to display
     opus        INTEGER NOT NULL,     -- ! link to the opus
-    prev        INTEGER, -- ? page to
-    next        INTEGER, -- ? page to
+    ante        INTEGER, -- ? previous document
+    post        INTEGER, -- ? next document
     -- should, bibliographic info
-    pagefrom    INTEGER, -- ? page from
-    pageto      INTEGER, -- ? page to
-    book        TEXT,    -- ? analytic,
-    chapter     TEXT,    -- ? analytic,
+    titulus     TEXT,    -- ? title of the document if relevant
+    pagde       INTEGER, -- ? page from
+    pagad       INTEGER, -- ? page to
+    volumen     TEXT,    -- ? analytic, for opus on more than one
+    liber       TEXT,    -- ? analytic,
+    capitulum   TEXT,    -- ? analytic,
+    sectio      TEXT,    -- ? analytic,
     PRIMARY KEY(id ASC)
 );
-CREATE UNIQUE INDEX IF NOT EXISTS doc_identifier ON doc(identifier);
+CREATE UNIQUE INDEX IF NOT EXISTS doc_code ON doc(clavis);
 
 
 DROP TABLE IF EXISTS tok;
@@ -57,12 +61,12 @@ CREATE TABLE tok (
     id          INTEGER, -- rowid auto
     doc         INTEGER NOT NULL,  -- ! doc id
     orth        INTEGER NOT NULL,  -- ! normalized orthographic form id
+    charde      INTEGER NOT NULL,  -- ! start offset in source file, utf8 chars
+    charad      INTEGER NOT NULL,  -- ! size of token, utf8 chars
     cat         TEXT    NOT NULL,  -- ! word category id
     lem         INTEGER NOT NULL,  -- ! lemma form id
-    offset      INTEGER NOT NULL,  -- ! start offset in source file, utf8 chars
-    length      INTEGER NOT NULL,  -- ! size of token, utf8 chars
-    page        INTEGER,           -- ? page number
-    line        INTEGER,           -- ? line number
+    pag         INTEGER,           -- ? page number
+    linea       INTEGER,           -- ? line number
     PRIMARY KEY(id ASC)
 );
  -- search an orthographic form in all or some documents
