@@ -1,4 +1,4 @@
-# Verbapy
+# Verbapie
  Python code to produce an SQLite database, ready to offer lemma search on the web for Epidocs XML greek documents. 
 
 ## Caution
@@ -24,13 +24,16 @@ This code is at a very early stage and is not ready for distribution. It works, 
 
 Not stable for now.
 
-## Optional
+## Optional, Cuda with nvidia graphic cards
 
-For a faster lemmatisation, if you have an Nvidia graphic card, you can use it for work (and not only gaming). Install the latest Nvidia pilots, and the Cuda toolkit to use the processors of your graphic card.
+For a faster lemmatisation, if you have an Nvidia graphic card, you can use it for work (and not only gaming). Install the latest Nvidia pilots, and the Cuda toolkit to use the processors of your graphic card, ant install the python lib 
 <br>ubuntu.21.10:~$ `sudo apt install nvidia-cuda-toolkit`
 
+Installation for Windows
+* Install [nvidia cuda pilots](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html)
+* Install [PyTorch 1.7.1](https://pytorch.org/get-started/previous-versions/#linux-and-windows-7), lemmatization with papie 0.3.9 requires torch<=1.7.1,>=1.3.1, chose the torch version according to your cuda pilot version
 
-## Windows 10
+## Install Python for Windows 10
 
 A python package suppose usually that you have already a running Python installation, but if not, and if you are on windows, the system will not help vou to make good choices like linux. Here some hints that may save you time, at least at date (2022-01).
 
