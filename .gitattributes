@@ -6,3 +6,7 @@
 
 # Sqlite files, truly binary and should not be modified.
 *.db binary
+*.pdf binary
+*.png binary
+*.jpg binary
+

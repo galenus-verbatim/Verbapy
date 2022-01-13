@@ -17,6 +17,7 @@ import sys
 import zlib
 # local
 import config
+import verbapie
 
 """Ingest a prepared folder of texts with vertical tsv lemma in sqlite"""
 
@@ -26,18 +27,27 @@ con = cur = None
 # dictionnaries of form ids
 orth_dic = lem_dic = {}
 
-def crawl(html_dir: str, sqlite_file=None):
-    """Recursive crawl of folder of greek texts"""
+def crawl(corpus_conf: str, sqlite_file=None):
+    """Recursive crawl of a file list to pilot ingestion of greek texts"""
+    # test immediately parameters before deleting or create something
+    cts_list = verbapie.cts_list(corpus_conf)
+    html_dir = verbapie.html_dir(corpus_conf)
+    json_list = []
+    for cts_file in cts_list:
+        cts_name = os.path.splitext(os.path.basename(cts_file))[0]
+        json_file = os.path.join(html_dir, cts_name, cts_name + ".json")
+        if not os.path.isfile(json_file):
+            raise Exception("Json file not found:\"" + json_file + "\"\nRun cts.py and lemmatize.py before")
+        json_list.append(json_file)
 
     # the global variables to set here
     global con, cur
-    html_dir = os.path.abspath(html_dir).replace('\\', '/').rstrip('/') + '/'
     # the sqlite base
     if not sqlite_file:
         sqlite_file = html_dir.rstrip('/') + ".db"
     else:
         sqlite_file = os.path.abspath(sqlite_file).replace('\\', '/')
-    # for now, not incremental insert
+    # for now, no incremental insert, delete sqlite base
     if os.path.isfile(sqlite_file):
         os.remove(sqlite_file)
 
@@ -51,10 +61,7 @@ def crawl(html_dir: str, sqlite_file=None):
         sql = f.read()
     cur.executescript(sql)
     con.commit()
-    # for each TEI/CTS file, a json file has been generated to keep the order of chapters to ingest
-    json_list = sorted(glob.glob(html_dir + '**/*.json', recursive=True))
-    if len(json_list) < 1:
-        raise Exception("No json file found in directory:\n\"" + html_dir + "\"")
+
     for json_file in json_list:
         docs(json_file)
     con.commit()
@@ -162,7 +169,9 @@ INSERT INTO doc(
 def toks(tsv_path: str, doc_id: int):
     """Parse a verticalized tsv list of tokens with positions"""
     with open(tsv_path, 'r', encoding="utf-8") as f:
-        tsv_reader = csv.reader(f, delimiter="\t", quoting=csv.QUOTE_NONE)
+        tsv_reader = csv.reader(f, delimiter="\t")
+        next(tsv_reader)
+        # quoting=csv.QUOTE_NONE
         # orth	offset	length	cat	lem
         # ὧν	178 	2   	p	ὅς
         i = 0
@@ -220,12 +229,12 @@ def main() -> int:
         fromfile_prefix_chars='@',
         description='Lemmatize and ingest an html folder of greek texts in an sqlite base'
     )
-    parser.add_argument('html_dir', nargs=1,
-        help='a directory of html files of structure corpus/book/chapter.html ')
+    parser.add_argument('corpus_conf', nargs=1, type=str,
+        help='a file listing of cts file to pilot order of ingestion and of bibliography')
     parser.add_argument('sqlite_file', nargs='?',
         help='an sqlite file destination to write in')
     args = parser.parse_args()
-    crawl(args.html_dir[0], args.sqlite_file)
+    crawl(args.corpus_conf[0], args.sqlite_file)
     return 0
 
 if __name__ == '__main__':

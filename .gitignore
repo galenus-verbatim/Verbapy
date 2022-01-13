@@ -3,7 +3,6 @@ __pycache__/
 *.egg-info/
 *.py[cod]
 
-
-tests/out/
+tests/play*
 tests/galenus/
 tests/*.db

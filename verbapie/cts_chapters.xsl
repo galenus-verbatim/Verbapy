@@ -103,22 +103,18 @@ TODO : prev / next and lots of other item metadata
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="volumen">
-      <xsl:for-each select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc">
-        <xsl:variable name="volumende" select="*[1]//tei:biblScope[@unit='vol']"/>
-        <xsl:value-of select="$volumende"/>
-        <xsl:if test="*[2]">
-          <xsl:variable name="volumenad" select="*[position() = last()]//tei:biblScope[@unit='vol']"/>
-          <xsl:if test="$volumenad != '' and $volumenad != $volumende">
-            <xsl:text>-</xsl:text>
-            <xsl:value-of select="$volumenad"/>
-          </xsl:if>
-        </xsl:if>
-      </xsl:for-each>
+      <xsl:variable name="vols" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='vol']"/>
+      <xsl:value-of select="$vols[1]"/>
+      <xsl:variable name="vol2" select="$vols[last()]"/>
+      <xsl:if test="$vol2 != '' and $vol2 != $vols[1]">
+        <xsl:text>-</xsl:text>
+        <xsl:value-of select="$vol2"/>
+      </xsl:if>
     </xsl:variable>
     <xsl:variable name="pagde">
       <xsl:choose>
         <!-- more than one source volume, page number not relevant -->
-        <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/*) &gt; 2"/>
+        <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
         <xsl:otherwise>
           <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@from"/>
         </xsl:otherwise>
@@ -127,7 +123,7 @@ TODO : prev / next and lots of other item metadata
     <xsl:variable name="pagad">
       <xsl:choose>
         <!-- more than one source volume, page number not relevant -->
-        <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/*) &gt; 2"/>
+        <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
         <xsl:otherwise>
           <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@to"/>
         </xsl:otherwise>

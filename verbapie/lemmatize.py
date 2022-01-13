@@ -20,10 +20,15 @@ import verbatoks
 
 # shared pie-extended objects, import as late as possible (takes time)
 tagger = iterator = processor = None
+tsv_esc = str.maketrans({
+    "\t": r" ",
+    "\n": r" ",
+    "\"": r"\"",
+    "\\": r"\\"
+})
 
-def crawl(html_dir: str, torch: bool=False):
+def crawl(html_dir: str, torch: bool=False, force: bool=False):
     """Recursive crawl of an html folder of greek texts"""
-
     # the global variables to set here
     global tagger, iterator, processor, con, cur
     html_dir = os.path.abspath(html_dir).replace('\\', '/').rstrip('/') + '/'
@@ -49,16 +54,21 @@ def crawl(html_dir: str, torch: bool=False):
                 continue
             if os.path.basename(f) == 'toc.html':
                 continue
-            lemmatize(os.path.join(root, f))
+            html_file = os.path.join(root, f)
+            html_name = os.path.splitext(os.path.basename(html_file))[0]
+            csv_file = os.path.join(root, html_name+'.csv');
+            if force:
+                pass
+            elif not os.path.exists(csv_file):
+                pass
+            elif os.path.getmtime(html_file) < os.path.getmtime(csv_file):
+                continue
+            logging.debug(html_name)
+            lemmatize(html_file, csv_file)
 
 
-def lemmatize(html_file: str):
+def lemmatize(html_file: str, csv_file:str):
     """Parse tokens"""
-    html_name = os.path.splitext(os.path.basename(html_file))[0]
-    csv_file = os.path.join(os.path.dirname(html_file), html_name+'.csv');
-    if os.path.exists(csv_file) and os.path.getmtime(html_file) < os.path.getmtime(csv_file):
-        return
-    logging.debug(html_name)
     with open(html_file, mode="r", encoding="utf-8") as f:
         html = f.read()
 
@@ -67,7 +77,7 @@ def lemmatize(html_file: str):
     count = len(toks)
     vert = "\n".join(toks)
     i = -1
-    csv = "orth\toffset\tlength\tcat\tlem\tpage\tline\n"
+    csv = "orth\tcharde\tcharad\tcat\tlem\tpag\tlinea\n"
 
     # here we should handle better exceptions for torch
     for word in tagger.tag_str(
@@ -82,15 +92,18 @@ def lemmatize(html_file: str):
         {"form": "πλήθει", "case": "-", "degree": "-", "gend": "-", "lemma": "πλῆθος", "mood": "-", "num": "s", "pers": "-", "pos": "n", "tense": "-", "voice": "-", "treated": "πλήθει"}
         """
         # here it could be possible to concat a better string for category
+        orth = toks[i].lower().strip().translate(tsv_esc)
+        if not orth.isalpha():
+            continue
+        lem = word['lemma'].strip().translate(tsv_esc)
         cat = word['pos']
-        orth = toks[i].lower()
-        lem = word['lemma']
+
         csv += (
-            orth.strip()
+            orth
             + "\t" + str(starts[i])
             + "\t" + str(ends[i])
             + "\t" + cat
-            + "\t" + lem.strip()
+            + "\t" + lem # strip \n in
             + "\t" + str(pages[i])
             + "\t" + str(lines[i])
         + "\n")
@@ -111,7 +124,7 @@ def main() -> int:
         help='force deletion of identifier.csv file of lemma, even newer that identifier.html')
 
     args = parser.parse_args()
-    crawl(args.html_dir[0], args.torch)
+    crawl(args.html_dir[0], torch=args.torch, force=args.force)
     return 0
 
 if __name__ == '__main__':

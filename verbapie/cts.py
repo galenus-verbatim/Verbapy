@@ -18,6 +18,7 @@ import shutil
 import sys
 # local
 import config
+import verbapie
 
 """Split an XML/TEI/Epidoc/cts file in HTML+json chapters
 
@@ -39,49 +40,19 @@ etree.set_default_parser(
 # the default dir where to output files
 html_dir = None
 
-def corpus(paths_file: str, todo_dir=None, force=True):
+def corpus(paths_file: str, force=True):
     """Load a file with a list of paths, and process them"""
     global html_dir
-    # will cry if not a file
-    paths = open(paths_file, 'r').readlines()
-    paths_dir = os.path.dirname(paths_file)
-    if not os.path.isabs(paths_dir):
-        paths_dir = os.path.abspath(paths_dir)
-    logging.debug("paths_dir="+paths_dir)
-    paths_name = os.path.splitext(os.path.basename(paths_file))[0]
 
-    # prepare html destination directory
-    if todo_dir is None:
-        todo_dir = os.path.join(paths_dir, paths_name)
-    elif todo_dir is List:
-        todo_dir = todo_dir[0]
-    if not os.path.isabs(todo_dir):
-        todo_dir = os.path.abspath(todo_dir)
-    # libxml do not like windows filepath
-    html_dir = todo_dir.replace('\\', '/').rstrip('/') + '/'
+    html_dir = verbapie.html_dir(paths_file)
     logging.info(html_dir + " (html destination directory)")
     # do not delete html_dir, let user, keep lemma
     if force:
         shutil.rmtree(html_dir, ignore_errors=True)
     os.makedirs(html_dir, exist_ok=True)
-
-    # TODO, parse the path config for exclude files
-    for cts_glob in paths:
-        cts_glob = cts_glob.strip()
-        if not cts_glob:
-            continue
-        if cts_glob[0] == '#':
-            continue
-        cts_glob = cts_glob.replace('\\', '/').rstrip('/')
-        if not os.path.isabs(cts_glob):
-            cts_glob = os.path.join(paths_dir, cts_glob)
-        cts_glob = os.path.normpath(cts_glob)
-        cts_list = glob.glob(cts_glob)
-        if len(cts_list) < 1:
-            logging.warning("No file found for pattern "+cts_glob)
-            continue
-        for cts_file in cts_list:
-            split(cts_file)
+    cts_list = verbapie.cts_list(paths_file)
+    for cts_file in cts_list:
+        split(cts_file)
 
 def split(cts_file: str):
     global html_dir
@@ -128,18 +99,13 @@ a file with a list of file/glob path of xml files to process, one per line:
 ../../First1KGreek/data/tlg0052/*/tlg*.xml
 ../../First1KGreek/data/tlg0057/*/tlg*.xml
 (relative paths resolved from the file they come from)
-"""
-    )
-    parser.add_argument('html_dir', nargs='?', type=str,
-        help="""ex: ../work/galenus/
-A folder where to project generated html files.
-Default is a folder with the name of the file with paths.
+will create a folder of same name.
 """
     )
     parser.add_argument('-f', '--force', action='store_true',
         help='force deletion of html_dir')
     args = parser.parse_args()
-    corpus(args.paths_file[0], args.html_dir, args.force)
+    corpus(args.paths_file[0], force=args.force)
 
 
 if __name__ == '__main__':
