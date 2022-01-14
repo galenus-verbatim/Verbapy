@@ -2,6 +2,8 @@
 __pycache__/
 *.egg-info/
 *.py[cod]
+# LibreOdds
+.~*
 
 tests/play*
 tests/galenus/

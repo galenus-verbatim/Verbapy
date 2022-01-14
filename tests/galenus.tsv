@@ -27,7 +27,7 @@ iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
 ../../First1KGreek/data/tlg0057/tlg029/tlg0057.tlg029.1st1K-grc1.xml	Galenus	De animi cuiuslibet peccatorum dignotione et curatione	1823	Karl Gottlob Kühn	5	58	103
 ../../First1KGreek/data/tlg0057/tlg030/tlg0057.tlg030.1st1K-grc1.xml	Galenus	De atra bile	1823	Karl Gottlob Kühn	5	104	148
 ../../First1KGreek/data/tlg0057/tlg031/tlg0057.tlg031.1st1K-grc1.xml	Galenus	De usu pulsuum	1823	Karl Gottlob Kühn	5	149	180
-../../First1KGreek/data/tlg0057/tlg032/tlg0057.tlg032.1st1K-grc1.xml	Galenus	De placitis Hippocratis et Platonis	1823	Karl Gottlob Kühn	5	181	805	
+../../First1KGreek/data/tlg0057/tlg032/tlg0057.tlg032.1st1K-grc1.xml	Galenus	De placitis Hippocratis et Platonis	1823	Karl Gottlob Kühn	5	181	805
 ../../First1KGreek/data/tlg0057/tlg034/tlg0057.tlg034.1st1K-grc2.xml	Galenus	De parvae pilae exercitio	1823	Karl Gottlob Kühn	5	899	910
 ../../First1KGreek/data/tlg0057/tlg035/tlg0057.tlg035.1st1K-grc2.xml	Galenus	De venereis	1823	Karl Gottlob Kühn	5	911	914
 ../../First1KGreek/data/tlg0057/tlg036/tlg0057.tlg036.1st1K-grc1.xml	Galenus	De sanitate tuenda	1823	Karl Gottlob Kühn	6	1	452
@@ -95,7 +95,7 @@ iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
 ../../First1KGreek/data/tlg0530/tlg043/tlg0530.tlg043.1st1K-grc1.xml	pseudo-Galen	De optima secta ad Thrasybulum	1821	Karl Gottlob Kühn	1	106	223
 ../../First1KGreek/data/tlg0057/tlg001/tlg0057.tlg001.1st1K-grc2.xml	Galenus	Adhortatio ad artes addiscendas	1894	Georg Kaibel		1	22
 ../../First1KGreek/data/tlg0057/tlg009/tlg0057.tlg009.1st1K-grc2.xml	Galenus	De temperamentis	1904	Georg Helmreich		1	115
-../../First1KGreek/data/tlg0057/tlg033/tlg0057.tlg033.1st1K-grc1.xml	Galenus	Thrasybulus sive utrum medicinae sit an gymnasticae hygieine	1893	Georg Helmreich	
+../../First1KGreek/data/tlg0057/tlg033/tlg0057.tlg033.1st1K-grc1.xml	Galenus	Thrasybulus sive utrum medicinae sit an gymnasticae hygieine	1893	Georg Helmreich			
 ../../First1KGreek/data/tlg0057/tlg019/tlg0057.tlg019.1st1K-grc1.xml	Galenus	De Victu Attenuante	1898	Karl Kalbfleisch		3	37
 ../../First1KGreek/data/tlg0057/tlg019/tlg0057.tlg019.opp-grc1.xml	Galenus	De Victu Attenuante	1898	Karl Kalbfleisch			
 ../../First1KGreek/data/tlg0057/tlg034/tlg0057.tlg034.1st1K-grc1.xml	Galenus	De parvae pilae exercitio	1879	Johannes Marquardt		3	8
@@ -106,4 +106,3 @@ iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
 ../../First1KGreek/data/tlg0057/tlg103/tlg0057.tlg103.1st1K-grc1.xml	Galenus	De consuetudinibus	1879	Iwan von Müller		5	19
 ../../First1KGreek/data/tlg0057/tlg107/tlg0057.tlg107.1st1K-grc1.xml	Galenus	De experientia medica	1901	Hermann Schöne	1901	1258	1263
 ../../First1KGreek/data/tlg0530/tlg006/tlg0530.tlg006.1st1K-grc1.xml	pseudo-Galen	Ad Gaurum quomodo animetur fetus	1895	Karl Kalbfleisch	1895	33	62
-

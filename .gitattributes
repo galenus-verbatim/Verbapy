@@ -1,5 +1,5 @@
 * text eol=lf
-
+*.tsv text
 
 # Specific Windows
 *.bat text eol=crlf
