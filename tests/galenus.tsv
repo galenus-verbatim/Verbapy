@@ -1,0 +1,119 @@
+iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
+
+# empty lines OK
+# relative paths are resolved from this file
+# the only requested column is the first one (tab separation)
+# the other metadata are only there for humans
+
+../../First1KGreek/data/tlg0057/tlg001/tlg0057.tlg001.1st1K-grc1.xml	Galenus	Adhortatio ad artes addiscendas	1821	Karl Gottlob Kühn	1	1	39
+../../First1KGreek/data/tlg0057/tlg002/tlg0057.tlg002.1st1K-grc1.xml	Galenus	De optima doctrina	1821	Karl Gottlob Kühn	1	40	52
+../../First1KGreek/data/tlg0057/tlg003/tlg0057.tlg003.1st1K-grc1.xml	Galenus	Quod optimus medicus sit quoque philosophus	1821	Karl Gottlob Kühn	1	53	63
+../../First1KGreek/data/tlg0057/tlg004/tlg0057.tlg004.1st1K-grc1.xml	Galenus	De sectis ad eos qui introducuntur	1821	Karl Gottlob Kühn	1	64	105
+../../First1KGreek/data/tlg0057/tlg006/tlg0057.tlg006.1st1K-grc1.xml	Galenus	De constitutione artis medicae ad Patrophilum	1821	Karl Gottlob Kühn	1	224	304
+../../First1KGreek/data/tlg0057/tlg007/tlg0057.tlg007.1st1K-grc1.xml	Galenus	Ars Medica	1821	Karl Gottlob Kühn	1	305	412
+../../First1KGreek/data/tlg0057/tlg008/tlg0057.tlg008.1st1K-grc1.xml	Galenus	De elementis ex Hippocrate	1821	Karl Gottlob Kühn	1	413	508
+../../First1KGreek/data/tlg0057/tlg009/tlg0057.tlg009.1st1K-grc1.xml	Galenus	De temperamentis	1821	Karl Gottlob Kühn	1	509	694
+../../First1KGreek/data/tlg0057/tlg010/tlg0057.tlg010.1st1K-grc1.xml	Galenus	De naturalibus facultatibus	1821	Karl Gottlob Kühn	2	1	204
+../../First1KGreek/data/tlg0057/tlg011/tlg0057.tlg011.1st1K-grc1.xml	Galenus	De anatomicis administrationibus	1821	Karl Gottlob Kühn	2	205	731
+../../First1KGreek/data/tlg0057/tlg012/tlg0057.tlg012.1st1K-grc1.xml	Galenus	De ossibus ad tirones	1821	Karl Gottlob Kühn	2	732	778
+../../First1KGreek/data/tlg0057/tlg013/tlg0057.tlg013.1st1K-grc1.xml	Galenus	De venarum arteriarumque dissectione	1821	Karl Gottlob Kühn	2	779	830
+../../First1KGreek/data/tlg0057/tlg014/tlg0057.tlg014.1st1K-grc1.xml	Galenus	De nervorum dissectione	1821	Karl Gottlob Kühn	2	831	856
+../../First1KGreek/data/tlg0057/tlg015/tlg0057.tlg015.1st1K-grc1.xml	Galenus	De instrumento odoratus	1821	Karl Gottlob Kühn	2	857	886
+../../First1KGreek/data/tlg0057/tlg016/tlg0057.tlg016.1st1K-grc1.xml	Galenus	De uteri dissectione	1821	Karl Gottlob Kühn	2	887	908
+../../First1KGreek/data/tlg0057/tlg017/tlg0057.tlg017.1st1K-grc1.xml	Galenus	De usu partium corporis humani I-XI	1822	Karl Gottlob Kühn	3-4		
+../../First1KGreek/data/tlg0057/tlg018/tlg0057.tlg018.1st1K-grc1.xml	Galenus	De motu musculorum	1822	Karl Gottlob Kühn	4	367	464
+../../First1KGreek/data/tlg0057/tlg020/tlg0057.tlg020.1st1K-grc1.xml	Galenus	De utilitate respirationis	1822	Karl Gottlob Kühn	4	470	511
+../../First1KGreek/data/tlg0057/tlg021/tlg0057.tlg021.1st1K-grc1.xml	Galenus	De semine	1822	Karl Gottlob Kühn	4	512	651
+../../First1KGreek/data/tlg0057/tlg022/tlg0057.tlg022.1st1K-grc1.xml	Galenus	De foetuum formatione	1822	Karl Gottlob Kühn	4	652	702
+../../First1KGreek/data/tlg0057/tlg023/tlg0057.tlg023.1st1K-grc1.xml	Galenus	An in arteriis sanguis contineatur	1822	Karl Gottlob Kühn	4	703	736
+../../First1KGreek/data/tlg0057/tlg024/tlg0057.tlg024.1st1K-grc1.xml	Galenus	De optima corporis nostri constitutione	1822	Karl Gottlob Kühn	4	737	749
+../../First1KGreek/data/tlg0057/tlg025/tlg0057.tlg025.1st1K-grc1.xml	Galenus	De bono habitu	1822	Karl Gottlob Kühn	4	750	756
+../../First1KGreek/data/tlg0057/tlg027/tlg0057.tlg027.1st1K-grc1.xml	Galenus	Quod animi mores corporis temperamenta sequantur	1822	Karl Gottlob Kühn	4	767	822
+../../First1KGreek/data/tlg0057/tlg028/tlg0057.tlg028.1st1K-grc1.xml	Galenus	De propriorum animi cuiuslibet affectuum dignotione et curatione	1823	Karl Gottlob Kühn	5	1	57
+../../First1KGreek/data/tlg0057/tlg029/tlg0057.tlg029.1st1K-grc1.xml	Galenus	De animi cuiuslibet peccatorum dignotione et curatione	1823	Karl Gottlob Kühn	5	58	103
+../../First1KGreek/data/tlg0057/tlg030/tlg0057.tlg030.1st1K-grc1.xml	Galenus	De atra bile	1823	Karl Gottlob Kühn	5	104	148
+../../First1KGreek/data/tlg0057/tlg031/tlg0057.tlg031.1st1K-grc1.xml	Galenus	De usu pulsuum	1823	Karl Gottlob Kühn	5	149	180
+../../First1KGreek/data/tlg0057/tlg032/tlg0057.tlg032.1st1K-grc1.xml	Galenus	De placitis Hippocratis et Platonis	1823	Karl Gottlob Kühn	5	181	805	
+../../First1KGreek/data/tlg0057/tlg034/tlg0057.tlg034.1st1K-grc2.xml	Galenus	De parvae pilae exercitio	1823	Karl Gottlob Kühn	5	899	910
+../../First1KGreek/data/tlg0057/tlg035/tlg0057.tlg035.1st1K-grc2.xml	Galenus	De venereis	1823	Karl Gottlob Kühn	5	911	914
+../../First1KGreek/data/tlg0057/tlg036/tlg0057.tlg036.1st1K-grc1.xml	Galenus	De sanitate tuenda	1823	Karl Gottlob Kühn	6	1	452
+../../First1KGreek/data/tlg0057/tlg038/tlg0057.tlg038.1st1K-grc1.xml	Galenus	De rebus boni malique suci	1823	Karl Gottlob Kühn	6	749	815
+../../First1KGreek/data/tlg0057/tlg039/tlg0057.tlg039.1st1K-grc1.xml	Galenus	De ptisana	1823	Karl Gottlob Kühn	6	816	831
+../../First1KGreek/data/tlg0057/tlg040/tlg0057.tlg040.1st1K-grc1.xml	Galenus	De dignotione ex insomniis	1823	Karl Gottlob Kühn	6	832	835
+../../First1KGreek/data/tlg0057/tlg041/tlg0057.tlg041.1st1K-grc1.xml	Galenus	De morborum differentiis	1823	Karl Gottlob Kühn	6	836	880
+../../First1KGreek/data/tlg0057/tlg042/tlg0057.tlg042.1st1K-grc1.xml	Galenus	De causis morborum	1824	Karl Gottlob Kühn	7	1	41
+../../First1KGreek/data/tlg0057/tlg043/tlg0057.tlg043.1st1K-grc1.xml	Galenus	De symptomatum differentiis	1824	Karl Gottlob Kühn	7	42	84
+../../First1KGreek/data/tlg0057/tlg044/tlg0057.tlg044.1st1K-grc1.xml	Galenus	De symptomatum causis	1824	Karl Gottlob Kühn	7	85	272
+../../First1KGreek/data/tlg0057/tlg045/tlg0057.tlg045.1st1K-grc1.xml	Galenus	De differentiis febrium	1824	Karl Gottlob Kühn	7	273	405
+../../First1KGreek/data/tlg0057/tlg046/tlg0057.tlg046.1st1K-grc1.xml	Galenus	De morborum temporibus	1824	Karl Gottlob Kühn	7	406	439
+../../First1KGreek/data/tlg0057/tlg047/tlg0057.tlg047.1st1K-grc1.xml	Galenus	De totius morbi temporibus	1824	Karl Gottlob Kühn	7	440	462
+../../First1KGreek/data/tlg0057/tlg048/tlg0057.tlg048.1st1K-grc1.xml	Galenus	De typis	1824	Karl Gottlob Kühn	7	463	474
+../../First1KGreek/data/tlg0057/tlg049/tlg0057.tlg049.1st1K-grc1.xml	Galenus	Adversus eos qui de typis scripserunt vel de circuitibus	1824	Karl Gottlob Kühn	7	475	512
+../../First1KGreek/data/tlg0057/tlg050/tlg0057.tlg050.1st1K-grc1.xml	Galenus	De plenitudine	1824	Karl Gottlob Kühn	7	513	583
+../../First1KGreek/data/tlg0057/tlg051/tlg0057.tlg051.1st1K-grc1.xml	Galenus	De tremore, palpitatione, convulsione et rigore	1824	Karl Gottlob Kühn	7	584	642
+../../First1KGreek/data/tlg0057/tlg052/tlg0057.tlg052.1st1K-grc1.xml	Galenus	De comate secundum Hippocratem	1824	Karl Gottlob Kühn	7	643	665
+../../First1KGreek/data/tlg0057/tlg053/tlg0057.tlg053.1st1K-grc1.xml	Galenus	De marcore	1824	Karl Gottlob Kühn	7	666	704
+../../First1KGreek/data/tlg0057/tlg054/tlg0057.tlg054.1st1K-grc1.xml	Galenus	De tumoribus praeter naturam	1824	Karl Gottlob Kühn	7	705	732
+../../First1KGreek/data/tlg0057/tlg055/tlg0057.tlg055.1st1K-grc1.xml	Galenus	De inaequali intemperie	1824	Karl Gottlob Kühn	7	733	752
+../../First1KGreek/data/tlg0057/tlg056/tlg0057.tlg056.1st1K-grc1.xml	Galenus	De difficultate respirationis	1824	Karl Gottlob Kühn	7	753	960
+../../First1KGreek/data/tlg0057/tlg057/tlg0057.tlg057.1st1K-grc1.xml	Galenus	De locis affectis	1824	Karl Gottlob Kühn	8	1	452
+../../First1KGreek/data/tlg0057/tlg058/tlg0057.tlg058.1st1K-grc1.xml	Galenus	De pulsibus ad tirones	1824	Karl Gottlob Kühn	8	453	492
+../../First1KGreek/data/tlg0057/tlg059/tlg0057.tlg059.1st1K-grc1.xml	Galenus	De differentiis pulsuum	1824	Karl Gottlob Kühn	8	493	765
+../../First1KGreek/data/tlg0057/tlg060/tlg0057.tlg060.1st1K-grc1.xml	Galenus	De dignoscendis pulsibus	1824	Karl Gottlob Kühn	8	766	961
+../../First1KGreek/data/tlg0057/tlg061/tlg0057.tlg061.1st1K-grc1.xml	Galenus	De causis pulsuum	1825	Karl Gottlob Kühn	9	1	204
+../../First1KGreek/data/tlg0057/tlg062/tlg0057.tlg062.1st1K-grc1.xml	Galenus	De praesagitione ex pulsibus	1825	Karl Gottlob Kühn	9	205	430
+../../First1KGreek/data/tlg0057/tlg063/tlg0057.tlg063.1st1K-grc1.xml	Galenus	Synopsis librorum suorum de pulsibus	1825	Karl Gottlob Kühn	9	431	533
+../../First1KGreek/data/tlg0057/tlg064/tlg0057.tlg064.1st1K-grc1.xml	Galenus	De crisibus	1825	Karl Gottlob Kühn	9	550	768
+../../First1KGreek/data/tlg0057/tlg065/tlg0057.tlg065.1st1K-grc1.xml	Galenus	De diebus decretoriis	1825	Karl Gottlob Kühn	9	761	941
+../../First1KGreek/data/tlg0057/tlg066/tlg0057.tlg066.1st1K-grc1.xml	Galenus	De methodo medendi	1825	Karl Gottlob Kühn	10	1	1021
+../../First1KGreek/data/tlg0057/tlg067/tlg0057.tlg067.1st1K-grc1.xml	Galenus	Ad Glauconem de methodo medendi	1826	Karl Gottlob Kühn	11	1	146
+../../First1KGreek/data/tlg0057/tlg068/tlg0057.tlg068.1st1K-grc1.xml	Galenus	De venae sectione adversus Erasistratum	1826	Karl Gottlob Kühn	11	147	186
+../../First1KGreek/data/tlg0057/tlg069/tlg0057.tlg069.1st1K-grc1.xml	Galenus	De venae sectione adversus Erasistrateos Romae degentes	1826	Karl Gottlob Kühn	11	187	249
+../../First1KGreek/data/tlg0057/tlg070/tlg0057.tlg070.1st1K-grc1.xml	Galenus	De curandi ratione per venae sectionem	1826	Karl Gottlob Kühn	11	250	316
+../../First1KGreek/data/tlg0057/tlg071/tlg0057.tlg071.1st1K-grc1.xml	Galenus	De hirudinibus, revulsione, cucurbitula, incisione et scarificatione	1826	Karl Gottlob Kühn	11	317	322
+../../First1KGreek/data/tlg0057/tlg072/tlg0057.tlg072.1st1K-grc1.xml	Galenus	De purgantium medicamentorum facultate	1826	Karl Gottlob Kühn	11	323	342
+../../First1KGreek/data/tlg0057/tlg073/tlg0057.tlg073.1st1K-grc1.xml	Galenus	Quos quibus catharticis medicamentis et quando purgare oporteat	1826	Karl Gottlob Kühn	11	343	356
+../../First1KGreek/data/tlg0057/tlg074/tlg0057.tlg074.1st1K-grc1.xml	Galenus	Pro puero epileptico consilium	1826	Karl Gottlob Kühn	11	357	368
+../../First1KGreek/data/tlg0057/tlg075/tlg0057.tlg075.1st1K-grc1.xml	Galenus	De simplicium medicamentorum temperamentis ac facultatibus I-VI	1826	Karl Gottlob Kühn	11-12		
+../../First1KGreek/data/tlg0057/tlg076/tlg0057.tlg076.1st1K-grc1.xml	Galenus	De compositione medicamentorum secundum locos I-VI	1826	Karl Gottlob Kühn	12-13		
+../../First1KGreek/data/tlg0057/tlg077/tlg0057.tlg077.1st1K-grc1.xml	Galenus	De compositione medicamentorum per genera	1827	Karl Gottlob Kühn	13	362	1058
+../../First1KGreek/data/tlg0057/tlg078/tlg0057.tlg078.1st1K-grc1.xml	Galenus	De antidotis	1827	Karl Gottlob Kühn	14	1	209
+../../First1KGreek/data/tlg0057/tlg079/tlg0057.tlg079.1st1K-grc1.xml	Galenus	De theriaca ad Pisonem	1827	Karl Gottlob Kühn	14	210	294
+../../First1KGreek/data/tlg0057/tlg082/tlg0057.tlg082.1st1K-grc1.xml	Galenus	De sophismatis seu captionibus penes dictionem	1827	Karl Gottlob Kühn	14	582	598
+../../First1KGreek/data/tlg0057/tlg083/tlg0057.tlg083.1st1K-grc1.xml	Galenus	De praenotione ad Epigenem	1827	Karl Gottlob Kühn	14	599	673
+../../First1KGreek/data/tlg0057/tlg084/tlg0057.tlg084.1st1K-grc1.xml	Galenus	De substantia facultatum naturalium fragmentum	1822	Karl Gottlob Kühn	4	757	766
+../../First1KGreek/data/tlg0057/tlg085/tlg0057.tlg085.1st1K-grc1.xml	Galenus	In Hippocratis De natura hominis	1828	Karl Gottlob Kühn	15	1	173
+../../First1KGreek/data/tlg0057/tlg086/tlg0057.tlg086.1st1K-grc1.xml	Galenus	In Hippocratis vel Polybi Opus de Salubri Victus Ratione Privatorum Commentarius	1822	Karl Gottlob Kühn	15	174	223
+../../First1KGreek/data/tlg0057/tlg087/tlg0057.tlg087.1st1K-grc1.xml	Galenus	In Hippocratis De victu acutorum	1828	Karl Gottlob Kühn	15	418	919
+../../First1KGreek/data/tlg0057/tlg093/tlg0057.tlg093.1st1K-grc1.xml	Galenus	Adversus Lycum	1829	Karl Gottlob Kühn	18a	196	245
+../../First1KGreek/data/tlg0057/tlg094/tlg0057.tlg094.1st1K-grc1.xml	Galenus	Adversus ea quae Juliano in Hippocratis Aphorismos enuntiata sunt	1829	Karl Gottlob Kühn	18a	246	299
+../../First1KGreek/data/tlg0057/tlg095/tlg0057.tlg095.1st1K-grc1.xml	Galenus	In Hippocratis De articulis	1829	Karl Gottlob Kühn	18a		
+../../First1KGreek/data/tlg0057/tlg096/tlg0057.tlg096.1st1K-grc1.xml	Galenus	De Humero iis Modis Prolapso quos Hippocrates non Vidit	1829	Karl Gottlob Kühn	18a	346	422
+../../First1KGreek/data/tlg0057/tlg099/tlg0057.tlg099.1st1K-grc1.xml	Galenus	In Hippocratis Prognosticum	1830	Karl Gottlob Kühn	18b	1	317
+../../First1KGreek/data/tlg0057/tlg100/tlg0057.tlg100.1st1K-grc1.xml	Galenus	In Hippocratis De fracturis	1830	Karl Gottlob Kühn	18b	318	628
+../../First1KGreek/data/tlg0057/tlg101/tlg0057.tlg101.1st1K-grc1.xml	Galenus	In Hippocratis De officina medici	1830	Karl Gottlob Kühn	18b	629	925
+../../First1KGreek/data/tlg0057/tlg102/tlg0057.tlg102.1st1K-grc1.xml	Galenus	De musculorum dissectione ad tirones	1830	Karl Gottlob Kühn	18b	926	1026
+../../First1KGreek/data/tlg0057/tlg114/tlg0057.tlg114.1st1K-grc1.xml	Galenus	De causis respirationis	1822	Karl Gottlob Kühn	4	465	469
+
+
+../../First1KGreek/data/tlg0530/tlg005/tlg0530.tlg005.1st1K-grc1.xml	pseudo-Galen	De fasciis	1829	Karl Gottlob Kühn	18a	768	827
+../../First1KGreek/data/tlg0530/tlg012/tlg0530.tlg012.1st1K-grc1.xml	pseudo-Galen	Introductio seu medicus	1827	Karl Gottlob Kühn	14	674	797
+../../First1KGreek/data/tlg0530/tlg029/tlg0530.tlg029.1st1K-grc1.xml	pseudo-Galen	De remediis parabilibus	1827	Karl Gottlob Kühn	14	311	581
+../../First1KGreek/data/tlg0530/tlg032/tlg0530.tlg032.1st1K-grc1.xml	pseudo-Galen	De theriaca ad Pamphilianum	1827	Karl Gottlob Kühn	14	295	310
+../../First1KGreek/data/tlg0530/tlg043/tlg0530.tlg043.1st1K-grc1.xml	pseudo-Galen	De optima secta ad Thrasybulum	1821	Karl Gottlob Kühn	1	106	223
+
+
+../../First1KGreek/data/tlg0057/tlg001/tlg0057.tlg001.1st1K-grc2.xml	Galenus	Adhortatio ad artes addiscendas	1894	Georg Kaibel		1	22
+../../First1KGreek/data/tlg0057/tlg009/tlg0057.tlg009.1st1K-grc2.xml	Galenus	De temperamentis	1904	Georg Helmreich		1	115
+../../First1KGreek/data/tlg0057/tlg033/tlg0057.tlg033.1st1K-grc1.xml	Galenus	Thrasybulus sive utrum medicinae sit an gymnasticae hygieine	1893	Georg Helmreich	
+../../First1KGreek/data/tlg0057/tlg019/tlg0057.tlg019.1st1K-grc1.xml	Galenus	De Victu Attenuante	1898	Karl Kalbfleisch		3	37
+../../First1KGreek/data/tlg0057/tlg019/tlg0057.tlg019.opp-grc1.xml	Galenus	De Victu Attenuante	1898	Karl Kalbfleisch			
+../../First1KGreek/data/tlg0057/tlg034/tlg0057.tlg034.1st1K-grc1.xml	Galenus	De parvae pilae exercitio	1879	Johannes Marquardt		3	8
+../../First1KGreek/data/tlg0057/tlg035/tlg0057.tlg035.1st1K-grc3.xml	Galenus	De venereis	1928	Ioannes Raeder		187	189
+../../First1KGreek/data/tlg0057/tlg037/tlg0057.tlg037.1st1K-grc1.xml	Galenus	De alimentorum facultatibus	1923	George Helmreich			
+../../First1KGreek/data/tlg0057/tlg073/tlg0057.tlg073.1st1K-grc2.xml	Galenus	Quos quibus catharticis medicamentis et quando purgare oporteat	1928	Ioannes Raeder			
+../../First1KGreek/data/tlg0057/tlg081/tlg0057.tlg081.1st1K-grc1.xml	Galenus	Institutio logica	1896	Karl Kalbfleisch		3	49
+../../First1KGreek/data/tlg0057/tlg103/tlg0057.tlg103.1st1K-grc1.xml	Galenus	De consuetudinibus	1879	Iwan von Müller		5	19
+../../First1KGreek/data/tlg0057/tlg107/tlg0057.tlg107.1st1K-grc1.xml	Galenus	De experientia medica	1901	Hermann Schöne	1901	1258	1263
+../../First1KGreek/data/tlg0530/tlg006/tlg0530.tlg006.1st1K-grc1.xml	pseudo-Galen	Ad Gaurum quomodo animetur fetus	1895	Karl Kalbfleisch	1895	33	62
+

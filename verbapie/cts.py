@@ -60,6 +60,7 @@ def split(cts_file: str):
     # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
     os.makedirs(os.path.join(html_dir, cts_name), exist_ok=True)
     logging.info(cts_name + " {:.0f} kb".format(os.path.getsize(cts_file) / 1024))
+    # normalize spaces
     with open(cts_file, 'r', encoding="utf-8") as f:
         xml = f.read()
     xml = re.sub(r"\s+", ' ', xml)

@@ -26,6 +26,95 @@ TODO : prev / next and lots of other item metadata
   <xsl:param name="src_name"/>
   <!-- Shall we allow __cts__.xml search ? Default is true(), caller should check if no -->
   <xsl:param name="__cts__" select="'true'"/>
+  <!-- first dic, file meta, and ordered array of chapters -->
+  <xsl:variable name="titulus">
+    <xsl:choose>
+      <!-- avoid an xslt error if no cts file to get -->
+      <xsl:when test="$__cts__ = ''">
+        <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- Load cts for opus -->
+        <xsl:variable name="cts_opus" select="document('__cts__.xml', /)"/>
+        <xsl:choose>
+          <xsl:when test="$cts_opus/ti:work/ti:title[@xml:lang='lat']">
+            <xsl:value-of select="normalize-space($cts_opus/ti:work/ti:title[@xml:lang='lat'])"/>
+          </xsl:when>
+          <xsl:when test="$cts_opus/ti:work/ti:title">
+            <xsl:value-of select="normalize-space($cts_opus/ti:work/ti:title)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>   
+  <xsl:variable name="auctor">
+    <xsl:choose>
+      <!-- avoid an xslt error if no cts file to get -->
+      <xsl:when test="$__cts__ = ''">
+        <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author)"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- Load cts for auctor -->
+        <xsl:variable name="cts_auctor" select="document('./../__cts__.xml', .)"/>
+        <xsl:choose>
+          <xsl:when test="$cts_auctor/*/ti:groupname[@xml:lang='lat']">
+            <xsl:value-of select="normalize-space($cts_auctor/*/ti:groupname[@xml:lang='lat'])"/>
+          </xsl:when>
+          <xsl:when test="$cts_auctor/*/ti:groupname">
+            <xsl:value-of select="normalize-space($cts_auctor/*/ti:groupname)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author)"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="editor" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:editor"/>
+  <xsl:variable name="annuspub">
+    <xsl:for-each select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc">
+      <xsl:variable name="annusde" select="*[1]//tei:date"/>
+      <xsl:value-of select="$annusde"/>
+      <xsl:if test="*[2]">
+        <xsl:variable name="annusad" select="*[position() = last()]//tei:date"/>
+        <xsl:if test="$annusad != '' and $annusad != $annusde">
+          <xsl:text>-</xsl:text>
+          <xsl:value-of select="$annusad"/>
+        </xsl:if>
+      </xsl:if>
+    </xsl:for-each>
+  </xsl:variable>
+  <xsl:variable name="volumen">
+    <xsl:variable name="vols" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='vol']"/>
+    <xsl:value-of select="$vols[1]"/>
+    <xsl:variable name="vol2" select="$vols[last()]"/>
+    <xsl:if test="$vol2 != '' and $vol2 != $vols[1]">
+      <xsl:text>-</xsl:text>
+      <xsl:value-of select="$vol2"/>
+    </xsl:if>
+  </xsl:variable>
+  <xsl:variable name="pagde">
+    <xsl:choose>
+      <!-- more than one source volume, page number not relevant -->
+      <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
+      <xsl:otherwise>
+        <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@from"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="pagad">
+    <xsl:choose>
+      <!-- more than one source volume, page number not relevant -->
+      <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
+      <xsl:otherwise>
+        <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@to"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  
   <!-- file extension to output -->
   <xsl:variable name="ext">.html</xsl:variable>
   <!-- Output page numbers, if we have the -->
@@ -41,94 +130,6 @@ TODO : prev / next and lots of other item metadata
     <xsl:if test="count(//tei:div[@type='edition']) != 1">
       <xsl:message terminate="yes">[cts_chapter.xsl] 0 or more than one &lt;div type="edition"&gt;, not expected</xsl:message>
     </xsl:if>
-    <!-- first dic, file meta, and ordered array of chapters -->
-    <xsl:variable name="titulus">
-      <xsl:choose>
-        <!-- avoid an xslt error if no cts file to get -->
-        <xsl:when test="$__cts__ = ''">
-          <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <!-- Load cts for opus -->
-          <xsl:variable name="cts_opus" select="document('__cts__.xml', /)"/>
-          <xsl:choose>
-            <xsl:when test="$cts_opus/ti:work/ti:title[@xml:lang='lat']">
-              <xsl:value-of select="normalize-space($cts_opus/ti:work/ti:title[@xml:lang='lat'])"/>
-            </xsl:when>
-            <xsl:when test="$cts_opus/ti:work/ti:title">
-              <xsl:value-of select="normalize-space($cts_opus/ti:work/ti:title)"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title)"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>   
-    <xsl:variable name="auctor">
-      <xsl:choose>
-        <!-- avoid an xslt error if no cts file to get -->
-        <xsl:when test="$__cts__ = ''">
-          <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author)"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <!-- Load cts for auctor -->
-          <xsl:variable name="cts_auctor" select="document('./../__cts__.xml', .)"/>
-          <xsl:choose>
-            <xsl:when test="$cts_auctor/*/ti:groupname[@xml:lang='lat']">
-              <xsl:value-of select="normalize-space($cts_auctor/*/ti:groupname[@xml:lang='lat'])"/>
-            </xsl:when>
-            <xsl:when test="$cts_auctor/*/ti:groupname">
-              <xsl:value-of select="normalize-space($cts_auctor/*/ti:groupname)"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author)"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:variable name="editor" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:editor"/>
-    <xsl:variable name="annuspub">
-      <xsl:for-each select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc">
-        <xsl:variable name="annusde" select="*[1]//tei:date"/>
-        <xsl:value-of select="$annusde"/>
-        <xsl:if test="*[2]">
-          <xsl:variable name="annusad" select="*[position() = last()]//tei:date"/>
-          <xsl:if test="$annusad != '' and $annusad != $annusde">
-            <xsl:text>-</xsl:text>
-            <xsl:value-of select="$annusad"/>
-          </xsl:if>
-        </xsl:if>
-      </xsl:for-each>
-    </xsl:variable>
-    <xsl:variable name="volumen">
-      <xsl:variable name="vols" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='vol']"/>
-      <xsl:value-of select="$vols[1]"/>
-      <xsl:variable name="vol2" select="$vols[last()]"/>
-      <xsl:if test="$vol2 != '' and $vol2 != $vols[1]">
-        <xsl:text>-</xsl:text>
-        <xsl:value-of select="$vol2"/>
-      </xsl:if>
-    </xsl:variable>
-    <xsl:variable name="pagde">
-      <xsl:choose>
-        <!-- more than one source volume, page number not relevant -->
-        <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
-        <xsl:otherwise>
-          <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@from"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:variable name="pagad">
-      <xsl:choose>
-        <!-- more than one source volume, page number not relevant -->
-        <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
-        <xsl:otherwise>
-          <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']/@to"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
     <root>
       <xsl:text>[
     {</xsl:text>
