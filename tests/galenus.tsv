@@ -1,10 +1,4 @@
 iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
-
-# empty lines OK
-# relative paths are resolved from this file
-# the only requested column is the first one (tab separation)
-# the other metadata are only there for humans
-
 ../../First1KGreek/data/tlg0057/tlg001/tlg0057.tlg001.1st1K-grc1.xml	Galenus	Adhortatio ad artes addiscendas	1821	Karl Gottlob Kühn	1	1	39
 ../../First1KGreek/data/tlg0057/tlg002/tlg0057.tlg002.1st1K-grc1.xml	Galenus	De optima doctrina	1821	Karl Gottlob Kühn	1	40	52
 ../../First1KGreek/data/tlg0057/tlg003/tlg0057.tlg003.1st1K-grc1.xml	Galenus	Quod optimus medicus sit quoque philosophus	1821	Karl Gottlob Kühn	1	53	63
@@ -94,15 +88,11 @@ iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
 ../../First1KGreek/data/tlg0057/tlg101/tlg0057.tlg101.1st1K-grc1.xml	Galenus	In Hippocratis De officina medici	1830	Karl Gottlob Kühn	18b	629	925
 ../../First1KGreek/data/tlg0057/tlg102/tlg0057.tlg102.1st1K-grc1.xml	Galenus	De musculorum dissectione ad tirones	1830	Karl Gottlob Kühn	18b	926	1026
 ../../First1KGreek/data/tlg0057/tlg114/tlg0057.tlg114.1st1K-grc1.xml	Galenus	De causis respirationis	1822	Karl Gottlob Kühn	4	465	469
-
-
 ../../First1KGreek/data/tlg0530/tlg005/tlg0530.tlg005.1st1K-grc1.xml	pseudo-Galen	De fasciis	1829	Karl Gottlob Kühn	18a	768	827
 ../../First1KGreek/data/tlg0530/tlg012/tlg0530.tlg012.1st1K-grc1.xml	pseudo-Galen	Introductio seu medicus	1827	Karl Gottlob Kühn	14	674	797
 ../../First1KGreek/data/tlg0530/tlg029/tlg0530.tlg029.1st1K-grc1.xml	pseudo-Galen	De remediis parabilibus	1827	Karl Gottlob Kühn	14	311	581
 ../../First1KGreek/data/tlg0530/tlg032/tlg0530.tlg032.1st1K-grc1.xml	pseudo-Galen	De theriaca ad Pamphilianum	1827	Karl Gottlob Kühn	14	295	310
 ../../First1KGreek/data/tlg0530/tlg043/tlg0530.tlg043.1st1K-grc1.xml	pseudo-Galen	De optima secta ad Thrasybulum	1821	Karl Gottlob Kühn	1	106	223
-
-
 ../../First1KGreek/data/tlg0057/tlg001/tlg0057.tlg001.1st1K-grc2.xml	Galenus	Adhortatio ad artes addiscendas	1894	Georg Kaibel		1	22
 ../../First1KGreek/data/tlg0057/tlg009/tlg0057.tlg009.1st1K-grc2.xml	Galenus	De temperamentis	1904	Georg Helmreich		1	115
 ../../First1KGreek/data/tlg0057/tlg033/tlg0057.tlg033.1st1K-grc1.xml	Galenus	Thrasybulus sive utrum medicinae sit an gymnasticae hygieine	1893	Georg Helmreich	
