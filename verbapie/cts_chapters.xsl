@@ -127,9 +127,6 @@ TODO : prev / next and lots of other item metadata
     <xsl:if test="normalize-space($src_name) = ''">
       <xsl:message terminate="yes">[cts_chapter.xsl] $src_name param is required to output files</xsl:message>
     </xsl:if>
-    <xsl:if test="count(//tei:div[@type='edition']) != 1">
-      <xsl:message terminate="yes">[cts_chapter.xsl] 0 or more than one &lt;div type="edition"&gt;, not expected</xsl:message>
-    </xsl:if>
     <root>
       <xsl:text>[
     {</xsl:text>
@@ -151,14 +148,27 @@ TODO : prev / next and lots of other item metadata
         "pagad": "<xsl:value-of select="$pagad"/>"</xsl:if>
       <xsl:text>
     }</xsl:text>
-      <xsl:apply-templates select="//tei:div[@type='edition']"/>
+      <xsl:choose>
+        <!-- Idiomatic Cahal -->
+        <xsl:when test="/tei:TEI/tei:text[2]">
+          <xsl:call-template name="toc"/>
+          <xsl:apply-templates select="/tei:TEI/tei:text"/>
+        </xsl:when>
+        <xsl:when test="//tei:div[@type='edition']">
+          <xsl:apply-templates select="//tei:div[@type='edition']"/>
+        </xsl:when>
+      </xsl:choose>
       <xsl:text>
 ]</xsl:text>
 </root>
   </xsl:template>
+  
+  <xsl:template match="tei:text">
+    <xsl:apply-templates select="*"/>
+  </xsl:template>
 
   <!-- chaptering -->
-  <xsl:template match="tei:div[@type='edition']">
+  <xsl:template match="tei:div[@type='edition'] | tei:body">
     <xsl:choose>
       <!-- chapters may be children of book -->
       <xsl:when test="count(.//tei:div[@type='textpart'][@subtype='chapter']) &gt; 1">
@@ -180,9 +190,16 @@ TODO : prev / next and lots of other item metadata
           <xsl:call-template name="document"/>
         </xsl:for-each>
       </xsl:when>
+      <!-- Cahal, epidoc conform  -->
+      <xsl:when test="tei:div[@type='textpart']">
+        <xsl:call-template name="toc"/>
+        <xsl:for-each select="tei:div">
+          <xsl:call-template name="document"/>
+        </xsl:for-each>
+      </xsl:when>
       <!-- A book with no chapters -->
       <xsl:otherwise>
-        <xsl:message terminate="yes">No chapters found in <xsl:value-of select="$src_name"/></xsl:message>
+        <xsl:message terminate="yes">[cts_chapter.xsl] No chapters found in <xsl:value-of select="$src_name"/></xsl:message>
       </xsl:otherwise>
     </xsl:choose>
 
@@ -205,10 +222,26 @@ TODO : prev / next and lots of other item metadata
       >
       <nav>
         <ul>
-          <xsl:apply-templates select="tei:div" mode="toc"/>
+          <xsl:choose>
+            <xsl:when test="/tei:TEI/tei:text[2]">
+              <xsl:apply-templates select="/tei:TEI/tei:text" mode="toc"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates select="tei:div" mode="toc"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </ul>
       </nav>
     </xsl:document>
+  </xsl:template>
+
+  <!-- Should I go now ? La, la, la -->
+  <xsl:template match="tei:back | tei:body | tei:front | tei:group" mode="toc">
+    <xsl:apply-templates select="tei:div" mode="toc"/>
+  </xsl:template>
+  
+  <xsl:template match="tei:text " mode="toc">
+    <xsl:apply-templates select="*" mode="toc"/>
   </xsl:template>
 
   <xsl:template match="tei:div" mode="toc">
@@ -257,9 +290,22 @@ TODO : prev / next and lots of other item metadata
           </a>
         </li>
       </xsl:when>
+      <xsl:when test="@type='textpart' and @n">
+        <li>
+          <a>
+            <xsl:attribute name="href">
+              <xsl:call-template name="dst_name"/>
+            </xsl:attribute>
+            <xsl:value-of select="@n"/>
+          </a>
+        </li>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:message terminate="yes">
+          <xsl:text>[cts_chapter.xsl] file:</xsl:text>
           <xsl:value-of select="$src_name"/>
+          <xsl:text> toc pb in element </xsl:text>
+          <xsl:value-of select="name()"/>
         </xsl:message>
       </xsl:otherwise>
     </xsl:choose>
@@ -273,6 +319,8 @@ TODO : prev / next and lots of other item metadata
           <xsl:value-of select="substring-after(@n, 'urn:cts:greekLit:')"/>
         </xsl:when>
         <xsl:otherwise>
+          <xsl:value-of select="$src_name"/>
+          <xsl:text>.</xsl:text>
           <xsl:value-of select="@n"/>
         </xsl:otherwise>
       </xsl:choose>

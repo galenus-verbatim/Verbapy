@@ -33,8 +33,52 @@ Split a single TEI file in a multi-pages site
   <xsl:template match="tei:add">
     <xsl:apply-templates/>
   </xsl:template>
+
+  <xsl:template match="tei:author">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="tei:bibl">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="tei:choice">
+    <xsl:choose>
+      <xsl:when test="tei:supplied">
+        <xsl:apply-templates select="tei:supplied"/>
+      </xsl:when>
+      <xsl:when test="tei:corr">
+        <xsl:apply-templates select="tei:corr"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="*[1]"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="tei:cit">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="tei:date">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
   
   <xsl:template match="tei:del"/>
+  
+  <xsl:template match="tei:desc">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
   
   <xsl:template match="tei:div">
     <xsl:text>&#10;</xsl:text>
@@ -56,6 +100,13 @@ Split a single TEI file in a multi-pages site
       <xsl:text>&#10;</xsl:text>
     </figure>
   </xsl:template>  
+  
+  
+  <xsl:template match="tei:forename">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
   
   <!-- Graphic founds seem links 
   <graphic url="https://babel.hathitrust.org/cgi/pt?id=hvd.hxpp8p;view=2up;seq=514"/>
@@ -82,12 +133,19 @@ Split a single TEI file in a multi-pages site
   <xsl:template match="tei:lb">
     <xsl:text>&#10;</xsl:text>
     <span class="lb">
+      <xsl:choose>
+        <xsl:when test="@n">
+          <xsl:attribute name="data-line">
+            <xsl:value-of select="@n"/>
+          </xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
       <xsl:call-template name="data-line"/>
     </span>
   </xsl:template>
   
   <xsl:template name="data-line">
-    <!-- Count lines from the last page break. If not…? not predicted -->
+    <!-- Count lines from the last page break. If no <pb> before…? not predicted -->
     <xsl:variable name="pb" select="generate-id(preceding::tei:pb[1])"/>
     
     <xsl:variable name="id" select="generate-id()"/>
@@ -214,6 +272,12 @@ Split a single TEI file in a multi-pages site
     </span>
   </xsl:template>
   
+  <xsl:template match="tei:name">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
 
   <!-- Check if notes are interesting and find a good way to display and index -->
   <xsl:template match="tei:note">
@@ -232,6 +296,16 @@ Split a single TEI file in a multi-pages site
       <xsl:call-template name="data-line"/>
       <xsl:apply-templates/>
     </p>
+  </xsl:template>
+  
+  <xsl:template match="tei:orgName">
+    <a class="{local-name()}">
+      <xsl:apply-templates/>
+    </a>
+  </xsl:template>
+  
+  <xsl:template match="tei:orig">
+    <xsl:apply-templates/>
   </xsl:template>
   
   <xsl:template match="tei:pb">
@@ -253,19 +327,75 @@ Split a single TEI file in a multi-pages site
     <xsl:text>&#10;</xsl:text>
   </xsl:template>
   
+  <xsl:template match="tei:persName">
+    <a class="{local-name()}">
+      <xsl:apply-templates/>
+    </a>
+  </xsl:template>
+  
+  <xsl:template match="tei:placeName">
+    <a class="{local-name()}">
+      <xsl:apply-templates/>
+    </a>
+  </xsl:template>
+  
   <xsl:template match="tei:q">
     <q class="q">
       <xsl:apply-templates/>
     </q>
   </xsl:template>
+
+  <xsl:template match="tei:rs">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
   
   <!-- Will produce bad html for p/quote -->
   <xsl:template match="tei:quote">
-    <xsl:text>&#10;</xsl:text>
-    <blockquote class="quote">
+    <xsl:choose>
+      <!-- level block -->
+      <xsl:when test="not(ancestor::tei:p) or parent::tei:div">
+        <xsl:text>&#10;</xsl:text>
+        <blockquote class="quote">
+          <xsl:apply-templates/>
+          <xsl:text>&#10;</xsl:text>
+        </blockquote>
+      </xsl:when>
+      <xsl:otherwise>
+        <q class="{local-name()}">
+          <xsl:apply-templates/>
+        </q>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="tei:roleName">
+    <span class="{local-name()}">
       <xsl:apply-templates/>
-      <xsl:text>&#10;</xsl:text>
-    </blockquote>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="tei:state">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="tei:supplied">
+    <xsl:apply-templates/>
+  </xsl:template>
+  
+  <xsl:template match="tei:surname">
+    <span class="{local-name()}">
+      <xsl:apply-templates/>
+    </span>
+  </xsl:template>
+  
+  <xsl:template match="tei:title">
+    <em class="{local-name()}">
+      <xsl:apply-templates/>
+    </em>
   </xsl:template>
   
 </xsl:transform>

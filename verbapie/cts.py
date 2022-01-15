@@ -76,15 +76,22 @@ def split(cts_file: str):
         __cts__ = 'true'
     else:
         __cts__ = ''
-    dst_dom = xslt(
-        cts_dom,
-        # libxml do not like windows paths starting C:
-        dst_dir = etree.XSLT.strparam(
-           (html_dir, "file:///"+html_dir)[os.path.sep == '\\']
-        ),
-        __cts__ = etree.XSLT.strparam(__cts__),
-        src_name = etree.XSLT.strparam(cts_name)
-    )
+    dst_dom = None
+    try:
+        dst_dom = xslt(
+            cts_dom,
+            # libxml do not like windows paths starting C:
+            dst_dir = etree.XSLT.strparam(
+            (html_dir, "file:///"+html_dir)[os.path.sep == '\\']
+            ),
+            __cts__ = etree.XSLT.strparam(__cts__),
+            src_name = etree.XSLT.strparam(cts_name)
+        )
+    except:
+        pass
+    for error in xslt.error_log:
+        print(error.message + " l. " + str(error.line))
+
     infile = etree.tounicode(dst_dom, method='text', pretty_print=True)
     outfile = open(os.path.join(html_dir, cts_name, cts_name+".json"), 'w', encoding="utf-8")
     outfile.write(infile)
