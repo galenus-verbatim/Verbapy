@@ -33,7 +33,6 @@ iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
 ../../First1KGreek/data/tlg0057/tlg036/tlg0057.tlg036.1st1K-grc1.xml	Galenus	De sanitate tuenda	1823	Karl Gottlob Kühn	6	1	452
 ../../First1KGreek/data/tlg0057/tlg038/tlg0057.tlg038.1st1K-grc1.xml	Galenus	De rebus boni malique suci	1823	Karl Gottlob Kühn	6	749	815
 ../../First1KGreek/data/tlg0057/tlg039/tlg0057.tlg039.1st1K-grc1.xml	Galenus	De ptisana	1823	Karl Gottlob Kühn	6	816	831
-../../First1KGreek/data/tlg0057/tlg040/tlg0057.tlg040.1st1K-grc1.xml	Galenus	De dignotione ex insomniis	1823	Karl Gottlob Kühn	6	832	835
 ../../First1KGreek/data/tlg0057/tlg041/tlg0057.tlg041.1st1K-grc1.xml	Galenus	De morborum differentiis	1823	Karl Gottlob Kühn	6	836	880
 ../../First1KGreek/data/tlg0057/tlg042/tlg0057.tlg042.1st1K-grc1.xml	Galenus	De causis morborum	1824	Karl Gottlob Kühn	7	1	41
 ../../First1KGreek/data/tlg0057/tlg043/tlg0057.tlg043.1st1K-grc1.xml	Galenus	De symptomatum differentiis	1824	Karl Gottlob Kühn	7	42	84
@@ -72,7 +71,6 @@ iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
 ../../First1KGreek/data/tlg0057/tlg076/tlg0057.tlg076.1st1K-grc1.xml	Galenus	De compositione medicamentorum secundum locos I-VI	1826	Karl Gottlob Kühn	12-13		
 ../../First1KGreek/data/tlg0057/tlg077/tlg0057.tlg077.1st1K-grc1.xml	Galenus	De compositione medicamentorum per genera	1827	Karl Gottlob Kühn	13	362	1058
 ../../First1KGreek/data/tlg0057/tlg078/tlg0057.tlg078.1st1K-grc1.xml	Galenus	De antidotis	1827	Karl Gottlob Kühn	14	1	209
-../../First1KGreek/data/tlg0057/tlg079/tlg0057.tlg079.1st1K-grc1.xml	Galenus	De theriaca ad Pisonem	1827	Karl Gottlob Kühn	14	210	294
 ../../First1KGreek/data/tlg0057/tlg082/tlg0057.tlg082.1st1K-grc1.xml	Galenus	De sophismatis seu captionibus penes dictionem	1827	Karl Gottlob Kühn	14	582	598
 ../../First1KGreek/data/tlg0057/tlg083/tlg0057.tlg083.1st1K-grc1.xml	Galenus	De praenotione ad Epigenem	1827	Karl Gottlob Kühn	14	599	673
 ../../First1KGreek/data/tlg0057/tlg084/tlg0057.tlg084.1st1K-grc1.xml	Galenus	De substantia facultatum naturalium fragmentum	1822	Karl Gottlob Kühn	4	757	766
@@ -88,11 +86,13 @@ iter	auctor	titulus	annuspub	editor	volumen	pagde	pagad
 ../../First1KGreek/data/tlg0057/tlg101/tlg0057.tlg101.1st1K-grc1.xml	Galenus	In Hippocratis De officina medici	1830	Karl Gottlob Kühn	18b	629	925
 ../../First1KGreek/data/tlg0057/tlg102/tlg0057.tlg102.1st1K-grc1.xml	Galenus	De musculorum dissectione ad tirones	1830	Karl Gottlob Kühn	18b	926	1026
 ../../First1KGreek/data/tlg0057/tlg114/tlg0057.tlg114.1st1K-grc1.xml	Galenus	De causis respirationis	1822	Karl Gottlob Kühn	4	465	469
-../../First1KGreek/data/tlg0530/tlg005/tlg0530.tlg005.1st1K-grc1.xml	pseudo-Galen	De fasciis	1829	Karl Gottlob Kühn	18a	768	827
-../../First1KGreek/data/tlg0530/tlg012/tlg0530.tlg012.1st1K-grc1.xml	pseudo-Galen	Introductio seu medicus	1827	Karl Gottlob Kühn	14	674	797
-../../First1KGreek/data/tlg0530/tlg029/tlg0530.tlg029.1st1K-grc1.xml	pseudo-Galen	De remediis parabilibus	1827	Karl Gottlob Kühn	14	311	581
-../../First1KGreek/data/tlg0530/tlg032/tlg0530.tlg032.1st1K-grc1.xml	pseudo-Galen	De theriaca ad Pamphilianum	1827	Karl Gottlob Kühn	14	295	310
 ../../First1KGreek/data/tlg0530/tlg043/tlg0530.tlg043.1st1K-grc1.xml	pseudo-Galen	De optima secta ad Thrasybulum	1821	Karl Gottlob Kühn	1	106	223
+../../First1KGreek/data/tlg0057/tlg079/tlg0057.tlg079.1st1K-grc1.xml	Galenus	De theriaca ad Pisonem	1827	Karl Gottlob Kühn	14	210	294
+../../First1KGreek/data/tlg0530/tlg032/tlg0530.tlg032.1st1K-grc1.xml	pseudo-Galen	De theriaca ad Pamphilianum	1827	Karl Gottlob Kühn	14	295	310
+../../First1KGreek/data/tlg0530/tlg029/tlg0530.tlg029.1st1K-grc1.xml	pseudo-Galen	De remediis parabilibus	1827	Karl Gottlob Kühn	14	311	581
+../../First1KGreek/data/tlg0530/tlg012/tlg0530.tlg012.1st1K-grc1.xml	pseudo-Galen	Introductio seu medicus	1827	Karl Gottlob Kühn	14	674	797
+../../First1KGreek/data/tlg0530/tlg005/tlg0530.tlg005.1st1K-grc1.xml	pseudo-Galen	De fasciis	1829	Karl Gottlob Kühn	18a	768	827
+../../First1KGreek/data/tlg0057/tlg040/tlg0057.tlg040.1st1K-grc1.xml	Galenus	De dignotione ex insomniis	1823	Karl Gottlob Kühn	6	832	835
 ../../First1KGreek/data/tlg0057/tlg001/tlg0057.tlg001.1st1K-grc2.xml	Galenus	Adhortatio ad artes addiscendas	1894	Georg Kaibel		1	22
 ../../First1KGreek/data/tlg0057/tlg009/tlg0057.tlg009.1st1K-grc2.xml	Galenus	De temperamentis	1904	Georg Helmreich		1	115
 ../../First1KGreek/data/tlg0057/tlg033/tlg0057.tlg033.1st1K-grc1.xml	Galenus	Thrasybulus sive utrum medicinae sit an gymnasticae hygieine	1893	Georg Helmreich			
