@@ -30,12 +30,12 @@ orth_dic = lem_dic = {}
 def crawl(corpus_conf: str, sqlite_file=None):
     """Recursive crawl of a file list to pilot ingestion of greek texts"""
     # test immediately parameters before deleting or create something
-    cts_list = verbapie.cts_list(corpus_conf)
+    tei_list = verbapie.tei_list(corpus_conf)
     html_dir = verbapie.html_dir(corpus_conf)
     json_list = []
-    for cts_file in cts_list:
-        cts_name = os.path.splitext(os.path.basename(cts_file))[0]
-        json_file = os.path.join(html_dir, cts_name, cts_name + ".json")
+    for tei_file in tei_list:
+        tei_name = os.path.splitext(os.path.basename(tei_file))[0]
+        json_file = os.path.join(html_dir, tei_name, tei_name + ".json")
         if not os.path.isfile(json_file):
             raise Exception("Json file not found:\"" + json_file + "\"\nRun cts.py and lemmatize.py before")
         json_list.append(json_file)

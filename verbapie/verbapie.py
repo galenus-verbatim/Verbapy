@@ -20,31 +20,31 @@ def html_dir(corpus_conf: str) -> str:
     html_dir = os.path.join(dir, paths_name) + '/'
     return html_dir
 
-def cts_list(tsv_file: str) -> List:
+def tei_list(tsv_file: str) -> List:
     """List file inside the conf"""
     if not os.path.isfile(tsv_file):
-        raise Exception("File not found for a cts list:\"" + tsv_file + "\"")
+        raise Exception("File not found for a tei list:\"" + tsv_file + "\"")
     tsv_dir = norm_dir(tsv_file)
-    cts_list = []
+    tei_list = []
     with open(tsv_file, 'r', encoding="utf-8") as f:
         tsv_reader = csv.reader(f, delimiter="\t")
         next(tsv_reader)
         for row in tsv_reader:
             if len(row) < 1:
                 continue
-            cts_file = row[0].strip()
-            if not cts_file:
+            tei_file = row[0].strip()
+            if not tei_file:
                 continue
-            if cts_file[0] == '#':
+            if tei_file[0] == '#':
                 continue
-            if not os.path.isabs(cts_file):
-                cts_file = os.path.join(tsv_dir, cts_file)
-            cts_file = os.path.normpath(cts_file)
-            cts_file = cts_file.replace('\\', '/')
-            if not os.path.isfile(cts_file):
-                raise Exception("Cts file not found:\"" + cts_file + "\"\n in cts list:\"" + tsv_file + "\"")
-            cts_list.append(cts_file)
-    return cts_list
+            if not os.path.isabs(tei_file):
+                tei_file = os.path.join(tsv_dir, tei_file)
+            tei_file = os.path.normpath(tei_file)
+            tei_file = tei_file.replace('\\', '/')
+            if not os.path.isfile(tei_file):
+                raise Exception("TEI file not found:\"" + tei_file + "\"\n in cts list:\"" + tsv_file + "\"")
+            tei_list.append(tei_file)
+    return tei_list
 
 def norm_dir(file: str) -> str:
     """Normalize a path of directory"""
