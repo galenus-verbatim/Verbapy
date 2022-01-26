@@ -26,6 +26,7 @@
     </bib:authors>
     <dc:title>Exhortatio ad medicinam (Protrepticus)</dc:title>
     <z:shortTitle>Protr.</z:shortTitle>
+    <z:numberOfVolumes>14</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg001.1st1K-grc1"/>
     <dc:relation rdf:resource="#tlg0057.tlg001.1st1K-grc2"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg001_CMGgrc"/>
@@ -114,6 +115,7 @@
     </bib:authors>
     <dc:title>De optimo docendi genere</dc:title>
     <z:shortTitle>De opt. doc. gen.</z:shortTitle>
+    <z:numberOfVolumes>5</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg002.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg002_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg002_BMfr"/>
@@ -177,6 +179,7 @@
     </bib:authors>
     <dc:title>Quod optimus medicus sit quoque philosophus</dc:title>
     <z:shortTitle>Quod opt. med. sit etiam philos.</z:shortTitle>
+    <z:numberOfVolumes>4</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg003.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg003_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg003_BMfr"/>
@@ -240,6 +243,7 @@
     </bib:authors>
     <dc:title>De sectis ad eos, qui introducuntur</dc:title>
     <z:shortTitle>De sectis ad eos qui introd.</z:shortTitle>
+    <z:numberOfVolumes>9</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg004.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg004_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg004_BMfr"/>
@@ -303,6 +307,7 @@
     </bib:authors>
     <dc:title>De constitutione artis medicae ad Patrophilum</dc:title>
     <z:shortTitle>De constit. artis med.</z:shortTitle>
+    <z:numberOfVolumes>21</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg006.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg006_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg006_BMfr"/>
@@ -366,6 +371,7 @@
     </bib:authors>
     <dc:title>Ars medica</dc:title>
     <z:shortTitle>Ars med.</z:shortTitle>
+    <z:numberOfVolumes>38</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg007.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg007_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg007_BMfr"/>
@@ -429,6 +435,7 @@
     </bib:authors>
     <dc:title>De elementis ex Hippocratis sententia</dc:title>
     <z:shortTitle>De elem. ex Hipp. sent.</z:shortTitle>
+    <z:numberOfVolumes>14</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg008.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg008_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg008_BMfr"/>
@@ -492,6 +499,7 @@
     </bib:authors>
     <dc:title>De temperamentis</dc:title>
     <z:shortTitle>De temp.</z:shortTitle>
+    <z:numberOfVolumes>21</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg009.1st1K-grc2"/>
     <dc:relation rdf:resource="#tlg0057.tlg009.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg009_CMGgrc"/>
@@ -580,6 +588,7 @@
     </bib:authors>
     <dc:title>De facultatibus naturalibus</dc:title>
     <z:shortTitle>De fac. nat.</z:shortTitle>
+    <z:numberOfVolumes>41</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg010.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg010_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg010_BMfr"/>
@@ -643,6 +652,7 @@
     </bib:authors>
     <dc:title>De anatomicis administrationibus</dc:title>
     <z:shortTitle>De anat. administr.</z:shortTitle>
+    <z:numberOfVolumes>101</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg011.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg011_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg011_BMfr"/>
@@ -706,6 +716,7 @@
     </bib:authors>
     <dc:title>De ossibus ad tirones</dc:title>
     <z:shortTitle>De oss. ad tir.</z:shortTitle>
+    <z:numberOfVolumes>26</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg012.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg012_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg012_BMfr"/>
@@ -769,6 +780,7 @@
     </bib:authors>
     <dc:title>De venarum arteriarumque dissectione</dc:title>
     <z:shortTitle>De ven. arter. dissect.</z:shortTitle>
+    <z:numberOfVolumes>10</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg013.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg013_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg013_BMfr"/>
@@ -832,6 +844,7 @@
     </bib:authors>
     <dc:title>De nervorum dissectione</dc:title>
     <z:shortTitle>De nerv. dissect.</z:shortTitle>
+    <z:numberOfVolumes>17</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg014.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg014_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg014_BMfr"/>
@@ -895,6 +908,7 @@
     </bib:authors>
     <dc:title>De instrumento odoratus</dc:title>
     <z:shortTitle>De instr. odor.</z:shortTitle>
+    <z:numberOfVolumes>6</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg015.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg015_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg015_BMfr"/>
@@ -958,6 +972,7 @@
     </bib:authors>
     <dc:title>De uteri dissectione</dc:title>
     <z:shortTitle>De uteri dissect.</z:shortTitle>
+    <z:numberOfVolumes>10</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg016.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg016_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg016_BMfr"/>
@@ -1021,6 +1036,7 @@
     </bib:authors>
     <dc:title>De usu partium</dc:title>
     <z:shortTitle>De usu part.</z:shortTitle>
+    <z:numberOfVolumes>274</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg017.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg017_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg017_BMfr"/>
@@ -1061,7 +1077,7 @@
         </rdf:li>
       </rdf:Seq>
     </bib:authors>
-    <dc:title>De usu partium corporis humani I-XI</dc:title>
+    <dc:title>De usu partium corporis humani</dc:title>
     <dc:relation rdf:resource="#tlg0057.tlg017"/>
     <prism:edition>Karl Gottlob Kühn</prism:edition>
     <dc:date>1822</dc:date>
@@ -1088,6 +1104,7 @@
     </bib:authors>
     <dc:title>De motu musculorum</dc:title>
     <z:shortTitle>De motu musc.</z:shortTitle>
+    <z:numberOfVolumes>19</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg018.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg018_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg018_BMfr"/>
@@ -1151,6 +1168,7 @@
     </bib:authors>
     <dc:title>De usu respirationis</dc:title>
     <z:shortTitle>De respir. usu</z:shortTitle>
+    <z:numberOfVolumes>5</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg020.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg020_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg020_BMfr"/>
@@ -1214,6 +1232,7 @@
     </bib:authors>
     <dc:title>De semine</dc:title>
     <z:shortTitle>De sem.</z:shortTitle>
+    <z:numberOfVolumes>23</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg021.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg021_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg021_BMfr"/>
@@ -1277,6 +1296,7 @@
     </bib:authors>
     <dc:title>De foetuum formatione</dc:title>
     <z:shortTitle>De foet. form.</z:shortTitle>
+    <z:numberOfVolumes>6</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg022.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg022_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg022_BMfr"/>
@@ -1340,6 +1360,7 @@
     </bib:authors>
     <dc:title>An in arteriis natura sanguis contineatur</dc:title>
     <z:shortTitle>An in art. nat. sanguis contin.</z:shortTitle>
+    <z:numberOfVolumes>8</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg023.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg023_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg023_BMfr"/>
@@ -1403,6 +1424,7 @@
     </bib:authors>
     <dc:title>De optima corporis nostri constitutione</dc:title>
     <z:shortTitle>De opt. corp. nostri constit.</z:shortTitle>
+    <z:numberOfVolumes>4</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg024.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg024_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg024_BMfr"/>
@@ -1529,6 +1551,7 @@
     </bib:authors>
     <dc:title>Quod animi mores corporis temperamenta sequantur</dc:title>
     <z:shortTitle>Quod animi mores corp. temp. sequ.</z:shortTitle>
+    <z:numberOfVolumes>11</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg027.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg027_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg027_BMfr"/>
@@ -1592,6 +1615,7 @@
     </bib:authors>
     <dc:title>De animi cuiuslibet affectuum et peccatorum dignotione et curatione</dc:title>
     <z:shortTitle>De animi cuiusl. affect. et pecc. dign. et cur.</z:shortTitle>
+    <z:numberOfVolumes>10</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg028.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg028_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg028_BMfr"/>
@@ -1654,6 +1678,7 @@
       </rdf:Seq>
     </bib:authors>
     <dc:title/>
+    <z:numberOfVolumes>7</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg029.1st1K-grc1"/>
     <dc:coverage>30</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg029_rem"/>
@@ -1705,6 +1730,7 @@
     </bib:authors>
     <dc:title>De atra bile</dc:title>
     <z:shortTitle>De atra bile</z:shortTitle>
+    <z:numberOfVolumes>9</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg030.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg030_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg030_BMfr"/>
@@ -1768,6 +1794,7 @@
     </bib:authors>
     <dc:title>De usu pulsuum</dc:title>
     <z:shortTitle>De usu puls.</z:shortTitle>
+    <z:numberOfVolumes>8</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg031.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg031_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg031_BMfr"/>
@@ -1831,6 +1858,7 @@
     </bib:authors>
     <dc:title>De placitis Hippocratis et Platonis</dc:title>
     <z:shortTitle>De plac. Hipp. et Plat.</z:shortTitle>
+    <z:numberOfVolumes>70</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg032.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg032_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg032_BMfr"/>
@@ -1894,6 +1922,7 @@
     </bib:authors>
     <dc:title>De parvae pilae exercitio</dc:title>
     <z:shortTitle>De parvae pilae exercit.</z:shortTitle>
+    <z:numberOfVolumes>5</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg034.1st1K-grc2"/>
     <dc:relation rdf:resource="#tlg0057.tlg034.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg034_CMGgrc"/>
@@ -2057,6 +2086,7 @@
     </bib:authors>
     <dc:title>De sanitate tuenda</dc:title>
     <z:shortTitle>De san. tuenda</z:shortTitle>
+    <z:numberOfVolumes>78</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg036.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg036_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg036_BMfr"/>
@@ -2120,6 +2150,7 @@
     </bib:authors>
     <dc:title>De bonis malisque sucis</dc:title>
     <z:shortTitle>De bonis malisque sucis</z:shortTitle>
+    <z:numberOfVolumes>14</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg038.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg038_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg038_BMfr"/>
@@ -2183,6 +2214,7 @@
     </bib:authors>
     <dc:title>De ptisana</dc:title>
     <z:shortTitle>De ptis.</z:shortTitle>
+    <z:numberOfVolumes>6</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg039.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg039_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg039_BMfr"/>
@@ -2250,6 +2282,7 @@
     </bib:authors>
     <dc:title>De differentiis morborum</dc:title>
     <z:shortTitle>De diff. morb.</z:shortTitle>
+    <z:numberOfVolumes>13</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg041.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg041_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg041_BMfr"/>
@@ -2313,6 +2346,7 @@
     </bib:authors>
     <dc:title>De morborum causis</dc:title>
     <z:shortTitle>De morb. causis</z:shortTitle>
+    <z:numberOfVolumes>11</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg042.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg042_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg042_BMfr"/>
@@ -2376,6 +2410,7 @@
     </bib:authors>
     <dc:title>De symptomatum differentiis</dc:title>
     <z:shortTitle>De sympt. diff.</z:shortTitle>
+    <z:numberOfVolumes>6</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg043.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg043_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg043_BMfr"/>
@@ -2439,6 +2474,7 @@
     </bib:authors>
     <dc:title>De symptomatum causis</dc:title>
     <z:shortTitle>De sympt. causis</z:shortTitle>
+    <z:numberOfVolumes>27</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg044.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg044_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg044_BMfr"/>
@@ -2502,6 +2538,7 @@
     </bib:authors>
     <dc:title>De differentiis febrium</dc:title>
     <z:shortTitle>De diff. febr.</z:shortTitle>
+    <z:numberOfVolumes>32</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg045.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg045_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg045_BMfr"/>
@@ -2565,6 +2602,7 @@
     </bib:authors>
     <dc:title>De morborum temporibus</dc:title>
     <z:shortTitle>De morb. temp.</z:shortTitle>
+    <z:numberOfVolumes>9</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg046.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg046_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg046_BMfr"/>
@@ -2627,6 +2665,7 @@
       </rdf:Seq>
     </bib:authors>
     <dc:title/>
+    <z:numberOfVolumes>8</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg047.1st1K-grc1"/>
     <dc:coverage>50</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg047_rem"/>
@@ -2678,6 +2717,7 @@
     </bib:authors>
     <dc:title>De typis</dc:title>
     <z:shortTitle>De typis</z:shortTitle>
+    <z:numberOfVolumes>5</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg048.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg048_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg048_BMfr"/>
@@ -2741,6 +2781,7 @@
     </bib:authors>
     <dc:title>Adversus eos, qui de typis scripserunt</dc:title>
     <z:shortTitle>Adv. eos qui de typis scrips.</z:shortTitle>
+    <z:numberOfVolumes>7</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg049.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg049_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg049_BMfr"/>
@@ -2804,6 +2845,7 @@
     </bib:authors>
     <dc:title>De plenitudine</dc:title>
     <z:shortTitle>De plen.</z:shortTitle>
+    <z:numberOfVolumes>11</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg050.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg050_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg050_BMfr"/>
@@ -2867,6 +2909,7 @@
     </bib:authors>
     <dc:title>De tremore, palpitatione, convulsione et rigore</dc:title>
     <z:shortTitle>De trem., palp., convuls. et rig.</z:shortTitle>
+    <z:numberOfVolumes>8</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg051.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg051_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg051_BMfr"/>
@@ -2930,6 +2973,7 @@
     </bib:authors>
     <dc:title>De comate secundum Hippocratem</dc:title>
     <z:shortTitle>De comate sec. Hipp.</z:shortTitle>
+    <z:numberOfVolumes>4</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg052.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg052_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg052_BMfr"/>
@@ -2993,6 +3037,7 @@
     </bib:authors>
     <dc:title>De marcore</dc:title>
     <z:shortTitle>De marcore</z:shortTitle>
+    <z:numberOfVolumes>9</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg053.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg053_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg053_BMfr"/>
@@ -3056,6 +3101,7 @@
     </bib:authors>
     <dc:title>De tumoribus praeter naturam</dc:title>
     <z:shortTitle>De tum. praeter nat.</z:shortTitle>
+    <z:numberOfVolumes>17</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg054.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg054_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg054_BMfr"/>
@@ -3119,6 +3165,7 @@
     </bib:authors>
     <dc:title>De inaequali intemperie</dc:title>
     <z:shortTitle>De inaequ. intemp.</z:shortTitle>
+    <z:numberOfVolumes>9</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg055.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg055_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg055_BMfr"/>
@@ -3182,6 +3229,7 @@
     </bib:authors>
     <dc:title>De difficultate respirationis</dc:title>
     <z:shortTitle>De difficult. respir.</z:shortTitle>
+    <z:numberOfVolumes>51</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg056.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg056_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg056_BMfr"/>
@@ -3245,6 +3293,7 @@
     </bib:authors>
     <dc:title>De locis affectis</dc:title>
     <z:shortTitle>De locis affectis</z:shortTitle>
+    <z:numberOfVolumes>58</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg057.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg057_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg057_BMfr"/>
@@ -3308,6 +3357,7 @@
     </bib:authors>
     <dc:title>De pulsibus ad tirones</dc:title>
     <z:shortTitle>De puls. ad tir.</z:shortTitle>
+    <z:numberOfVolumes>12</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg058.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg058_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg058_BMfr"/>
@@ -3371,6 +3421,7 @@
     </bib:authors>
     <dc:title>De pulsuum differentiis</dc:title>
     <z:shortTitle>De puls. diff.</z:shortTitle>
+    <z:numberOfVolumes>64</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg059.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg059_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg059_BMfr"/>
@@ -3434,6 +3485,7 @@
     </bib:authors>
     <dc:title>De dignoscendis pulsibus</dc:title>
     <z:shortTitle>De dign. puls.</z:shortTitle>
+    <z:numberOfVolumes>20</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg060.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg060_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg060_BMfr"/>
@@ -3497,6 +3549,7 @@
     </bib:authors>
     <dc:title>De causis pulsuum</dc:title>
     <z:shortTitle>De causis puls.</z:shortTitle>
+    <z:numberOfVolumes>71</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg061.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg061_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg061_BMfr"/>
@@ -3560,6 +3613,7 @@
     </bib:authors>
     <dc:title>De praesagitione ex pulsibus</dc:title>
     <z:shortTitle>De praesag. ex puls.</z:shortTitle>
+    <z:numberOfVolumes>42</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg062.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg062_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg062_BMfr"/>
@@ -3623,6 +3677,7 @@
     </bib:authors>
     <dc:title>Synopsis librorum suorum sedecim de pulsibus</dc:title>
     <z:shortTitle>Synopsis libr. suor. de puls.</z:shortTitle>
+    <z:numberOfVolumes>28</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg063.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg063_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg063_BMfr"/>
@@ -3690,6 +3745,7 @@
     </bib:authors>
     <dc:title>De crisibus</dc:title>
     <z:shortTitle>De cris.</z:shortTitle>
+    <z:numberOfVolumes>44</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg064.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg064_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg064_BMfr"/>
@@ -3753,6 +3809,7 @@
     </bib:authors>
     <dc:title>De diebus decretoriis</dc:title>
     <z:shortTitle>De diebus decr.</z:shortTitle>
+    <z:numberOfVolumes>39</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg065.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg065_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg065_BMfr"/>
@@ -3816,6 +3873,7 @@
     </bib:authors>
     <dc:title>Methodus medendi</dc:title>
     <z:shortTitle>Meth. med.</z:shortTitle>
+    <z:numberOfVolumes>173</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg066.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg066_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg066_BMfr"/>
@@ -3879,6 +3937,7 @@
     </bib:authors>
     <dc:title>Ad Glauconem de medendi methodo</dc:title>
     <z:shortTitle>Ad Glauc. de med. meth.</z:shortTitle>
+    <z:numberOfVolumes>29</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg067.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg067_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg067_BMfr"/>
@@ -3942,6 +4001,7 @@
     </bib:authors>
     <dc:title>De venae sectione adversus Erasistratum</dc:title>
     <z:shortTitle>De venae sect. adv. Erasistr.</z:shortTitle>
+    <z:numberOfVolumes>9</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg068.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg068_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg068_BMfr"/>
@@ -4005,6 +4065,7 @@
     </bib:authors>
     <dc:title>De venae sectione adversus Erasistrateos Romae degentes</dc:title>
     <z:shortTitle>De venae sect. adv. Erasistrateos Romae deg.</z:shortTitle>
+    <z:numberOfVolumes>9</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg069.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg069_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg069_BMfr"/>
@@ -4068,6 +4129,7 @@
     </bib:authors>
     <dc:title>De curandi ratione per venae sectionem</dc:title>
     <z:shortTitle>De cur. rat. per venae sect.</z:shortTitle>
+    <z:numberOfVolumes>23</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg070.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg070_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg070_BMfr"/>
@@ -4131,6 +4193,7 @@
     </bib:authors>
     <dc:title>De hirudinibus, revulsione, cucurbitula, incisione, et scarificatione</dc:title>
     <z:shortTitle>De hirudinibus</z:shortTitle>
+    <z:numberOfVolumes>4</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg071.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg071_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg071_BMfr"/>
@@ -4194,6 +4257,7 @@
     </bib:authors>
     <dc:title>De purgantium medicamentorum facultate</dc:title>
     <z:shortTitle>De purg. med. fac.</z:shortTitle>
+    <z:numberOfVolumes>5</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg072.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg072_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg072_BMfr"/>
@@ -4256,6 +4320,7 @@
       </rdf:Seq>
     </bib:authors>
     <dc:title>*Quos quibus catharticis medicamentis et quando purgare oporteat*</dc:title>
+    <z:numberOfVolumes>1</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg073.1st1K-grc1"/>
     <dc:relation rdf:resource="#tlg0057.tlg073.1st1K-grc2"/>
     <dc:coverage>76</dc:coverage>
@@ -4333,6 +4398,7 @@
     </bib:authors>
     <dc:title>Puero epileptico consilium</dc:title>
     <z:shortTitle>Puero epil. consil.</z:shortTitle>
+    <z:numberOfVolumes>6</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg074.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg074_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg074_BMfr"/>
@@ -4396,6 +4462,7 @@
     </bib:authors>
     <dc:title>De simplicium medicamentorum temperamentis et facultatibus</dc:title>
     <z:shortTitle>De simpl. med. temp. et fac.</z:shortTitle>
+    <z:numberOfVolumes>181</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg075.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg075_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg075_BMfr"/>
@@ -4436,7 +4503,7 @@
         </rdf:li>
       </rdf:Seq>
     </bib:authors>
-    <dc:title>De simplicium medicamentorum temperamentis ac facultatibus I-VI</dc:title>
+    <dc:title>De simplicium medicamentorum temperamentis ac facultatibus</dc:title>
     <dc:relation rdf:resource="#tlg0057.tlg075"/>
     <prism:edition>Karl Gottlob Kühn</prism:edition>
     <dc:date>1826</dc:date>
@@ -4463,6 +4530,7 @@
     </bib:authors>
     <dc:title>De compositione medicamentorum secundum locos</dc:title>
     <z:shortTitle>De comp. med. sec. loc.</z:shortTitle>
+    <z:numberOfVolumes>68</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg076.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg076_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg076_BMfr"/>
@@ -4503,7 +4571,7 @@
         </rdf:li>
       </rdf:Seq>
     </bib:authors>
-    <dc:title>De compositione medicamentorum secundum locos I-VI</dc:title>
+    <dc:title>De compositione medicamentorum secundum locos</dc:title>
     <dc:relation rdf:resource="#tlg0057.tlg076"/>
     <prism:edition>Karl Gottlob Kühn</prism:edition>
     <dc:date>1826</dc:date>
@@ -4530,6 +4598,7 @@
     </bib:authors>
     <dc:title>De compositione medicamentorum per genera</dc:title>
     <z:shortTitle>De comp. med. per gen.</z:shortTitle>
+    <z:numberOfVolumes>113</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg077.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg077_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg077_BMfr"/>
@@ -4593,6 +4662,7 @@
     </bib:authors>
     <dc:title>De antidotis</dc:title>
     <z:shortTitle>De antid.</z:shortTitle>
+    <z:numberOfVolumes>33</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg078.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg078_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg078_BMfr"/>
@@ -4656,6 +4726,7 @@
     </bib:authors>
     <dc:title>De captionibus penes dictionem</dc:title>
     <z:shortTitle>De capt. penes dict.</z:shortTitle>
+    <z:numberOfVolumes>4</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg082.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg082_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg082_BMfr"/>
@@ -4719,6 +4790,7 @@
     </bib:authors>
     <dc:title>De praecognitione ad Epigenem</dc:title>
     <z:shortTitle>De praecogn.</z:shortTitle>
+    <z:numberOfVolumes>14</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg083.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg083_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg083_BMfr"/>
@@ -4849,6 +4921,7 @@
     </bib:authors>
     <dc:title>In Hippocratis De natura hominis commentaria</dc:title>
     <z:shortTitle>In Hipp. De nat. hom. comm.</z:shortTitle>
+    <z:numberOfVolumes>66</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg085.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg085_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg085_BMfr"/>
@@ -4911,6 +4984,7 @@
       </rdf:Seq>
     </bib:authors>
     <dc:title/>
+    <z:numberOfVolumes>34</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg086.1st1K-grc1"/>
     <dc:coverage>91</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg086_rem"/>
@@ -4962,6 +5036,7 @@
     </bib:authors>
     <dc:title>In Hippocratis De victu acutorum commentaria</dc:title>
     <z:shortTitle>In Hipp. De victu acut. comm.</z:shortTitle>
+    <z:numberOfVolumes>264</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg087.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg087_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg087_BMfr"/>
@@ -5025,6 +5100,7 @@
     </bib:authors>
     <dc:title>In Hippocratis Prorrheticum I commentaria</dc:title>
     <z:shortTitle>In Hipp. Prorrh. I comm.</z:shortTitle>
+    <z:numberOfVolumes>173</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg088.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg088_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg088_BMfr"/>
@@ -5088,6 +5164,7 @@
     </bib:authors>
     <dc:title>Adversus Lycum</dc:title>
     <z:shortTitle>Adv. Lycum</z:shortTitle>
+    <z:numberOfVolumes>7</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg093.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg093_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg093_BMfr"/>
@@ -5151,6 +5228,7 @@
     </bib:authors>
     <dc:title>Adversus ea quae Iuliano in Hippocratis aphorismos enuntiata sunt</dc:title>
     <z:shortTitle>Adv. Iul.</z:shortTitle>
+    <z:numberOfVolumes>8</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg094.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg094_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg094_BMfr"/>
@@ -5214,6 +5292,7 @@
     </bib:authors>
     <dc:title>In Hippocratis De articulis commentaria</dc:title>
     <z:shortTitle>In Hipp. De artic. comm.</z:shortTitle>
+    <z:numberOfVolumes>256</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg095.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg095_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg095_BMfr"/>
@@ -5276,6 +5355,7 @@
       </rdf:Seq>
     </bib:authors>
     <dc:title/>
+    <z:numberOfVolumes>52</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg096.1st1K-grc1"/>
     <dc:coverage>106</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg096_rem"/>
@@ -5327,6 +5407,7 @@
     </bib:authors>
     <dc:title>In Hippocratis Prognosticum commentaria</dc:title>
     <z:shortTitle>In Hipp. Progn. comm.</z:shortTitle>
+    <z:numberOfVolumes>158</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg099.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg099_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg099_BMfr"/>
@@ -5390,6 +5471,7 @@
     </bib:authors>
     <dc:title>In Hippocratis De fracturis commentaria</dc:title>
     <z:shortTitle>In Hipp. De fract. comm.</z:shortTitle>
+    <z:numberOfVolumes>192</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg100.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg100_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg100_BMfr"/>
@@ -5453,6 +5535,7 @@
     </bib:authors>
     <dc:title>In Hippocratis De officina medici commentaria</dc:title>
     <z:shortTitle>In Hipp. De off. med. comm.</z:shortTitle>
+    <z:numberOfVolumes>94</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg101.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg101_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg101_BMfr"/>
@@ -5516,6 +5599,7 @@
     </bib:authors>
     <dc:title>De musculorum dissectione ad tirones</dc:title>
     <z:shortTitle>De musc. dissect.</z:shortTitle>
+    <z:numberOfVolumes>37</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg102.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg102_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg102_BMfr"/>
@@ -5642,6 +5726,7 @@
     </bib:authors>
     <dc:title>De optima secta ad Thrasybulum</dc:title>
     <z:shortTitle>De opt. secta ad Thrasyb.</z:shortTitle>
+    <z:numberOfVolumes>51</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0530.tlg043.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg043_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg043_BMfr"/>
@@ -5705,6 +5790,7 @@
     </bib:authors>
     <dc:title>De theriaca ad Pisonem</dc:title>
     <z:shortTitle>De ther. ad Pis.</z:shortTitle>
+    <z:numberOfVolumes>18</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg079.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg079_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg079_BMfr"/>
@@ -5831,6 +5917,7 @@
     </bib:authors>
     <dc:title>De remediis parabilibus</dc:title>
     <z:shortTitle>De rem. parab.</z:shortTitle>
+    <z:numberOfVolumes>362</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0530.tlg029.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg029_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg029_BMfr"/>
@@ -5894,6 +5981,7 @@
     </bib:authors>
     <dc:title>Introductio sive medicus</dc:title>
     <z:shortTitle>Medicus. Introd.</z:shortTitle>
+    <z:numberOfVolumes>20</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0530.tlg012.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg012_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg012_BMfr"/>
@@ -5957,6 +6045,7 @@
     </bib:authors>
     <dc:title>De fasciis</dc:title>
     <z:shortTitle>De fasc.</z:shortTitle>
+    <z:numberOfVolumes>114</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0530.tlg005.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg005_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg005_BMfr"/>
@@ -6234,6 +6323,7 @@
     </bib:authors>
     <dc:title>De alimentorum facultatibus</dc:title>
     <z:shortTitle>De alim. fac.</z:shortTitle>
+    <z:numberOfVolumes>147</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg037.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg037_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg037_BMfr"/>
@@ -6297,6 +6387,7 @@
     </bib:authors>
     <dc:title>Institutio logica</dc:title>
     <z:shortTitle>Inst. log.</z:shortTitle>
+    <z:numberOfVolumes>19</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg081.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg081_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg081_BMfr"/>
@@ -6360,6 +6451,7 @@
     </bib:authors>
     <dc:title>De consuetudinibus</dc:title>
     <z:shortTitle>De consuet.</z:shortTitle>
+    <z:numberOfVolumes>5</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0057.tlg103.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg103_CMGgrc"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg103_BMfr"/>
@@ -6486,6 +6578,7 @@
     </bib:authors>
     <dc:title>Ad Gaurum quomodo animetur fetus</dc:title>
     <z:shortTitle>Ad Gaurum quomodo animetur fetus</z:shortTitle>
+    <z:numberOfVolumes>18</z:numberOfVolumes>
     <dc:relation rdf:resource="#tlg0530.tlg006.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg006_CMGgrc"/>
     <dc:coverage>138</dc:coverage>

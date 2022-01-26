@@ -111,6 +111,17 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
             <xsl:value-of select="$CMGabbr"/>
           </z:shortTitle>
         </xsl:if>
+        <!-- Load first doc -->
+        <xsl:variable name="tei" select="document(concat(substring-after(ti:edition/@urn, 'urn:cts:greekLit:'), '.xml'), .)"/>
+        
+        <xsl:choose>
+          <xsl:when test="$tei//tei:div[@subtype='chapter']">
+            <z:numberOfVolumes>
+              <xsl:value-of select="count($tei//tei:div[@subtype='chapter'])"/>
+            </z:numberOfVolumes>
+          </xsl:when>
+        </xsl:choose>
+        
         <xsl:for-each select="ti:edition">
           <dc:relation>
             <xsl:attribute name="rdf:resource">
