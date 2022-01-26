@@ -78,13 +78,13 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
           <xsl:value-of select="$aboutWork"/>
         </xsl:attribute>
         <z:itemType>book</z:itemType>
-        <dc:subject>
-          <dcterms:LCC>
+        <dc:identifier>
+          <dcterms:URI>
             <rdf:value>
-              <xsl:value-of select="$aboutWork"/>
+              <xsl:value-of select="@urn"/>
             </rdf:value>
-          </dcterms:LCC>
-        </dc:subject>
+          </dcterms:URI>
+        </dc:identifier>
         <bib:authors>
           <rdf:Seq>
             <rdf:li>
@@ -132,7 +132,9 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
           <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_CGTabbr"/>
         </xsl:if>
         <xsl:if test="$fichtner != ''">
-          <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_fichtner"/>
+          <dc:coverage>
+            <xsl:value-of select="$fichtner"/>
+          </dc:coverage>
         </xsl:if>
         <xsl:if test="$rem != ''">
           <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_rem"/>
@@ -156,11 +158,6 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
       <xsl:if test="$CGTabbr != ''">
         <bib:Memo rdf:about="#{$aboutWork}_CGTabbr">
           <rdf:value>CGTAbbr: <xsl:value-of select="$CGTabbr"/></rdf:value>
-        </bib:Memo>
-      </xsl:if>
-      <xsl:if test="$fichtner != ''">
-        <bib:Memo rdf:about="#{$aboutWork}_fichtner">
-          <rdf:value>fichtner: <xsl:value-of select="$fichtner"/></rdf:value>
         </bib:Memo>
       </xsl:if>
       <xsl:if test="$rem != ''">
@@ -216,13 +213,18 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
         
         <bib:Book rdf:about="#{$about}">
           <z:itemType>book</z:itemType>
-          <dc:subject>
-            <dcterms:LCC>
+          <dc:identifier>
+            <dcterms:URI>
               <rdf:value>
-                <xsl:value-of select="$about"/>
+                <xsl:value-of select="@urn"/>
               </rdf:value>
-            </dcterms:LCC>
-          </dc:subject>
+            </dcterms:URI>
+          </dc:identifier>
+          <xsl:if test="$fichtner != ''">
+            <dc:coverage>
+              <xsl:value-of select="$fichtner"/>
+            </dc:coverage>
+          </xsl:if>
           <bib:authors>
             <rdf:Seq>
               <rdf:li>

@@ -10,11 +10,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg001">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg001</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg001</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -32,7 +32,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg001_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg001_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg001_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg001_fichtner"/>
+    <dc:coverage>1</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg001_CMGgrc">
     <rdf:value>CMGgrc: Προτρεπτικὸς ἐπ’ ἰατρικήν</rdf:value>
@@ -46,16 +46,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg001_CGTabbr">
     <rdf:value>CGTAbbr: Protr.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg001_fichtner">
-    <rdf:value>fichtner: 1</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg001.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg001.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg001.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>1</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -74,11 +72,12 @@
   </bib:Book>
   <bib:Book rdf:about="#tlg0057.tlg001.1st1K-grc2">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg001.1st1K-grc2</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg001.1st1K-grc2</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>1</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -99,11 +98,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg002">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg002</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg002</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -120,7 +119,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg002_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg002_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg002_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg002_fichtner"/>
+    <dc:coverage>2</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg002_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ἀρίστης διδασκαλίας</rdf:value>
@@ -134,16 +133,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg002_CGTabbr">
     <rdf:value>CGTAbbr: Opt. Doct.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg002_fichtner">
-    <rdf:value>fichtner: 2</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg002.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg002.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg002.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>2</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -164,11 +161,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg003">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg003</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg003</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -185,7 +182,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg003_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg003_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg003_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg003_fichtner"/>
+    <dc:coverage>3</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg003_CMGgrc">
     <rdf:value>CMGgrc: Ὅτι ὁ ἄριστος ἰατρὸς καὶ φιλόσοφος</rdf:value>
@@ -199,16 +196,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg003_CGTabbr">
     <rdf:value>CGTAbbr: Opt. Med.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg003_fichtner">
-    <rdf:value>fichtner: 3</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg003.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg003.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg003.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>3</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -229,11 +224,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg004">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg004</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg004</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -250,7 +245,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg004_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg004_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg004_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg004_fichtner"/>
+    <dc:coverage>4</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg004_CMGgrc">
     <rdf:value>CMGgrc: Περὶ αἱρέσεων τοῖς εἰσαγομένοις</rdf:value>
@@ -264,16 +259,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg004_CGTabbr">
     <rdf:value>CGTAbbr: SI</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg004_fichtner">
-    <rdf:value>fichtner: 4</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg004.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg004.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg004.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>4</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -294,11 +287,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg006">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg006</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg006</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -315,7 +308,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg006_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg006_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg006_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg006_fichtner"/>
+    <dc:coverage>6</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg006_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς Πατρόφιλον περὶ συστάσεως ἰατρικῆς</rdf:value>
@@ -329,16 +322,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg006_CGTabbr">
     <rdf:value>CGTAbbr: CAM</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg006_fichtner">
-    <rdf:value>fichtner: 6</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg006.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg006.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg006.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>6</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -359,11 +350,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg007">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg007</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg007</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -380,7 +371,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg007_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg007_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg007_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg007_fichtner"/>
+    <dc:coverage>7</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg007_CMGgrc">
     <rdf:value>CMGgrc: Τέχνη ἰατρική</rdf:value>
@@ -394,16 +385,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg007_CGTabbr">
     <rdf:value>CGTAbbr: Ars Med.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg007_fichtner">
-    <rdf:value>fichtner: 7</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg007.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg007.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg007.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>7</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -424,11 +413,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg008">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg008</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg008</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -445,7 +434,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg008_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg008_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg008_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg008_fichtner"/>
+    <dc:coverage>8</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg008_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν καθ’ Ἱπποκράτην στοιχείων</rdf:value>
@@ -459,16 +448,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg008_CGTabbr">
     <rdf:value>CGTAbbr: Hipp. Elem.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg008_fichtner">
-    <rdf:value>fichtner: 8</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg008.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg008.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg008.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>8</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -489,11 +476,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg009">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg009</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg009</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -511,7 +498,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg009_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg009_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg009_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg009_fichtner"/>
+    <dc:coverage>9</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg009_CMGgrc">
     <rdf:value>CMGgrc: Περὶ κράσεων</rdf:value>
@@ -525,16 +512,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg009_CGTabbr">
     <rdf:value>CGTAbbr: Temp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg009_fichtner">
-    <rdf:value>fichtner: 9</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg009.1st1K-grc2">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg009.1st1K-grc2</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg009.1st1K-grc2</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>9</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -553,11 +538,12 @@
   </bib:Book>
   <bib:Book rdf:about="#tlg0057.tlg009.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg009.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg009.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>9</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -578,11 +564,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg010">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg010</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg010</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -599,7 +585,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg010_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg010_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg010_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg010_fichtner"/>
+    <dc:coverage>10</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg010_CMGgrc">
     <rdf:value>CMGgrc: Περὶ δυνάμεων φυσικῶν</rdf:value>
@@ -613,16 +599,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg010_CGTabbr">
     <rdf:value>CGTAbbr: Nat. Fac.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg010_fichtner">
-    <rdf:value>fichtner: 10</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg010.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg010.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg010.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>10</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -643,11 +627,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg011">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg011</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg011</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -664,7 +648,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg011_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg011_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg011_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg011_fichtner"/>
+    <dc:coverage>11</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg011_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ἀνατομικῶν ἐγχειρήσεων</rdf:value>
@@ -678,16 +662,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg011_CGTabbr">
     <rdf:value>CGTAbbr: AA</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg011_fichtner">
-    <rdf:value>fichtner: 11</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg011.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg011.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg011.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>11</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -708,11 +690,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg012">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg012</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg012</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -729,7 +711,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg012_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg012_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg012_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg012_fichtner"/>
+    <dc:coverage>12</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg012_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ὀστῶν τοῖς εἰσαγομένοις</rdf:value>
@@ -743,16 +725,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg012_CGTabbr">
     <rdf:value>CGTAbbr: Oss.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg012_fichtner">
-    <rdf:value>fichtner: 12</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg012.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg012.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg012.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>12</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -773,11 +753,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg013">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg013</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg013</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -794,7 +774,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg013_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg013_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg013_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg013_fichtner"/>
+    <dc:coverage>13</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg013_CMGgrc">
     <rdf:value>CMGgrc: Περὶ φλεβῶν καὶ ἀρτηριῶν ἀνατομῆς</rdf:value>
@@ -808,16 +788,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg013_CGTabbr">
     <rdf:value>CGTAbbr: Ven. Art. Diss.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg013_fichtner">
-    <rdf:value>fichtner: 13</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg013.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg013.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg013.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>13</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -838,11 +816,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg014">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg014</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg014</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -859,7 +837,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg014_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg014_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg014_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg014_fichtner"/>
+    <dc:coverage>14</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg014_CMGgrc">
     <rdf:value>CMGgrc: Περὶ νευρῶν ἀνατομῆς</rdf:value>
@@ -873,16 +851,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg014_CGTabbr">
     <rdf:value>CGTAbbr: Nerv. Diss.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg014_fichtner">
-    <rdf:value>fichtner: 14</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg014.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg014.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg014.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>14</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -903,11 +879,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg015">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg015</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg015</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -924,7 +900,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg015_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg015_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg015_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg015_fichtner"/>
+    <dc:coverage>15</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg015_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ὀσφρήσεως ὀργάνου</rdf:value>
@@ -938,16 +914,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg015_CGTabbr">
     <rdf:value>CGTAbbr: Inst. Od.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg015_fichtner">
-    <rdf:value>fichtner: 15</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg015.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg015.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg015.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>15</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -968,11 +942,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg016">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg016</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg016</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -989,7 +963,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg016_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg016_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg016_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg016_fichtner"/>
+    <dc:coverage>16</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg016_CMGgrc">
     <rdf:value>CMGgrc: Περὶ μήτρας ἀνατομῆς</rdf:value>
@@ -1003,16 +977,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg016_CGTabbr">
     <rdf:value>CGTAbbr: Ut. Diss.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg016_fichtner">
-    <rdf:value>fichtner: 16</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg016.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg016.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg016.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>16</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1033,11 +1005,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg017">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg017</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg017</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1054,7 +1026,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg017_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg017_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg017_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg017_fichtner"/>
+    <dc:coverage>17</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg017_rem"/>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg017_CMGgrc">
@@ -1069,19 +1041,17 @@
   <bib:Memo rdf:about="#tlg0057.tlg017_CGTabbr">
     <rdf:value>CGTAbbr: UP</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg017_fichtner">
-    <rdf:value>fichtner: 17</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg017_rem">
     <rdf:value>Note: éd. Kühn: livres I à XI dans le vol. 3 (p. 1-939), livres XII à XVI dans le vol. 4 (p. 1-366)</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg017.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg017.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg017.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>17</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1102,11 +1072,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg018">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg018</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg018</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1123,7 +1093,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg018_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg018_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg018_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg018_fichtner"/>
+    <dc:coverage>19</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg018_CMGgrc">
     <rdf:value>CMGgrc: Περὶ μυῶν κινήσεως</rdf:value>
@@ -1137,16 +1107,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg018_CGTabbr">
     <rdf:value>CGTAbbr: Mot. Musc.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg018_fichtner">
-    <rdf:value>fichtner: 19</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg018.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg018.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg018.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>19</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1167,11 +1135,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg020">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg020</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg020</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1188,7 +1156,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg020_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg020_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg020_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg020_fichtner"/>
+    <dc:coverage>21</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg020_CMGgrc">
     <rdf:value>CMGgrc: Περὶ χρείας ἀναπνοῆς</rdf:value>
@@ -1202,16 +1170,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg020_CGTabbr">
     <rdf:value>CGTAbbr: Ut. Resp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg020_fichtner">
-    <rdf:value>fichtner: 21</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg020.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg020.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg020.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>21</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1232,11 +1198,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg021">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg021</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg021</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1253,7 +1219,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg021_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg021_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg021_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg021_fichtner"/>
+    <dc:coverage>22</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg021_CMGgrc">
     <rdf:value>CMGgrc: Περὶ σπέρματος</rdf:value>
@@ -1267,16 +1233,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg021_CGTabbr">
     <rdf:value>CGTAbbr: Sem.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg021_fichtner">
-    <rdf:value>fichtner: 22</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg021.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg021.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg021.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>22</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1297,11 +1261,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg022">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg022</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg022</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1318,7 +1282,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg022_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg022_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg022_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg022_fichtner"/>
+    <dc:coverage>23</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg022_CMGgrc">
     <rdf:value>CMGgrc: Περὶ κυουμένων διαπλάσεως</rdf:value>
@@ -1332,16 +1296,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg022_CGTabbr">
     <rdf:value>CGTAbbr: Foet. Form.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg022_fichtner">
-    <rdf:value>fichtner: 23</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg022.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg022.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg022.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>23</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1362,11 +1324,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg023">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg023</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg023</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1383,7 +1345,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg023_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg023_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg023_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg023_fichtner"/>
+    <dc:coverage>24</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg023_CMGgrc">
     <rdf:value>CMGgrc: Εἰ κατὰ φύσιν ἐν ἀρτηρίαις αἷμα περιέχηται</rdf:value>
@@ -1397,16 +1359,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg023_CGTabbr">
     <rdf:value>CGTAbbr: Art. Sang.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg023_fichtner">
-    <rdf:value>fichtner: 24</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg023.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg023.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg023.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>24</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1427,11 +1387,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg024">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg024</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg024</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1448,7 +1408,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg024_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg024_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg024_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg024_fichtner"/>
+    <dc:coverage>25</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg024_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ἀρίστης κατασκευῆς τοῦ σώματος ἡμῶν</rdf:value>
@@ -1462,16 +1422,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg024_CGTabbr">
     <rdf:value>CGTAbbr: Opt. Corp. Const.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg024_fichtner">
-    <rdf:value>fichtner: 25</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg024.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg024.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg024.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>25</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1492,11 +1450,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg025">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg025</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg025</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1513,7 +1471,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg025_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg025_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg025_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg025_fichtner"/>
+    <dc:coverage>26</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg025_CMGgrc">
     <rdf:value>CMGgrc: Περὶ εὐεξίας</rdf:value>
@@ -1527,16 +1485,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg025_CGTabbr">
     <rdf:value>CGTAbbr: Bon. Hab.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg025_fichtner">
-    <rdf:value>fichtner: 26</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg025.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg025.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg025.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>26</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1557,11 +1513,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg027">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg027</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg027</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1578,7 +1534,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg027_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg027_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg027_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg027_fichtner"/>
+    <dc:coverage>28</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg027_CMGgrc">
     <rdf:value>CMGgrc: Ὅτι ταῖς τοῦ σώματος κράσεσιν αἱ τῆς ψυχῆς δυνάμεις ἕπονται</rdf:value>
@@ -1592,16 +1548,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg027_CGTabbr">
     <rdf:value>CGTAbbr: QAM</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg027_fichtner">
-    <rdf:value>fichtner: 28</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg027.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg027.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg027.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>28</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1622,11 +1576,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg028">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg028</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg028</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1643,7 +1597,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg028_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg028_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg028_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg028_fichtner"/>
+    <dc:coverage>29</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg028_CMGgrc">
     <rdf:value>CMGgrc: Περὶ διαγνώσεως καὶ θεραπείας τῶν ἐν τῇ ἑκάστου ψυχῇ ἰδίων παθῶν καὶ ἁμαρτημάτων</rdf:value>
@@ -1657,16 +1611,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg028_CGTabbr">
     <rdf:value>CGTAbbr: Aff. Pecc. Dig.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg028_fichtner">
-    <rdf:value>fichtner: 29</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg028.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg028.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg028.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>29</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1687,11 +1639,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg029">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg029</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg029</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1703,22 +1655,20 @@
     </bib:authors>
     <dc:title/>
     <dc:relation rdf:resource="#tlg0057.tlg029.1st1K-grc1"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg029_fichtner"/>
+    <dc:coverage>30</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg029_rem"/>
   </bib:Book>
-  <bib:Memo rdf:about="#tlg0057.tlg029_fichtner">
-    <rdf:value>fichtner: 30</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg029_rem">
     <rdf:value>Note: les textes respectivement transmis sous les titres De propriorum animi cuiuslibet affectuum dignotione et curatione et De animi cuiuslibet peccatorum dignotione et curatione constituent vraisemblablement les deux livres d’un même traité dont le titre n’est pas transmis par les manuscrits, mais évoqué par Galien dans son traité Sur ses propres livres: voir P. Singer, n. ad 3.2-3 DB, p. 315 (Cambridge Galen Translations, Psychological Writings, 2013)</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg029.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg029.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg029.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>30</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1739,11 +1689,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg030">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg030</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg030</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1760,7 +1710,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg030_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg030_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg030_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg030_fichtner"/>
+    <dc:coverage>31</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg030_CMGgrc">
     <rdf:value>CMGgrc: Περὶ μελαίνης χολῆς</rdf:value>
@@ -1774,16 +1724,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg030_CGTabbr">
     <rdf:value>CGTAbbr: At. Bil.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg030_fichtner">
-    <rdf:value>fichtner: 31</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg030.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg030.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg030.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>31</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1804,11 +1752,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg031">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg031</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg031</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1825,7 +1773,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg031_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg031_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg031_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg031_fichtner"/>
+    <dc:coverage>32</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg031_CMGgrc">
     <rdf:value>CMGgrc: Περὶ χρείας σφυγμῶν</rdf:value>
@@ -1839,16 +1787,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg031_CGTabbr">
     <rdf:value>CGTAbbr: Us. Puls.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg031_fichtner">
-    <rdf:value>fichtner: 32</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg031.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg031.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg031.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>32</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1869,11 +1815,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg032">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg032</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg032</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1890,7 +1836,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg032_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg032_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg032_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg032_fichtner"/>
+    <dc:coverage>33</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg032_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν Ἱπποκράτους καὶ Πλάτωνος δογμάτων</rdf:value>
@@ -1904,16 +1850,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg032_CGTabbr">
     <rdf:value>CGTAbbr: PHP</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg032_fichtner">
-    <rdf:value>fichtner: 33</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg032.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg032.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg032.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>33</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1934,11 +1878,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg034">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg034</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg034</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1956,7 +1900,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg034_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg034_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg034_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg034_fichtner"/>
+    <dc:coverage>35</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg034_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τοῦ διὰ μικρᾶς σφαίρας γυμνασίου</rdf:value>
@@ -1970,16 +1914,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg034_CGTabbr">
     <rdf:value>CGTAbbr: Parv. Pil.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg034_fichtner">
-    <rdf:value>fichtner: 35</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg034.1st1K-grc2">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg034.1st1K-grc2</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg034.1st1K-grc2</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>35</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -1998,11 +1940,12 @@
   </bib:Book>
   <bib:Book rdf:about="#tlg0057.tlg034.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg034.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg034.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>35</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2023,11 +1966,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg035">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg035</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg035</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2040,22 +1983,20 @@
     <dc:title>*De venereis*</dc:title>
     <dc:relation rdf:resource="#tlg0057.tlg035.1st1K-grc2"/>
     <dc:relation rdf:resource="#tlg0057.tlg035.1st1K-grc3"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg035_fichtner"/>
+    <dc:coverage>36</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg035_rem"/>
   </bib:Book>
-  <bib:Memo rdf:about="#tlg0057.tlg035_fichtner">
-    <rdf:value>fichtner: 36</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg035_rem">
     <rdf:value>Note: extraits réunis par Oribase, p. 187.27-189.4 Raeder (texte déjà présent dans d’autres traités édités par Kühn)</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg035.1st1K-grc2">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg035.1st1K-grc2</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg035.1st1K-grc2</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>36</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2074,11 +2015,12 @@
   </bib:Book>
   <bib:Book rdf:about="#tlg0057.tlg035.1st1K-grc3">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg035.1st1K-grc3</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg035.1st1K-grc3</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>36</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2099,11 +2041,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg036">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg036</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg036</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2120,7 +2062,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg036_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg036_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg036_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg036_fichtner"/>
+    <dc:coverage>37</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg036_CMGgrc">
     <rdf:value>CMGgrc: Ὑγιεινῶν λόγοι</rdf:value>
@@ -2134,16 +2076,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg036_CGTabbr">
     <rdf:value>CGTAbbr: San. Tu.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg036_fichtner">
-    <rdf:value>fichtner: 37</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg036.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg036.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg036.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>37</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2164,11 +2104,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg038">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg038</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg038</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2185,7 +2125,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg038_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg038_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg038_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg038_fichtner"/>
+    <dc:coverage>39</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg038_CMGgrc">
     <rdf:value>CMGgrc: Περὶ εὐχυμίας καὶ κακοχυμίας</rdf:value>
@@ -2199,16 +2139,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg038_CGTabbr">
     <rdf:value>CGTAbbr: Bon. Mal. Suc.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg038_fichtner">
-    <rdf:value>fichtner: 39</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg038.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg038.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg038.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>39</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2229,11 +2167,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg039">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg039</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg039</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2250,7 +2188,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg039_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg039_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg039_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg039_fichtner"/>
+    <dc:coverage>40</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg039_rem"/>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg039_CMGgrc">
@@ -2265,19 +2203,17 @@
   <bib:Memo rdf:about="#tlg0057.tlg039_CGTabbr">
     <rdf:value>CGTAbbr: Ptis.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg039_fichtner">
-    <rdf:value>fichtner: 40</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg039_rem">
     <rdf:value>Note: selon la Galenus und Galenus - Gesamtübersicht du CMG, la paternité de ce traité est discutée</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg039.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg039.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg039.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>40</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2298,11 +2234,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg041">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg041</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg041</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2319,7 +2255,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg041_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg041_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg041_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg041_fichtner"/>
+    <dc:coverage>42</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg041_CMGgrc">
     <rdf:value>CMGgrc: Περὶ διαφορᾶς νοσημάτων</rdf:value>
@@ -2333,16 +2269,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg041_CGTabbr">
     <rdf:value>CGTAbbr: Morb. Diff.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg041_fichtner">
-    <rdf:value>fichtner: 42</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg041.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg041.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg041.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>42</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2363,11 +2297,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg042">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg042</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg042</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2384,7 +2318,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg042_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg042_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg042_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg042_fichtner"/>
+    <dc:coverage>43</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg042_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν ἐν τοῖς νοσήμασιν αἰτιῶν</rdf:value>
@@ -2398,16 +2332,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg042_CGTabbr">
     <rdf:value>CGTAbbr: Caus. Morb.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg042_fichtner">
-    <rdf:value>fichtner: 43</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg042.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg042.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg042.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>43</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2428,11 +2360,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg043">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg043</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg043</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2449,7 +2381,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg043_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg043_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg043_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg043_fichtner"/>
+    <dc:coverage>44</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg043_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν συμπτωμάτων διαφορᾶς</rdf:value>
@@ -2463,16 +2395,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg043_CGTabbr">
     <rdf:value>CGTAbbr: Symp. Diff.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg043_fichtner">
-    <rdf:value>fichtner: 44</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg043.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg043.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg043.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>44</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2493,11 +2423,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg044">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg044</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg044</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2514,7 +2444,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg044_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg044_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg044_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg044_fichtner"/>
+    <dc:coverage>45</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg044_CMGgrc">
     <rdf:value>CMGgrc: Περὶ αἰτιῶν συμπτωμάτων</rdf:value>
@@ -2528,16 +2458,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg044_CGTabbr">
     <rdf:value>CGTAbbr: Caus. Symp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg044_fichtner">
-    <rdf:value>fichtner: 45</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg044.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg044.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg044.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>45</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2558,11 +2486,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg045">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg045</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg045</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2579,7 +2507,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg045_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg045_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg045_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg045_fichtner"/>
+    <dc:coverage>48</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg045_CMGgrc">
     <rdf:value>CMGgrc: Περὶ διαφορᾶς πυρετῶν</rdf:value>
@@ -2593,16 +2521,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg045_CGTabbr">
     <rdf:value>CGTAbbr: Diff. Feb.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg045_fichtner">
-    <rdf:value>fichtner: 48</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg045.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg045.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg045.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>48</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2623,11 +2549,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg046">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg046</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg046</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2644,7 +2570,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg046_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg046_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg046_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg046_fichtner"/>
+    <dc:coverage>49</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg046_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν ἐν ταῖς νόσοις καιρῶν</rdf:value>
@@ -2658,16 +2584,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg046_CGTabbr">
     <rdf:value>CGTAbbr: Morb. Temp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg046_fichtner">
-    <rdf:value>fichtner: 49</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg046.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg046.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg046.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>49</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2688,11 +2612,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg047">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg047</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg047</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2704,22 +2628,20 @@
     </bib:authors>
     <dc:title/>
     <dc:relation rdf:resource="#tlg0057.tlg047.1st1K-grc1"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg047_fichtner"/>
+    <dc:coverage>50</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg047_rem"/>
   </bib:Book>
-  <bib:Memo rdf:about="#tlg0057.tlg047_fichtner">
-    <rdf:value>fichtner: 50</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg047_rem">
     <rdf:value>Note: le texte imprimé par Kühn sous le titre De totius morbi temporibus constitue en réalité le livre II du traité De morborum temporibus</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg047.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg047.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg047.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>50</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2740,11 +2662,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg048">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg048</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg048</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2761,7 +2683,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg048_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg048_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg048_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg048_fichtner"/>
+    <dc:coverage>51</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg048_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τύπων</rdf:value>
@@ -2775,16 +2697,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg048_CGTabbr">
     <rdf:value>CGTAbbr: Typ.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg048_fichtner">
-    <rdf:value>fichtner: 51</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg048.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg048.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg048.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>51</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2805,11 +2725,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg049">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg049</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg049</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2826,7 +2746,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg049_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg049_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg049_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg049_fichtner"/>
+    <dc:coverage>52</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg049_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς τοὺς περὶ τύπων γράψαντας ἢ περὶ περιόδων</rdf:value>
@@ -2840,16 +2760,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg049_CGTabbr">
     <rdf:value>CGTAbbr: Adv. Typ. Scr.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg049_fichtner">
-    <rdf:value>fichtner: 52</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg049.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg049.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg049.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>52</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2870,11 +2788,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg050">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg050</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg050</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2891,7 +2809,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg050_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg050_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg050_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg050_fichtner"/>
+    <dc:coverage>53</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg050_CMGgrc">
     <rdf:value>CMGgrc: Περὶ πλήθους</rdf:value>
@@ -2905,16 +2823,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg050_CGTabbr">
     <rdf:value>CGTAbbr: Plen.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg050_fichtner">
-    <rdf:value>fichtner: 53</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg050.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg050.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg050.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>53</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2935,11 +2851,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg051">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg051</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg051</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -2956,7 +2872,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg051_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg051_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg051_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg051_fichtner"/>
+    <dc:coverage>54</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg051_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τρόμου καὶ παλμοῦ καὶ σπασμοῦ καὶ ῥίγους</rdf:value>
@@ -2970,16 +2886,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg051_CGTabbr">
     <rdf:value>CGTAbbr: Trem. Palp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg051_fichtner">
-    <rdf:value>fichtner: 54</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg051.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg051.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg051.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>54</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3000,11 +2914,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg052">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg052</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg052</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3021,7 +2935,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg052_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg052_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg052_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg052_fichtner"/>
+    <dc:coverage>55</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg052_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τοῦ παρ’ Ἱπποκράτει κώματος</rdf:value>
@@ -3035,16 +2949,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg052_CGTabbr">
     <rdf:value>CGTAbbr: Hipp. Com.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg052_fichtner">
-    <rdf:value>fichtner: 55</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg052.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg052.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg052.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>55</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3065,11 +2977,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg053">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg053</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg053</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3086,7 +2998,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg053_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg053_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg053_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg053_fichtner"/>
+    <dc:coverage>56</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg053_CMGgrc">
     <rdf:value>CMGgrc: Περὶ μαρασμοῦ</rdf:value>
@@ -3100,16 +3012,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg053_CGTabbr">
     <rdf:value>CGTAbbr: Marc.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg053_fichtner">
-    <rdf:value>fichtner: 56</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg053.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg053.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg053.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>56</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3130,11 +3040,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg054">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg054</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg054</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3151,7 +3061,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg054_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg054_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg054_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg054_fichtner"/>
+    <dc:coverage>57</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg054_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν παρὰ φύσιν ὄγκων</rdf:value>
@@ -3165,16 +3075,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg054_CGTabbr">
     <rdf:value>CGTAbbr: Tum. Pr. Nat.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg054_fichtner">
-    <rdf:value>fichtner: 57</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg054.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg054.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg054.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>57</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3195,11 +3103,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg055">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg055</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg055</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3216,7 +3124,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg055_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg055_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg055_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg055_fichtner"/>
+    <dc:coverage>58</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg055_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ἀνωμάλου δυσκρασίας</rdf:value>
@@ -3230,16 +3138,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg055_CGTabbr">
     <rdf:value>CGTAbbr: Inaequ. Int.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg055_fichtner">
-    <rdf:value>fichtner: 58</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg055.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg055.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg055.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>58</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3260,11 +3166,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg056">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg056</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg056</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3281,7 +3187,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg056_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg056_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg056_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg056_fichtner"/>
+    <dc:coverage>59</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg056_CMGgrc">
     <rdf:value>CMGgrc: Περὶ δυσπνοίας</rdf:value>
@@ -3295,16 +3201,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg056_CGTabbr">
     <rdf:value>CGTAbbr: Diff. Resp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg056_fichtner">
-    <rdf:value>fichtner: 59</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg056.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg056.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg056.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>59</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3325,11 +3229,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg057">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg057</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg057</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3346,7 +3250,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg057_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg057_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg057_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg057_fichtner"/>
+    <dc:coverage>60</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg057_CMGgrc">
     <rdf:value>CMGgrc: Περὶ διαγνώσεως τῶν πεπονθότων τόπων</rdf:value>
@@ -3360,16 +3264,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg057_CGTabbr">
     <rdf:value>CGTAbbr: Loc. Aff.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg057_fichtner">
-    <rdf:value>fichtner: 60</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg057.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg057.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg057.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>60</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3390,11 +3292,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg058">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg058</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg058</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3411,7 +3313,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg058_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg058_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg058_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg058_fichtner"/>
+    <dc:coverage>61</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg058_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν σφυγμῶν τοῖς εἰσαγομένοις</rdf:value>
@@ -3425,16 +3327,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg058_CGTabbr">
     <rdf:value>CGTAbbr: Puls.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg058_fichtner">
-    <rdf:value>fichtner: 61</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg058.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg058.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg058.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>61</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3455,11 +3355,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg059">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg059</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg059</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3476,7 +3376,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg059_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg059_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg059_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg059_fichtner"/>
+    <dc:coverage>62</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg059_CMGgrc">
     <rdf:value>CMGgrc: Περὶ διαφορᾶς σφυγμῶν</rdf:value>
@@ -3490,16 +3390,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg059_CGTabbr">
     <rdf:value>CGTAbbr: Diff. Puls.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg059_fichtner">
-    <rdf:value>fichtner: 62</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg059.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg059.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg059.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>62</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3520,11 +3418,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg060">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg060</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg060</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3541,7 +3439,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg060_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg060_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg060_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg060_fichtner"/>
+    <dc:coverage>63</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg060_CMGgrc">
     <rdf:value>CMGgrc: Περὶ διαγνώσεως σφυγμῶν</rdf:value>
@@ -3555,16 +3453,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg060_CGTabbr">
     <rdf:value>CGTAbbr: Dig. Puls.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg060_fichtner">
-    <rdf:value>fichtner: 63</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg060.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg060.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg060.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>63</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3585,11 +3481,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg061">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg061</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg061</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3606,7 +3502,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg061_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg061_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg061_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg061_fichtner"/>
+    <dc:coverage>64</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg061_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν ἐν τοῖς σφυγμοῖς αἰτιῶν</rdf:value>
@@ -3620,16 +3516,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg061_CGTabbr">
     <rdf:value>CGTAbbr: Caus. Puls.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg061_fichtner">
-    <rdf:value>fichtner: 64</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg061.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg061.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg061.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>64</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3650,11 +3544,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg062">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg062</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg062</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3671,7 +3565,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg062_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg062_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg062_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg062_fichtner"/>
+    <dc:coverage>65</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg062_CMGgrc">
     <rdf:value>CMGgrc: Περὶ προγνώσεως διὰ σφυγμῶν</rdf:value>
@@ -3685,16 +3579,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg062_CGTabbr">
     <rdf:value>CGTAbbr: Praes. Puls.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg062_fichtner">
-    <rdf:value>fichtner: 65</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg062.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg062.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg062.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>65</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3715,11 +3607,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg063">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg063</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg063</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3736,7 +3628,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg063_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg063_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg063_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg063_fichtner"/>
+    <dc:coverage>66</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg063_rem"/>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg063_CMGgrc">
@@ -3751,19 +3643,17 @@
   <bib:Memo rdf:about="#tlg0057.tlg063_CGTabbr">
     <rdf:value>CGTAbbr: Syn. Puls.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg063_fichtner">
-    <rdf:value>fichtner: 66</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg063_rem">
     <rdf:value>Note: selon la Galenus und Galenus - Gesamtübersicht du CMG, la paternité de ce traité est discutée. le texte grec s’arrête à la p. 533 mais la traduction latine va jusqu’à la p. 549</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg063.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg063.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg063.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>66</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3784,11 +3674,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg064">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg064</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg064</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3805,7 +3695,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg064_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg064_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg064_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg064_fichtner"/>
+    <dc:coverage>67</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg064_CMGgrc">
     <rdf:value>CMGgrc: Περὶ κρίσεων</rdf:value>
@@ -3819,16 +3709,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg064_CGTabbr">
     <rdf:value>CGTAbbr: Cris.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg064_fichtner">
-    <rdf:value>fichtner: 67</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg064.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg064.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg064.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>67</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3849,11 +3737,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg065">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg065</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg065</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3870,7 +3758,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg065_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg065_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg065_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg065_fichtner"/>
+    <dc:coverage>68</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg065_CMGgrc">
     <rdf:value>CMGgrc: Περὶ κρισίμων ἡμερῶν</rdf:value>
@@ -3884,16 +3772,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg065_CGTabbr">
     <rdf:value>CGTAbbr: Di. Dec.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg065_fichtner">
-    <rdf:value>fichtner: 68</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg065.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg065.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg065.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>68</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3914,11 +3800,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg066">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg066</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg066</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3935,7 +3821,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg066_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg066_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg066_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg066_fichtner"/>
+    <dc:coverage>69</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg066_CMGgrc">
     <rdf:value>CMGgrc: Θεραπευτικὴ μέθοδος</rdf:value>
@@ -3949,16 +3835,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg066_CGTabbr">
     <rdf:value>CGTAbbr: MM</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg066_fichtner">
-    <rdf:value>fichtner: 69</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg066.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg066.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg066.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>69</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -3979,11 +3863,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg067">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg067</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg067</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4000,7 +3884,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg067_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg067_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg067_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg067_fichtner"/>
+    <dc:coverage>70</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg067_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς Γλαύκωνα θεραπευτικὰ</rdf:value>
@@ -4014,16 +3898,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg067_CGTabbr">
     <rdf:value>CGTAbbr: MMG</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg067_fichtner">
-    <rdf:value>fichtner: 70</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg067.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg067.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg067.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>70</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4044,11 +3926,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg068">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg068</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg068</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4065,7 +3947,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg068_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg068_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg068_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg068_fichtner"/>
+    <dc:coverage>71</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg068_CMGgrc">
     <rdf:value>CMGgrc: Περὶ φλεβοτομίας πρὸς Ἐρασίστρατον</rdf:value>
@@ -4079,16 +3961,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg068_CGTabbr">
     <rdf:value>CGTAbbr: Ven. Sect. Er.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg068_fichtner">
-    <rdf:value>fichtner: 71</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg068.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg068.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg068.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>71</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4109,11 +3989,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg069">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg069</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg069</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4130,7 +4010,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg069_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg069_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg069_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg069_fichtner"/>
+    <dc:coverage>72</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg069_CMGgrc">
     <rdf:value>CMGgrc: Περὶ φλεβοτομίας πρὸς Ἐρασιστρατείους τοὺς ἐν Ῥώμῃ</rdf:value>
@@ -4144,16 +4024,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg069_CGTabbr">
     <rdf:value>CGTAbbr: Ven. Sect. Er. Rom.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg069_fichtner">
-    <rdf:value>fichtner: 72</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg069.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg069.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg069.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>72</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4174,11 +4052,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg070">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg070</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg070</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4195,7 +4073,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg070_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg070_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg070_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg070_fichtner"/>
+    <dc:coverage>73</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg070_CMGgrc">
     <rdf:value>CMGgrc: Περὶ φλεβοτομίας θεραπευτικὸν</rdf:value>
@@ -4209,16 +4087,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg070_CGTabbr">
     <rdf:value>CGTAbbr: Cur. Rat. Ven. Sect.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg070_fichtner">
-    <rdf:value>fichtner: 73</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg070.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg070.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg070.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>73</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4239,11 +4115,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg071">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg071</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg071</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4260,7 +4136,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg071_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg071_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg071_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg071_fichtner"/>
+    <dc:coverage>74</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg071_CMGgrc">
     <rdf:value>CMGgrc: Περὶ βδελλῶν, ἀντισπάσεως, σικύας καὶ ἐγχαράξεως καὶ κατασχασμοῦ</rdf:value>
@@ -4274,16 +4150,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg071_CGTabbr">
     <rdf:value>CGTAbbr: HRCIS</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg071_fichtner">
-    <rdf:value>fichtner: 74</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg071.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg071.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg071.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>74</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4304,11 +4178,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg072">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg072</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg072</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4325,7 +4199,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg072_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg072_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg072_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg072_fichtner"/>
+    <dc:coverage>75</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg072_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῆς τῶν καθαιρόντων φαρμάκων δυνάμεως</rdf:value>
@@ -4339,16 +4213,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg072_CGTabbr">
     <rdf:value>CGTAbbr: Purg. Med. Fac.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg072_fichtner">
-    <rdf:value>fichtner: 75</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg072.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg072.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg072.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>75</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4369,11 +4241,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg073">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg073</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg073</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4386,22 +4258,20 @@
     <dc:title>*Quos quibus catharticis medicamentis et quando purgare oporteat*</dc:title>
     <dc:relation rdf:resource="#tlg0057.tlg073.1st1K-grc1"/>
     <dc:relation rdf:resource="#tlg0057.tlg073.1st1K-grc2"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg073_fichtner"/>
+    <dc:coverage>76</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg073_rem"/>
   </bib:Book>
-  <bib:Memo rdf:about="#tlg0057.tlg073_fichtner">
-    <rdf:value>fichtner: 76</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg073_rem">
     <rdf:value>Note: extraits réunis par Oribase, p. 221.10-227.10 Raeder (texte déjà présent dans d’autres traités édités par Kühn)</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg073.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg073.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg073.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>76</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4420,11 +4290,12 @@
   </bib:Book>
   <bib:Book rdf:about="#tlg0057.tlg073.1st1K-grc2">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg073.1st1K-grc2</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg073.1st1K-grc2</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>76</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4446,11 +4317,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg074">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg074</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg074</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4467,7 +4338,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg074_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg074_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg074_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg074_fichtner"/>
+    <dc:coverage>77</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg074_CMGgrc">
     <rdf:value>CMGgrc: Τῷ ἐπιλήπτῳ παιδὶ ὑποθήκη</rdf:value>
@@ -4481,16 +4352,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg074_CGTabbr">
     <rdf:value>CGTAbbr: Puer. Epil.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg074_fichtner">
-    <rdf:value>fichtner: 77</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg074.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg074.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg074.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>77</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4511,11 +4380,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg075">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg075</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg075</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4532,7 +4401,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg075_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg075_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg075_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg075_fichtner"/>
+    <dc:coverage>78</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg075_rem"/>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg075_CMGgrc">
@@ -4547,19 +4416,17 @@
   <bib:Memo rdf:about="#tlg0057.tlg075_CGTabbr">
     <rdf:value>CGTAbbr: SMT</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg075_fichtner">
-    <rdf:value>fichtner: 78</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg075_rem">
     <rdf:value>Note: éd. Kühn: livres I à VI dans le vol. 11 (p. 379-892), livres VII à XI dans le vol. 12 (p. 1-377)</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg075.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg075.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg075.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>78</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4580,11 +4447,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg076">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg076</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg076</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4601,7 +4468,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg076_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg076_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg076_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg076_fichtner"/>
+    <dc:coverage>80</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg076_rem"/>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg076_CMGgrc">
@@ -4616,19 +4483,17 @@
   <bib:Memo rdf:about="#tlg0057.tlg076_CGTabbr">
     <rdf:value>CGTAbbr: Comp. Med. Loc.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg076_fichtner">
-    <rdf:value>fichtner: 80</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg076_rem">
     <rdf:value>Note: éd. Kühn: livres I à VI dans le vol. 12 (p. 378-1007), livres VII à X dans le vol. 13 (p. 1-361)</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg076.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg076.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg076.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>80</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4649,11 +4514,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg077">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg077</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg077</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4670,7 +4535,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg077_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg077_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg077_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg077_fichtner"/>
+    <dc:coverage>82</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg077_CMGgrc">
     <rdf:value>CMGgrc: Περὶ συνθέσεως φαρμάκων τῶν κατὰ γένη</rdf:value>
@@ -4684,16 +4549,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg077_CGTabbr">
     <rdf:value>CGTAbbr: Comp. Med. Gen.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg077_fichtner">
-    <rdf:value>fichtner: 82</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg077.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg077.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg077.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>82</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4714,11 +4577,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg078">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg078</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg078</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4735,7 +4598,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg078_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg078_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg078_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg078_fichtner"/>
+    <dc:coverage>83</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg078_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ἀντιδότων</rdf:value>
@@ -4749,16 +4612,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg078_CGTabbr">
     <rdf:value>CGTAbbr: Ant.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg078_fichtner">
-    <rdf:value>fichtner: 83</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg078.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg078.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg078.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>83</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4779,11 +4640,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg082">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg082</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg082</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4800,7 +4661,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg082_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg082_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg082_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg082_fichtner"/>
+    <dc:coverage>87</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg082_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν παρὰ τὴν λέξιν σοφισμάτων</rdf:value>
@@ -4814,16 +4675,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg082_CGTabbr">
     <rdf:value>CGTAbbr: Soph.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg082_fichtner">
-    <rdf:value>fichtner: 87</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg082.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg082.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg082.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>87</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4844,11 +4703,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg083">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg083</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg083</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4865,7 +4724,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg083_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg083_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg083_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg083_fichtner"/>
+    <dc:coverage>88</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg083_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τοῦ προγινώσκειν πρὸς Ἐπιγένην</rdf:value>
@@ -4879,16 +4738,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg083_CGTabbr">
     <rdf:value>CGTAbbr: Praen.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg083_fichtner">
-    <rdf:value>fichtner: 88</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg083.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg083.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg083.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>88</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4909,11 +4766,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg084">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg084</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg084</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4930,7 +4787,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg084_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg084_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg084_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg084_fichtner"/>
+    <dc:coverage>27</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg084_rem"/>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg084_CMGgrc">
@@ -4945,19 +4802,17 @@
   <bib:Memo rdf:about="#tlg0057.tlg084_CGTabbr">
     <rdf:value>CGTAbbr: Sub. Nat. Fac. fragm.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg084_fichtner">
-    <rdf:value>fichtner: 27</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg084_rem">
     <rdf:value>Note: fragment du traité De propriis placitis dont le texte entier a désormais été retrouvé (Fichtner-Bibliographie, n° 309)</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg084.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg084.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg084.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>27</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4978,11 +4833,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg085">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg085</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg085</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -4999,7 +4854,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg085_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg085_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg085_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg085_fichtner"/>
+    <dc:coverage>90</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg085_CMGgrc">
     <rdf:value>CMGgrc: Εἱς τὸ περὶ φύσιος ἀνθρώπου βιβλίον Ἱπποκράτους ὑπόμνημα</rdf:value>
@@ -5013,16 +4868,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg085_CGTabbr">
     <rdf:value>CGTAbbr: HNH</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg085_fichtner">
-    <rdf:value>fichtner: 90</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg085.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg085.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg085.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>90</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5043,11 +4896,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg086">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg086</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg086</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5059,22 +4912,20 @@
     </bib:authors>
     <dc:title/>
     <dc:relation rdf:resource="#tlg0057.tlg086.1st1K-grc1"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg086_fichtner"/>
+    <dc:coverage>91</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg086_rem"/>
   </bib:Book>
-  <bib:Memo rdf:about="#tlg0057.tlg086_fichtner">
-    <rdf:value>fichtner: 91</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg086_rem">
     <rdf:value>Note: le texte imprimé par Kühn sous le titre In Hippocratis vel Polybi Opus de Salubri Victus Ratione Privatorum Commentarius constitue en réalité le livre III du traité In Hippocratis De natura hominis commentaria</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg086.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg086.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg086.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>91</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5095,11 +4946,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg087">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg087</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg087</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5116,7 +4967,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg087_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg087_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg087_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg087_fichtner"/>
+    <dc:coverage>93</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg087_CMGgrc">
     <rdf:value>CMGgrc: Εἰς τὸ περὶ διαίτης ὀξέων Ἱπποκράτους ὑπομνήματα</rdf:value>
@@ -5130,16 +4981,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg087_CGTabbr">
     <rdf:value>CGTAbbr: HVA</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg087_fichtner">
-    <rdf:value>fichtner: 93</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg087.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg087.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg087.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>93</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5158,13 +5007,76 @@
   </bib:Book>
 
 
+  <bib:Book rdf:about="#tlg0057.tlg088">
+    <z:itemType>book</z:itemType>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg088</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <bib:authors>
+      <rdf:Seq>
+        <rdf:li>
+          <foaf:Person>
+            <foaf:surname>Galenus</foaf:surname>
+          </foaf:Person>
+        </rdf:li>
+      </rdf:Seq>
+    </bib:authors>
+    <dc:title>In Hippocratis Prorrheticum I commentaria</dc:title>
+    <z:shortTitle>In Hipp. Prorrh. I comm.</z:shortTitle>
+    <dc:relation rdf:resource="#tlg0057.tlg088.1st1K-grc1"/>
+    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg088_CMGgrc"/>
+    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg088_BMfr"/>
+    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg088_CGTen"/>
+    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg088_CGTabbr"/>
+    <dc:coverage>95</dc:coverage>
+  </bib:Book>
+  <bib:Memo rdf:about="#tlg0057.tlg088_CMGgrc">
+    <rdf:value>CMGgrc: Εἰς τὸ προρρητικὸν Ἱπποκράτους ὑπομνήματα</rdf:value>
+  </bib:Memo>
+  <bib:Memo rdf:about="#tlg0057.tlg088_BMfr">
+    <rdf:value>BMfr: Commentaire au Prorrhétique I d’Hippocrate</rdf:value>
+  </bib:Memo>
+  <bib:Memo rdf:about="#tlg0057.tlg088_CGTen">
+    <rdf:value>CGTen: Commentary on Hippocrates’ ‘Prorrhetics’</rdf:value>
+  </bib:Memo>
+  <bib:Memo rdf:about="#tlg0057.tlg088_CGTabbr">
+    <rdf:value>CGTAbbr: Hipp. Prorrh.</rdf:value>
+  </bib:Memo>
+  <bib:Book rdf:about="#tlg0057.tlg088.1st1K-grc1">
+    <z:itemType>book</z:itemType>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg088.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>95</dc:coverage>
+    <bib:authors>
+      <rdf:Seq>
+        <rdf:li>
+          <foaf:Person>
+            <foaf:surname>Galenus</foaf:surname>
+          </foaf:Person>
+        </rdf:li>
+      </rdf:Seq>
+    </bib:authors>
+    <dc:title>In Hippocratis Praedictionum</dc:title>
+    <dc:relation rdf:resource="#tlg0057.tlg088"/>
+    <prism:edition>Karl Gottlob Kühn</prism:edition>
+    <dc:date>1829</dc:date>
+    <prism:volume>16</prism:volume>
+    <z:numPages>489-840</z:numPages>
+  </bib:Book>
+
+
   <bib:Book rdf:about="#tlg0057.tlg093">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg093</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg093</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5181,7 +5093,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg093_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg093_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg093_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg093_fichtner"/>
+    <dc:coverage>103</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg093_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς Λύκον</rdf:value>
@@ -5195,16 +5107,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg093_CGTabbr">
     <rdf:value>CGTAbbr: Adv. Lyc.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg093_fichtner">
-    <rdf:value>fichtner: 103</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg093.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg093.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg093.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>103</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5225,11 +5135,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg094">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg094</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg094</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5246,7 +5156,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg094_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg094_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg094_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg094_fichtner"/>
+    <dc:coverage>104</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg094_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς τὰ ἀντειρημένα τοῖς Ἱπποκράτους ἀφορισμοῖς ὑπὸ Ἰουλιανοῦ</rdf:value>
@@ -5260,16 +5170,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg094_CGTabbr">
     <rdf:value>CGTAbbr: Adv. Jul.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg094_fichtner">
-    <rdf:value>fichtner: 104</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg094.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg094.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg094.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>104</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5290,11 +5198,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg095">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg095</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg095</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5311,7 +5219,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg095_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg095_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg095_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg095_fichtner"/>
+    <dc:coverage>105</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg095_CMGgrc">
     <rdf:value>CMGgrc: Εἰς τὸ περὶ ἀρθρῶν βιβλίον Ἱπποκράτους ὑπομνήματα</rdf:value>
@@ -5325,16 +5233,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg095_CGTabbr">
     <rdf:value>CGTAbbr: Hipp. Art.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg095_fichtner">
-    <rdf:value>fichtner: 105</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg095.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg095.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg095.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>105</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5355,11 +5261,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg096">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg096</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg096</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5371,22 +5277,20 @@
     </bib:authors>
     <dc:title/>
     <dc:relation rdf:resource="#tlg0057.tlg096.1st1K-grc1"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg096_fichtner"/>
+    <dc:coverage>106</dc:coverage>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg096_rem"/>
   </bib:Book>
-  <bib:Memo rdf:about="#tlg0057.tlg096_fichtner">
-    <rdf:value>fichtner: 106</rdf:value>
-  </bib:Memo>
   <bib:Memo rdf:about="#tlg0057.tlg096_rem">
     <rdf:value>Note: le texte imprimé par Kühn sous le titre De Humero iis Modis Prolapso quos Hippocrates non Vidit constitue en réalité le livre II du traité In Hippocratis De articulis commentaria</rdf:value>
   </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg096.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg096.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg096.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>106</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5407,11 +5311,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg099">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg099</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg099</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5428,7 +5332,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg099_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg099_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg099_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg099_fichtner"/>
+    <dc:coverage>109</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg099_CMGgrc">
     <rdf:value>CMGgrc: Εἰς τὸ προγνωστικὸν Ἱπποκράτους ὑπομνήματα</rdf:value>
@@ -5442,16 +5346,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg099_CGTabbr">
     <rdf:value>CGTAbbr: Hipp. Prog. </rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg099_fichtner">
-    <rdf:value>fichtner: 109</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg099.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg099.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg099.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>109</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5472,11 +5374,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg100">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg100</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg100</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5493,7 +5395,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg100_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg100_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg100_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg100_fichtner"/>
+    <dc:coverage>110</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg100_CMGgrc">
     <rdf:value>CMGgrc: Εἰς τὸ Ἱπποκράτους περὶ ἀγμῶν ὑπομνήματα</rdf:value>
@@ -5507,16 +5409,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg100_CGTabbr">
     <rdf:value>CGTAbbr: Hipp. Fract.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg100_fichtner">
-    <rdf:value>fichtner: 110</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg100.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg100.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg100.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>110</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5537,11 +5437,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg101">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg101</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg101</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5558,7 +5458,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg101_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg101_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg101_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg101_fichtner"/>
+    <dc:coverage>111</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg101_CMGgrc">
     <rdf:value>CMGgrc: Εἰς τὸ Ἱπποκράτους κατ’ ἰητρεῖον ὑπομνήματα</rdf:value>
@@ -5572,16 +5472,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg101_CGTabbr">
     <rdf:value>CGTAbbr: Hipp. Off. Med.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg101_fichtner">
-    <rdf:value>fichtner: 111</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg101.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg101.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg101.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>111</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5602,11 +5500,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg102">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg102</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg102</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5623,7 +5521,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg102_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg102_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg102_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg102_fichtner"/>
+    <dc:coverage>112</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg102_CMGgrc">
     <rdf:value>CMGgrc: Περὶ μυῶν ἀνατομῆς</rdf:value>
@@ -5637,16 +5535,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg102_CGTabbr">
     <rdf:value>CGTAbbr: Musc. Diss.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg102_fichtner">
-    <rdf:value>fichtner: 112</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg102.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg102.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg102.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>112</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5667,11 +5563,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg114">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg114</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg114</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5688,7 +5584,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg114_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg114_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg114_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg114_fichtner"/>
+    <dc:coverage>20</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg114_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν τῆς ἀναπνοῆς αἰτιῶν</rdf:value>
@@ -5702,16 +5598,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg114_CGTabbr">
     <rdf:value>CGTAbbr: Caus. Resp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg114_fichtner">
-    <rdf:value>fichtner: 20</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg114.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg114.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg114.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>20</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5732,11 +5626,11 @@
 
   <bib:Book rdf:about="#tlg0530.tlg043">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg043</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg043</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5753,7 +5647,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg043_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg043_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg043_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg043_fichtner"/>
+    <dc:coverage>5</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0530.tlg043_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς Θρασύβουλον περὶ ἀρίστης αἱρέσεως</rdf:value>
@@ -5767,16 +5661,14 @@
   <bib:Memo rdf:about="#tlg0530.tlg043_CGTabbr">
     <rdf:value>CGTAbbr: Opt. Sect.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0530.tlg043_fichtner">
-    <rdf:value>fichtner: 5</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0530.tlg043.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg043.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg043.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>5</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5797,11 +5689,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg079">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg079</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg079</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5818,7 +5710,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg079_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg079_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg079_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg079_fichtner"/>
+    <dc:coverage>84</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg079_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς Πίσωνα περὶ τῆς θηριακῆς</rdf:value>
@@ -5832,16 +5724,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg079_CGTabbr">
     <rdf:value>CGTAbbr: Ther. Pis.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg079_fichtner">
-    <rdf:value>fichtner: 84</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg079.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg079.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg079.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>84</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5862,11 +5752,11 @@
 
   <bib:Book rdf:about="#tlg0530.tlg032">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg032</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg032</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5883,7 +5773,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg032_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg032_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg032_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg032_fichtner"/>
+    <dc:coverage>85</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0530.tlg032_CMGgrc">
     <rdf:value>CMGgrc: Περὶ θηριακῆς πρὸς Παμφιλιανόν</rdf:value>
@@ -5897,16 +5787,14 @@
   <bib:Memo rdf:about="#tlg0530.tlg032_CGTabbr">
     <rdf:value>CGTAbbr: Ther. Pamph.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0530.tlg032_fichtner">
-    <rdf:value>fichtner: 85</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0530.tlg032.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg032.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg032.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>85</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5927,11 +5815,11 @@
 
   <bib:Book rdf:about="#tlg0530.tlg029">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg029</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg029</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5948,7 +5836,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg029_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg029_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg029_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg029_fichtner"/>
+    <dc:coverage>86</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0530.tlg029_CMGgrc">
     <rdf:value>CMGgrc: Περὶ εὐπορίστων</rdf:value>
@@ -5962,16 +5850,14 @@
   <bib:Memo rdf:about="#tlg0530.tlg029_CGTabbr">
     <rdf:value>CGTAbbr: Rem. Parab.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0530.tlg029_fichtner">
-    <rdf:value>fichtner: 86</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0530.tlg029.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg029.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg029.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>86</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -5992,11 +5878,11 @@
 
   <bib:Book rdf:about="#tlg0530.tlg012">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg012</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg012</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6013,7 +5899,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg012_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg012_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg012_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg012_fichtner"/>
+    <dc:coverage>89</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0530.tlg012_CMGgrc">
     <rdf:value>CMGgrc: Εἰσαγωγὴ ἢ ἰατρός</rdf:value>
@@ -6027,16 +5913,14 @@
   <bib:Memo rdf:about="#tlg0530.tlg012_CGTabbr">
     <rdf:value>CGTAbbr: Int.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0530.tlg012_fichtner">
-    <rdf:value>fichtner: 89</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0530.tlg012.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg012.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg012.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>89</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6057,11 +5941,11 @@
 
   <bib:Book rdf:about="#tlg0530.tlg005">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg005</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg005</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6078,7 +5962,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg005_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg005_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg005_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg005_fichtner"/>
+    <dc:coverage>107</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0530.tlg005_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν ἐπιδέσμων</rdf:value>
@@ -6092,16 +5976,14 @@
   <bib:Memo rdf:about="#tlg0530.tlg005_CGTabbr">
     <rdf:value>CGTAbbr: Fasc.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0530.tlg005_fichtner">
-    <rdf:value>fichtner: 107</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0530.tlg005.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg005.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg005.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>107</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6122,11 +6004,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg040">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg040</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg040</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6143,7 +6025,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg040_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg040_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg040_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg040_fichtner"/>
+    <dc:coverage>41</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg040_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῆς ἐξ ἐνυπνίων διαγνώσεως</rdf:value>
@@ -6157,16 +6039,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg040_CGTabbr">
     <rdf:value>CGTAbbr: Dig. Insomn.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg040_fichtner">
-    <rdf:value>fichtner: 41</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg040.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg040.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg040.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>41</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6187,11 +6067,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg033">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg033</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg033</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6208,7 +6088,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg033_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg033_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg033_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg033_fichtner"/>
+    <dc:coverage>34</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg033_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς Θρασύβουλον βιβλίον, πότερον ἰατρικῆς ἢ γυμναστικῆς ἐστι τὸ ὑγιεινόν</rdf:value>
@@ -6222,16 +6102,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg033_CGTabbr">
     <rdf:value>CGTAbbr: Thras.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg033_fichtner">
-    <rdf:value>fichtner: 34</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg033.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg033.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg033.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>34</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6252,11 +6130,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg019">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg019</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg019</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6274,7 +6152,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg019_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg019_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg019_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg019_fichtner"/>
+    <dc:coverage>349</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg019_CMGgrc">
     <rdf:value>CMGgrc: Περὶ λεπτυνούσης διαίτης</rdf:value>
@@ -6288,16 +6166,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg019_CGTabbr">
     <rdf:value>CGTAbbr: Vict. Att.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg019_fichtner">
-    <rdf:value>fichtner: 349</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg019.opp-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg019.opp-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg019.opp-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>349</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6316,11 +6192,12 @@
   </bib:Book>
   <bib:Book rdf:about="#tlg0057.tlg019.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg019.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg019.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>349</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6341,11 +6218,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg037">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg037</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg037</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6362,7 +6239,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg037_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg037_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg037_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg037_fichtner"/>
+    <dc:coverage>38</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg037_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῶν ἐν ταῖς τροφαῖς δυνάμεων</rdf:value>
@@ -6376,16 +6253,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg037_CGTabbr">
     <rdf:value>CGTAbbr: Alim. Fac.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg037_fichtner">
-    <rdf:value>fichtner: 38</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg037.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg037.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg037.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>38</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6406,11 +6281,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg081">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg081</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg081</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6427,7 +6302,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg081_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg081_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg081_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg081_fichtner"/>
+    <dc:coverage>402</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg081_CMGgrc">
     <rdf:value>CMGgrc: Εἰσαγωγὴ διαλεκτική</rdf:value>
@@ -6441,16 +6316,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg081_CGTabbr">
     <rdf:value>CGTAbbr: Inst. log.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg081_fichtner">
-    <rdf:value>fichtner: 402</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg081.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg081.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg081.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>402</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6471,11 +6344,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg103">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg103</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg103</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6492,7 +6365,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg103_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg103_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg103_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg103_fichtner"/>
+    <dc:coverage>202</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg103_CMGgrc">
     <rdf:value>CMGgrc: Περὶ ἐθῶν, Πρὸς Φαβωρῖνον</rdf:value>
@@ -6506,16 +6379,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg103_CGTabbr">
     <rdf:value>CGTAbbr: Cons.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg103_fichtner">
-    <rdf:value>fichtner: 202</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg103.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg103.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg103.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>202</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6536,11 +6407,11 @@
 
   <bib:Book rdf:about="#tlg0057.tlg107">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg107</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg107</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6557,7 +6428,7 @@
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg107_BMfr"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg107_CGTen"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg107_CGTabbr"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0057.tlg107_fichtner"/>
+    <dc:coverage>235</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0057.tlg107_CMGgrc">
     <rdf:value>CMGgrc: Περὶ τῆς ἰατρικῆς ἐμπειρίας</rdf:value>
@@ -6571,16 +6442,14 @@
   <bib:Memo rdf:about="#tlg0057.tlg107_CGTabbr">
     <rdf:value>CGTAbbr: Med. Exp.</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0057.tlg107_fichtner">
-    <rdf:value>fichtner: 235</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0057.tlg107.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0057.tlg107.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0057.tlg107.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>235</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6601,11 +6470,11 @@
 
   <bib:Book rdf:about="#tlg0530.tlg006">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg006</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg006</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
@@ -6619,21 +6488,19 @@
     <z:shortTitle>Ad Gaurum quomodo animetur fetus</z:shortTitle>
     <dc:relation rdf:resource="#tlg0530.tlg006.1st1K-grc1"/>
     <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg006_CMGgrc"/>
-    <dcterms:isReferencedBy rdf:resource="#tlg0530.tlg006_fichtner"/>
+    <dc:coverage>138</dc:coverage>
   </bib:Book>
   <bib:Memo rdf:about="#tlg0530.tlg006_CMGgrc">
     <rdf:value>CMGgrc: Πρὸς Γαῦρον περὶ τοῦ πῶς ἐμψυχοῦται τὰ ἔμβρυα</rdf:value>
   </bib:Memo>
-  <bib:Memo rdf:about="#tlg0530.tlg006_fichtner">
-    <rdf:value>fichtner: 138</rdf:value>
-  </bib:Memo>
   <bib:Book rdf:about="#tlg0530.tlg006.1st1K-grc1">
     <z:itemType>book</z:itemType>
-    <dc:subject>
-      <dcterms:LCC>
-        <rdf:value>tlg0530.tlg006.1st1K-grc1</rdf:value>
-      </dcterms:LCC>
-    </dc:subject>
+    <dc:identifier>
+      <dcterms:URI>
+        <rdf:value>urn:cts:greekLit:tlg0530.tlg006.1st1K-grc1</rdf:value>
+      </dcterms:URI>
+    </dc:identifier>
+    <dc:coverage>138</dc:coverage>
     <bib:authors>
       <rdf:Seq>
         <rdf:li>
