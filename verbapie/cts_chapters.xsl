@@ -49,7 +49,7 @@ TODO : prev / next and lots of other item metadata
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:variable>   
+  </xsl:variable>
   <xsl:variable name="auctor">
     <xsl:choose>
       <!-- avoid an xslt error if no cts file to get -->
