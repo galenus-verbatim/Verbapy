@@ -57,7 +57,6 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
   
   <xsl:template name="about">
     <xsl:param name="urn" select="@urn"/>
-    <xsl:text>#</xsl:text>
     <xsl:value-of select="substring-after($urn, 'urn:cts:greekLit:')"/>
   </xsl:template>
   
@@ -75,13 +74,14 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
       </xsl:variable>
       <bib:Book>
         <xsl:attribute name="rdf:about">
+          <xsl:text>#</xsl:text>
           <xsl:value-of select="$aboutWork"/>
         </xsl:attribute>
         <z:itemType>book</z:itemType>
         <dc:subject>
           <dcterms:LCC>
             <rdf:value>
-              <xsl:value-of select="@urn"/>
+              <xsl:value-of select="$aboutWork"/>
             </rdf:value>
           </dcterms:LCC>
         </dc:subject>
@@ -97,11 +97,14 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
           </rdf:Seq>
         </bib:authors>
         <dc:title>
+          <!--
           <xsl:if test="$no">
             <xsl:value-of select="$no"/>
             <xsl:text>. </xsl:text>
           </xsl:if>
           <xsl:value-of select="$titulus"/>
+          -->
+          <xsl:value-of select="$CMGla"/>
         </dc:title>
         <xsl:if test="$CMGabbr != ''">
           <z:shortTitle>
@@ -111,64 +114,57 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
         <xsl:for-each select="ti:edition">
           <dc:relation>
             <xsl:attribute name="rdf:resource">
+              <xsl:text>#</xsl:text>
               <xsl:call-template name="about"/>
             </xsl:attribute>
           </dc:relation>
         </xsl:for-each>
         <xsl:if test="$CMGgrc != ''">
-          <dcterms:isReferencedBy rdf:resource="{$aboutWork}_CMGgrc"/>
+          <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_CMGgrc"/>
         </xsl:if>
         <xsl:if test="$BMfr != ''">
-          <dcterms:isReferencedBy rdf:resource="{$aboutWork}_BMfr"/>
+          <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_BMfr"/>
         </xsl:if>
         <xsl:if test="$CGTen != ''">
-          <dcterms:isReferencedBy rdf:resource="{$aboutWork}_CGTen"/>
-        </xsl:if>
-        <xsl:if test="$CMGla != ''">
-          <dcterms:isReferencedBy rdf:resource="{$aboutWork}_CMGla"/>
+          <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_CGTen"/>
         </xsl:if>
         <xsl:if test="$CGTabbr != ''">
-          <dcterms:isReferencedBy rdf:resource="{$aboutWork}_CGTabbr"/>
+          <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_CGTabbr"/>
         </xsl:if>
         <xsl:if test="$fichtner != ''">
-          <dcterms:isReferencedBy rdf:resource="{$aboutWork}_fichtner"/>
+          <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_fichtner"/>
         </xsl:if>
         <xsl:if test="$rem != ''">
-          <dcterms:isReferencedBy rdf:resource="{$aboutWork}_rem"/>
+          <dcterms:isReferencedBy rdf:resource="#{$aboutWork}_rem"/>
         </xsl:if>
       </bib:Book>
       <xsl:if test="$CMGgrc != ''">
-        <bib:Memo rdf:about="{$aboutWork}_CMGgrc">
+        <bib:Memo rdf:about="#{$aboutWork}_CMGgrc">
           <rdf:value>CMGgrc: <xsl:value-of select="$CMGgrc"/></rdf:value>
         </bib:Memo>
       </xsl:if>
       <xsl:if test="$BMfr != ''">
-        <bib:Memo rdf:about="{$aboutWork}_BMfr">
+        <bib:Memo rdf:about="#{$aboutWork}_BMfr">
           <rdf:value>BMfr: <xsl:value-of select="$BMfr"/></rdf:value>
         </bib:Memo>
       </xsl:if>
       <xsl:if test="$CGTen != ''">
-        <bib:Memo rdf:about="{$aboutWork}_CGTen">
+        <bib:Memo rdf:about="#{$aboutWork}_CGTen">
           <rdf:value>CGTen: <xsl:value-of select="$CGTen"/></rdf:value>
         </bib:Memo>
       </xsl:if>
-      <xsl:if test="$CMGla != ''">
-        <bib:Memo rdf:about="{$aboutWork}_CMGla">
-          <rdf:value>CMGla: <xsl:value-of select="$CMGla"/></rdf:value>
-        </bib:Memo>
-      </xsl:if>
       <xsl:if test="$CGTabbr != ''">
-        <bib:Memo rdf:about="{$aboutWork}_CGTabbr">
+        <bib:Memo rdf:about="#{$aboutWork}_CGTabbr">
           <rdf:value>CGTAbbr: <xsl:value-of select="$CGTabbr"/></rdf:value>
         </bib:Memo>
       </xsl:if>
       <xsl:if test="$fichtner != ''">
-        <bib:Memo rdf:about="{$aboutWork}_fichtner">
+        <bib:Memo rdf:about="#{$aboutWork}_fichtner">
           <rdf:value>fichtner: <xsl:value-of select="$fichtner"/></rdf:value>
         </bib:Memo>
       </xsl:if>
       <xsl:if test="$rem != ''">
-        <bib:Memo rdf:about="{$aboutWork}_rem">
+        <bib:Memo rdf:about="#{$aboutWork}_rem">
           <rdf:value>Note: <xsl:value-of select="$rem"/></rdf:value>
         </bib:Memo>
       </xsl:if>
@@ -214,16 +210,16 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
           </xsl:choose>
         </xsl:variable>
         
+        <xsl:variable name="about">
+          <xsl:call-template name="about"/>
+        </xsl:variable>
         
-        <bib:Book>
-          <xsl:attribute name="rdf:about">
-            <xsl:call-template name="about"/>
-          </xsl:attribute>
+        <bib:Book rdf:about="#{$about}">
           <z:itemType>book</z:itemType>
           <dc:subject>
             <dcterms:LCC>
               <rdf:value>
-                <xsl:value-of select="@urn"/>
+                <xsl:value-of select="$about"/>
               </rdf:value>
             </dcterms:LCC>
           </dc:subject>
@@ -239,14 +235,11 @@ Input, a __cts_.xml for a work, output, zotero records, each edition is linked t
             </rdf:Seq>
           </bib:authors>
           <dc:title>
-            <xsl:if test="$no">
-              <xsl:value-of select="$no"/>
-              <xsl:text>. </xsl:text>
-            </xsl:if>
-            <xsl:value-of select="$titulus"/>
+            <xsl:value-of select="$tei/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"/>
           </dc:title>
           <dc:relation>
             <xsl:attribute name="rdf:resource">
+              <xsl:text>#</xsl:text>
               <xsl:value-of select="$aboutWork"/>
             </xsl:attribute>
           </dc:relation>
