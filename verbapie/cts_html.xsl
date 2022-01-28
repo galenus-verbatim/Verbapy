@@ -30,6 +30,12 @@ Split a single TEI file in a multi-pages site
     <xsl:apply-templates/>
   </xsl:template>
 
+  <xsl:template match="tei:teiHeader"/>
+
+  <xsl:template match="tei:TEI | tei:text | tei:body">
+    <xsl:apply-templates/>
+  </xsl:template>
+
   <xsl:template match="tei:add">
     <xsl:apply-templates/>
   </xsl:template>
@@ -134,13 +140,15 @@ Split a single TEI file in a multi-pages site
     <xsl:text>&#10;</xsl:text>
     <span class="lb">
       <xsl:choose>
-        <xsl:when test="@n">
+        <xsl:when test="@n != ''">
           <xsl:attribute name="data-line">
             <xsl:value-of select="@n"/>
           </xsl:attribute>
         </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="data-line"/>
+        </xsl:otherwise>
       </xsl:choose>
-      <xsl:call-template name="data-line"/>
     </span>
   </xsl:template>
   
@@ -293,7 +301,14 @@ Split a single TEI file in a multi-pages site
   <xsl:template match="tei:p">
     <xsl:text>&#10;</xsl:text>
     <p>
-      <xsl:call-template name="data-line"/>
+      <xsl:choose>
+        <xsl:when test="not(tei:lb)"/>
+        <xsl:when test="tei:lb[@n]"/>
+        <!-- text between <p> and first <lb/> -->
+        <xsl:when test="tei:lb[1]/preceding-sibling::text()[normalize-space(.)] != ''">
+          <xsl:call-template name="data-line"/>
+        </xsl:when>
+      </xsl:choose>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
