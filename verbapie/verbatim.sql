@@ -15,7 +15,7 @@ CREATE table opus (
     epoch       INTEGER NOT NULL,     -- ! file modified time
     octets      INTEGER NOT NULL,     -- ! filesize
     titulus     TEXT NOT NULL,        -- ! title of Opus
-    nav         BLOB,                 -- ? html table of centents if more than one chapter
+    nav         BLOB,                 -- ? html table of contents if more than one chapter
     -- should, bibliographic info
     auctor      TEXT,    -- ? name of an author
     editor      TEXT,    -- ? name of an editor
