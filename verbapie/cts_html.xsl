@@ -73,7 +73,7 @@ Split a single TEI file in a multi-pages site
   </xsl:template>
   
   <xsl:template match="tei:date">
-    <span class="{local-name()}">
+    <span class="{local-name()}" rel="{@notBefore}-{@notAfter}">
       <xsl:apply-templates/>
     </span>
   </xsl:template>
@@ -343,13 +343,23 @@ Split a single TEI file in a multi-pages site
   </xsl:template>
   
   <xsl:template match="tei:persName">
-    <a class="{local-name()}">
+    <a class="{local-name()}" type="{@type}" rel="{@nymRef}">
+		<a href="http://cahal.me/italikos/tablepers">
       <xsl:apply-templates/>
+	  </a>
     </a>
   </xsl:template>
   
+  <xsl:template match="tei:cit">
+	<i>
+		<a href="http://cahal.me/italikos/tablequote">
+			<xsl:apply-templates/>
+		</a>
+	</i>
+  </xsl:template>
+  
   <xsl:template match="tei:placeName">
-    <a class="{local-name()}">
+    <a class="{local-name()}" type="{@type}" rel="{@nymRef}">
       <xsl:apply-templates/>
     </a>
   </xsl:template>
@@ -398,7 +408,7 @@ Split a single TEI file in a multi-pages site
   </xsl:template>
   
   <xsl:template match="tei:supplied">
-    <xsl:apply-templates/>
+      <a class="{@reason}"><xsl:apply-templates/></a>
   </xsl:template>
   
   <xsl:template match="tei:surname">
