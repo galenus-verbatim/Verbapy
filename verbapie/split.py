@@ -40,7 +40,7 @@ etree.set_default_parser(
 # the default dir where to output files
 html_dir = None
 
-def corpus(paths_file: str, force=True):
+def corpus(paths_file: str, force=False):
     """Load a file with a list of paths, and process them"""
     global html_dir
 

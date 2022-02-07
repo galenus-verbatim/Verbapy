@@ -313,19 +313,19 @@ TODO : prev / next and lots of other item metadata
 
   <!-- Calculate the destination file name of a chapter, maybe used for  -->
   <xsl:template name="dst_name">
-    <xsl:for-each select="ancestor-or-self::tei:div">
-      <xsl:choose>
-        <xsl:when test="starts-with(@n, 'urn:cts:greekLit:')">
-          <xsl:value-of select="substring-after(@n, 'urn:cts:greekLit:')"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$src_name"/>
+    <!-- First ancestor !! -->
+    <xsl:choose>
+      <xsl:when test="starts-with(@n, 'urn:cts:greekLit:')">
+        <xsl:value-of select="substring-after(@n, 'urn:cts:greekLit:')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$src_name"/>
+        <xsl:for-each select="ancestor-or-self::tei:div[@type='textpart']">
           <xsl:text>.</xsl:text>
           <xsl:value-of select="@n"/>
-        </xsl:otherwise>
-      </xsl:choose>
-      <xsl:if test="position() != last()">.</xsl:if>
-    </xsl:for-each>
+        </xsl:for-each>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template name="text-before">

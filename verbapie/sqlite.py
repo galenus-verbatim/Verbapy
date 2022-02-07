@@ -8,6 +8,7 @@ Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 import argparse
 import csv
 import glob
+import importlib.resources as pkg_resources
 import json
 from typing import List
 import logging
@@ -18,6 +19,7 @@ import zlib
 # local
 import config
 import verbapie
+import res  # relative-import the *package* containing resources
 
 """Ingest a prepared folder of texts with vertical tsv lemma in sqlite"""
 
@@ -26,6 +28,17 @@ import verbapie
 con = cur = None
 # dictionnaries of form ids
 orth_dic = lem_dic = {}
+
+
+def trans(path):
+    data = pkg_resources.read_text(res, path)
+    dic = json.loads(data)
+    trans = "".maketrans(dic)
+    return trans
+# build the greek transliterator to get a form with no accents
+tr_deform = trans('tr_grc_deform.json')
+tr_nat = trans('tr_grc_nat.json')
+
 
 def crawl(corpus_conf: str, sqlite_file=None):
     """Recursive crawl of a file list to pilot ingestion of greek texts"""
@@ -71,8 +84,8 @@ def crawl(corpus_conf: str, sqlite_file=None):
 def docs(json_file: str):
     """Insert a record for a file"""
     logging.info(json_file)
-    opus_sql = """
-INSERT INTO opus(
+    edition_sql = """
+INSERT INTO edition(
 
     clavis,
     epoch,
@@ -93,34 +106,34 @@ INSERT INTO opus(
     json_dir = os.path.dirname(json_file)
     with open(json_file, 'r', encoding="utf-8") as fread:
         data = json.load(fread)
-    opus_json = data[0]
+    edition_json = data[0]
     toc_file = os.path.join(json_dir, "toc.html")
     nav = None
     if os.path.isfile(toc_file):
         with open(toc_file, mode="r", encoding="utf-8") as f:
             nav = f.read()
-    cur.execute(opus_sql, (
-        opus_json['clavis'],
+    cur.execute(edition_sql, (
+        edition_json['clavis'],
         os.path.getmtime(json_file),
         os.path.getsize(json_file),
-        opus_json['titulus'],
+        edition_json['titulus'],
         nav,
 
-        opus_json.get('auctor'),
-        opus_json.get('editor'),
-        opus_json.get('annuspub'),
-        opus_json.get('volumen'),
-        opus_json.get('pagde'),
-        opus_json.get('pagad'),
+        edition_json.get('auctor'),
+        edition_json.get('editor'),
+        edition_json.get('annuspub'),
+        edition_json.get('volumen'),
+        edition_json.get('pagde'),
+        edition_json.get('pagad'),
     ))
-    opus_id = cur.lastrowid
+    edition_id = cur.lastrowid
 
 
     doc_sql = """
 INSERT INTO doc(
     clavis,
     html,
-    opus,
+    edition,
 
     ante,
     post,
@@ -152,7 +165,7 @@ INSERT INTO doc(
         cur.execute(doc_sql, (
             clavis,
             html,
-            opus_id,
+            edition_id,
             ante,
             post,
             doc_json.get('pagde'),
@@ -200,20 +213,27 @@ def toks(tsv_path: str, doc_id: int):
             # get lem_id
             if not lem:
                 lem_id = 0
-            elif lem not in lem_dic:
+            elif (lem + '_' + str(cat)) not in lem_dic:
+                deform = lem.translate(tr_deform)
+                empty = deform.translate(tr_nat)
+                if empty:
+                    print(lem + " " + deform + " " 
+                    + str(empty.encode("unicode_escape")))
                 cur.execute(
-                    "INSERT INTO lem (form, cat) VALUES (?, ?)",
-                    (lem, cat)
+                    "INSERT INTO lem (form, deform, cat) VALUES (?, ?, ?)",
+                    (lem, deform, cat)
                 )
                 lem_id = cur.lastrowid
-                lem_dic[lem] = lem_id
+                lem_dic[lem+'_'+str(cat)] = lem_id
             else:
-                lem_id = lem_dic[lem]
+                lem_id = lem_dic[lem+'_'+str(cat)]
             # get orth_id
             if orth not in orth_dic:
+                deform = orth.translate(tr_deform)
+
                 cur.execute(
-                    "INSERT INTO orth (form, cat, lem) VALUES (?, ?, ?)",
-                    (orth, cat, lem_id)
+                    "INSERT INTO orth (form, deform, cat, lem) VALUES (?, ?, ?, ?)",
+                    (orth, deform, cat, lem_id)
                 )
                 orth_id = cur.lastrowid
                 orth_dic[orth] = orth_id

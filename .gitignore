@@ -8,3 +8,4 @@ __pycache__/
 tests/play*
 tests/galenus/
 tests/*.db
+tests/*.db-*
