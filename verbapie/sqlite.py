@@ -211,9 +211,10 @@ def toks(tsv_path: str, doc_id: int):
                 print(row)
                 raise
             # get lem_id
+            lem_key = lem + '_' + str(cat)
             if not lem:
                 lem_id = 0
-            elif (lem + '_' + str(cat)) not in lem_dic:
+            elif (lem_key) not in lem_dic:
                 deform = lem.translate(tr_deform)
                 empty = deform.translate(tr_nat)
                 if empty:
@@ -224,11 +225,12 @@ def toks(tsv_path: str, doc_id: int):
                     (lem, deform, cat)
                 )
                 lem_id = cur.lastrowid
-                lem_dic[lem+'_'+str(cat)] = lem_id
+                lem_dic[lem_key] = lem_id
             else:
-                lem_id = lem_dic[lem+'_'+str(cat)]
+                lem_id = lem_dic[lem_key]
             # get orth_id
-            if orth not in orth_dic:
+            orth_key = orth + '_' + str(lem_id)
+            if (orth_key) not in orth_dic:
                 deform = orth.translate(tr_deform)
 
                 cur.execute(
@@ -236,9 +238,9 @@ def toks(tsv_path: str, doc_id: int):
                     (orth, deform, cat, lem_id)
                 )
                 orth_id = cur.lastrowid
-                orth_dic[orth] = orth_id
+                orth_dic[orth_key] = orth_id
             else:
-                orth_id = orth_dic[orth]
+                orth_id = orth_dic[orth_key]
 
             cur.execute(tok_sql,
                 (doc_id, orth_id, charde, charad, cat, lem_id, pag, linea)

@@ -98,6 +98,8 @@ CREATE TABLE tok (
 CREATE INDEX IF NOT EXISTS tok_orth ON tok(orth, doc);
  -- search a lemma in all or some documents
 CREATE INDEX IF NOT EXISTS tok_lem ON tok(lem, doc);
+-- list pos
+CREATE INDEX IF NOT EXISTS tok_cat ON tok(cat);
 
 
 DROP TABLE IF EXISTS orth;
