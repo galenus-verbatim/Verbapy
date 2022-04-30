@@ -6,6 +6,7 @@ Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 """
 
 import argparse
+import glob
 import re
 import sys
 
@@ -84,16 +85,13 @@ def listing(text) :
     toks[-1] = toks[-1].strip()
     return toks, starts, ends, pages, lines
 
-def main() -> int:
-    parser = argparse.ArgumentParser(
-        description='Process an ML file (with <tag>), show tokenized words between tags, for search or linguistic',
-        formatter_class=argparse.RawTextHelpFormatter
-    )
-    parser.add_argument('ml_file', nargs='+', type=str,
-        help="""One or mor *.ml file"""
-    )
-    args = parser.parse_args()
-    for ml_file in args.ml_file:
+def freqlist(dir):
+    """Buid a list of most frequent forms from a set of XML files"""
+    for filename in glob.iglob(dir, recursive=True):
+        print(filename)
+
+def vert(files):
+    for ml_file in files:
         print(ml_file)
         with open(ml_file, mode="r", encoding="utf-8") as f:
             ml = f.read()
@@ -107,6 +105,19 @@ def main() -> int:
                   + "\t" + str(lines[i])
                 )
                 print(line)
+
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description='Process an ML file (with <tag>), show tokenized words between tags, for search or linguistic',
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+    parser.add_argument('files', nargs='+', type=str,
+        help="""One or mor *.ml file"""
+    )
+    args = parser.parse_args()
+    freqlist(args.files)
 
 
 if __name__ == '__main__':

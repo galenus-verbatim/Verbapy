@@ -112,6 +112,7 @@ INSERT INTO edition(
     if os.path.isfile(toc_file):
         with open(toc_file, mode="r", encoding="utf-8") as f:
             nav = f.read()
+    editor = edition_json.get('editor')
     cur.execute(edition_sql, (
         edition_json['clavis'],
         os.path.getmtime(json_file),
@@ -120,7 +121,7 @@ INSERT INTO edition(
         nav,
 
         edition_json.get('auctor'),
-        edition_json.get('editor'),
+        editor,
         edition_json.get('annuspub'),
         edition_json.get('volumen'),
         edition_json.get('pagde'),
@@ -134,17 +135,22 @@ INSERT INTO doc(
     clavis,
     html,
     edition,
+    editor,
 
     ante,
     post,
-    pagde,
-    pagad,
+
     volumen,
+    pagde,
+    linde,
+    pagad,
+    linad,
+
     liber,
     capitulum,
     sectio
 ) VALUES
-(?, ?, ?,  ?, ?, ?, ?, ?, ?, ?, ?)
+(?, ?, ?, ?,   ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?)
     """
     for i in range(1, len(data)):
         doc_json = data[i]
@@ -159,18 +165,24 @@ INSERT INTO doc(
         if i > 1:
             ante = data[i-1]['clavis']
         post = None
-        if i < len(data)-2:
+        if i < len(data)-1:
             post = data[i+1]['clavis']
 
         cur.execute(doc_sql, (
             clavis,
             html,
             edition_id,
+            editor,
+
             ante,
             post,
-            doc_json.get('pagde'),
-            doc_json.get('pagad'),
+
             doc_json.get('volumen'),
+            doc_json.get('pagde'),
+            doc_json.get('linde'),
+            doc_json.get('pagad'),
+            doc_json.get('linad'),
+
             doc_json.get('liber'),
             doc_json.get('capitulum'),
             doc_json.get('sectio')
@@ -199,7 +211,7 @@ def toks(tsv_path: str, doc_id: int):
             try:
                 orth = row[0]
                 if orth.isdigit(): # page numbers may have been tokenized
-                  continue
+                    continue
                 charde = row[1]
                 charad = row[2]
                 cat = row[3]
@@ -211,7 +223,8 @@ def toks(tsv_path: str, doc_id: int):
                 print(row)
                 raise
             # get lem_id
-            lem_key = lem + '_' + str(cat)
+            # lem_key = lem + '_' + str(cat) # too much noise on cat 
+            lem_key = lem # seems better for pie_extended
             if not lem:
                 lem_id = 0
             elif (lem_key) not in lem_dic:

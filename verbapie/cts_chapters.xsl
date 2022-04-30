@@ -8,8 +8,6 @@ MIT License https://opensource.org/licenses/mit-license.php
 
 Split a single TEI file in a multi-pages site
 
-TODO : prev / next and lots of other item metadata
-
 -->
 <xsl:transform version="1.1"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -119,6 +117,8 @@ TODO : prev / next and lots of other item metadata
   <xsl:variable name="ext">.html</xsl:variable>
   <!-- Output page numbers, if we have the -->
   <xsl:variable name="pb" select="count(.//pb)"/>
+  <!-- A handle on each line breaks by its page to count lines -->
+  <xsl:key name="line-by-page" match="tei:head|tei:item|tei:l|tei:lb|tei:p" use="generate-id(preceding::tei:pb[1])"/>
   
   <xsl:template match="/*">
     <xsl:if test="normalize-space($dst_dir) = ''">
@@ -321,7 +321,10 @@ TODO : prev / next and lots of other item metadata
       <xsl:otherwise>
         <xsl:value-of select="$src_name"/>
         <xsl:for-each select="ancestor-or-self::tei:div[@type='textpart']">
-          <xsl:text>.</xsl:text>
+          <xsl:choose>
+            <xsl:when test="position() = 1">_</xsl:when>
+            <xsl:otherwise>.</xsl:otherwise>
+          </xsl:choose>
           <xsl:value-of select="@n"/>
         </xsl:for-each>
       </xsl:otherwise>
@@ -389,6 +392,11 @@ TODO : prev / next and lots of other item metadata
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
+    <xsl:variable name="linde">
+      <xsl:for-each select="(.//*)[1]">
+        <xsl:call-template name="line"/>
+      </xsl:for-each>
+    </xsl:variable>
     <xsl:variable name="pagad">
       <xsl:variable name="pbad" select="(.//tei:pb)[last()]/@n"/>
       <xsl:choose>
@@ -400,6 +408,12 @@ TODO : prev / next and lots of other item metadata
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
+    <xsl:variable name="linad">
+      <xsl:for-each select="(.//*)[last()]">
+        <xsl:call-template name="line"/>
+      </xsl:for-each>
+    </xsl:variable>
+    
     <xsl:variable name="volumen">
       <xsl:choose>
         <xsl:when test="contains($pbde, '.')">
@@ -428,9 +442,11 @@ TODO : prev / next and lots of other item metadata
     <xsl:if test="$titulus != ''">,
       "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
     <xsl:if test="$pagde != ''">,
-      "pagde": "<xsl:value-of select="$pagde"/>"</xsl:if>
+      "pagde": "<xsl:value-of select="$pagde"/>",
+      "linde": "<xsl:value-of select="$linde"/>"</xsl:if>
     <xsl:if test="$pagad != ''">,
-      "pagad": "<xsl:value-of select="$pagad"/>"</xsl:if>
+      "pagad": "<xsl:value-of select="$pagad"/>",
+      "linad": "<xsl:value-of select="$linad"/>"</xsl:if>
     <xsl:if test="$volumen != ''">,
       "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='book']/@n">,
@@ -453,16 +469,128 @@ TODO : prev / next and lots of other item metadata
       >
       <article id="{$dst_name}">
         <xsl:if test="$text-before != '' or not(.//tei:pb)">
-          <xsl:apply-templates select="(preceding::tei:pb)[last()]">
-            <xsl:with-param name="class">pbde</xsl:with-param>
+          <xsl:apply-templates select="preceding::tei:pb[1]">
+            <xsl:with-param name="class">page1</xsl:with-param>
           </xsl:apply-templates>
         </xsl:if>
+        <!-- Not generic, Galen specific -->
+        <xsl:variable name="ed1" select="preceding::tei:milestone[@unit='ed1page'][1]"/>
+        <xsl:choose>
+          <xsl:when test="$ed1">
+            <xsl:apply-templates select="$ed1">
+              <xsl:with-param name="class">page1</xsl:with-param>
+            </xsl:apply-templates>
+          </xsl:when>
+          <!-- first section with a milestone in it -->
+          <xsl:when test=".//tei:milestone[@unit='ed1page']">
+            <xsl:apply-templates select="(.//tei:milestone[@unit='ed1page'])[1]">
+              <xsl:with-param name="class">page1</xsl:with-param>
+              <xsl:with-param name="diff" select="-1"/>
+            </xsl:apply-templates>
+          </xsl:when>
+          <!-- following axis excludes descendants -->
+          <xsl:otherwise>
+            <xsl:apply-templates select="following::tei:milestone[@unit='ed1page'][1]">
+              <xsl:with-param name="class">page1</xsl:with-param>
+              <xsl:with-param name="diff" select="-1"/>
+            </xsl:apply-templates>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:variable name="ed2" select="preceding::tei:milestone[@unit='ed2page'][1]"/>
+        <xsl:choose>
+          <xsl:when test="$ed2">
+            <xsl:apply-templates select="$ed2">
+              <xsl:with-param name="class">page1</xsl:with-param>
+            </xsl:apply-templates>
+          </xsl:when>
+          <!-- first section with a milestone in it -->
+          <xsl:when test=".//tei:milestone[@unit='ed2page']">
+            <xsl:apply-templates select="(.//tei:milestone[@unit='ed2page'])[1]">
+              <xsl:with-param name="diff" select="-1"/>
+              <xsl:with-param name="class">page1</xsl:with-param>
+            </xsl:apply-templates>
+          </xsl:when>
+          <!-- following axis excludes descendants -->
+          <xsl:otherwise>
+            <xsl:apply-templates select="following::tei:milestone[@unit='ed2page'][1]">
+              <xsl:with-param name="diff" select="-1"/>
+              <xsl:with-param name="class">page1</xsl:with-param>
+            </xsl:apply-templates>
+          </xsl:otherwise>
+        </xsl:choose>
+        <!-- Content -->
         <xsl:apply-templates/>
         <xsl:text>&#10;</xsl:text>
       </article>
     </xsl:document>
   </xsl:template>
 
+  <!-- 
+  Big hack to generate a line number from different line break cases
+  -->
+  <xsl:template name="line">
+    <!-- Count lines from the last page break. If no <pb> before…? not predicted -->
+    <xsl:variable name="pb" select="generate-id((self::tei:pb|preceding::tei:pb[1])[last()])"/>
+    <!--
+    <xsl:value-of select="
+      name((
+      preceding::tei:item[1]
+      | preceding::tei:l[1]
+      | preceding::tei:lb[1]
+      | preceding::tei:p[1]
+      )[last()])"/>
+      -->
+    <xsl:variable name="id">
+      <xsl:choose>
+        <xsl:when test="ancestor-or-self::tei:lb">
+          <xsl:value-of select="generate-id(ancestor-or-self::tei:lb)"/>
+        </xsl:when>
+        <xsl:when test="ancestor-or-self::tei:l">
+          <xsl:value-of select="generate-id(ancestor-or-self::tei:l)"/>
+        </xsl:when>
+        <xsl:when test="ancestor-or-self::tei:head">
+          <xsl:value-of select="generate-id(ancestor-or-self::tei:head)"/>
+        </xsl:when>
+        <xsl:when test="ancestor-or-self::tei:p">
+          <xsl:value-of select="generate-id(ancestor-or-self::tei:p)"/>
+        </xsl:when>
+        <xsl:when test="ancestor-or-self::tei:item">
+          <xsl:value-of select="generate-id(ancestor-or-self::tei:item)"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="
+            generate-id((
+                preceding::tei:head[1]
+              | preceding::tei:item[1]
+              | preceding::tei:l[1]
+              | preceding::tei:lb[1]
+              | preceding::tei:p[1]
+            )[last()])"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <!-- Seems not efficient but is well compiled and do not fall in hyperspace like some weird xpath -->
+    <xsl:variable name="n">
+      <xsl:for-each select="key('line-by-page', $pb)">
+        <xsl:if test="generate-id(.) = $id">
+          <xsl:value-of select="position()"/>
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+    <xsl:choose>
+      <!-- something went wrong, let it go -->
+      <xsl:when test="string(number($n)) = 'NaN'"/>
+      <!-- ugly fix -->
+      <xsl:when test="self::tei:head">
+        <xsl:value-of select="$n"/>
+      </xsl:when>
+      <!-- supposed line number after page or section -->
+      <xsl:otherwise>
+        <xsl:value-of select="$n + 1"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
 
   <!-- For debug, a linear xpath for an element -->
   <xsl:template name="idpath">

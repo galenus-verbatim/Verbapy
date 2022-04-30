@@ -31,31 +31,6 @@ CREATE table edition (
 CREATE UNIQUE INDEX IF NOT EXISTS edition_code ON edition(clavis);
 
 
-DROP TABLE IF EXISTS edition;
-CREATE table edition (
--- Source XML file
-    id          INTEGER, -- rowid auto
-    -- must, file infos and content
-    clavis      TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
-    epoch       INTEGER NOT NULL,     -- ! file modified time
-    octets      INTEGER NOT NULL,     -- ! filesize
-    titulus     TEXT NOT NULL,        -- ! title of an edition
-    nav         BLOB,                 -- ? html table of contents if more than one chapter
-    -- should, bibliographic info
-    auctor      TEXT,    -- ? name of an author
-    editor      TEXT,    -- ? name of an editor
-    editio      TEXT,    -- ? code for an edittion
-    volumen     TEXT,    -- ? volume
-    annuspub    INTEGER, -- ? publication year of the edition
-    pagde       INTEGER, -- ? page from
-    pagad       INTEGER, -- ? page to
-    titulbrev   TEXT,    -- ? title abbreviated
-    annuscrea   INTEGER, -- ? creation year
-    PRIMARY KEY(id ASC)
-);
-CREATE UNIQUE INDEX IF NOT EXISTS edition_code ON edition(clavis);
-
-
 -- Schema to store lemmatized texts
 DROP TABLE IF EXISTS doc;
 CREATE table doc (
@@ -68,16 +43,22 @@ CREATE table doc (
     ante        INTEGER, -- ? previous document
     post        INTEGER, -- ? next document
     -- should, bibliographic info
+    editor      TEXT,    -- ? replicated from edition, for efficient filtering
     titulus     TEXT,    -- ? title of the document if relevant
-    pagde       INTEGER, -- ? page from
-    pagad       INTEGER, -- ? page to
+    
     volumen     TEXT,    -- ? analytic, for edition on more than one
+    pagde       INTEGER, -- ? page from
+    linde       INTEGER, -- ? first line of first page
+    pagad       INTEGER, -- ? page to
+    linad       INTEGER, -- ? last line of last page
+
     liber       TEXT,    -- ? analytic,
     capitulum   TEXT,    -- ? analytic,
     sectio      TEXT,    -- ? analytic,
     PRIMARY KEY(id ASC)
 );
 CREATE UNIQUE INDEX IF NOT EXISTS doc_code ON doc(clavis);
+CREATE INDEX IF NOT EXISTS doc_redir ON doc(editor, volumen, pagde, pagad);
 
 
 DROP TABLE IF EXISTS tok;

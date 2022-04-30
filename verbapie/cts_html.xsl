@@ -15,9 +15,8 @@ Split a single TEI file in a multi-pages site
   xmlns:tei="http://www.tei-c.org/ns/1.0"
   exclude-result-prefixes="tei"
 >
+  <xsl:strip-space elements="*"/>
   <xsl:output indent="yes" encoding="UTF-8" method="html" />
-  <!-- A handle on each line breaks by its page to count lines -->
-  <xsl:key name="line-by-page" match="tei:item|tei:l|tei:lb|tei:p" use="generate-id(preceding::tei:pb[1])"/>
 
   <xsl:template match="tei:*">
     <xsl:message terminate="yes">
@@ -136,45 +135,45 @@ Split a single TEI file in a multi-pages site
     </h1>
   </xsl:template>
 
-  <xsl:template match="tei:lb">
-    <xsl:text>&#10;</xsl:text>
-    <span class="lb">
+  <!-- line identifier -->
+  <xsl:template match="tei:lb" name="lb">
+    <xsl:param name="n">
       <xsl:choose>
-        <xsl:when test="@n != ''">
-          <xsl:attribute name="data-line">
-            <xsl:value-of select="@n"/>
-          </xsl:attribute>
+        <xsl:when test="self::tei:lb and @n != ''">
+          <xsl:value-of select="@n"/>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:call-template name="data-line"/>
+          <xsl:call-template name="line"/>
         </xsl:otherwise>
       </xsl:choose>
-    </span>
-  </xsl:template>
-  
-  <xsl:template name="data-line">
-    <!-- Count lines from the last page break. If no <pb> before…? not predicted -->
-    <xsl:variable name="pb" select="generate-id(preceding::tei:pb[1])"/>
-    
-    <xsl:variable name="id" select="generate-id()"/>
-    <!-- Seems not efficient but is well compiled and do not fall in hyperspace like some weird xpath -->
-    <xsl:variable name="n">
-      <xsl:for-each select="key('line-by-page', $pb)">
-        <xsl:if test="generate-id(.) = $id">
-          <xsl:value-of select="position()"/>
-        </xsl:if>
-      </xsl:for-each>
+    </xsl:param>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:variable name="page">
+      <xsl:call-template name="data-page"/>
     </xsl:variable>
-    <xsl:if test="number($n) &gt; 0">
-      <xsl:attribute name="data-line">
-        <xsl:value-of select="$n + 1"/>
-      </xsl:attribute>
+    <xsl:if test="$n != ''">
+      <span class="lb">
+        <xsl:attribute name="data-page">
+          <xsl:value-of select="$page"/>
+        </xsl:attribute>
+        <xsl:attribute name="data-line">
+          <xsl:value-of select="$n"/>
+        </xsl:attribute>
+        <xsl:attribute name="id">
+          <xsl:text>p</xsl:text>
+          <xsl:value-of select="$page"/>
+          <xsl:text>.</xsl:text>
+          <xsl:value-of select="$n"/>
+        </xsl:attribute>
+      </span>
     </xsl:if>
   </xsl:template>
+  
 
   <xsl:template match="tei:l">
     <xsl:text>&#10;</xsl:text>
     <div class="l">
+      <xsl:call-template name="lb"/>
       <xsl:apply-templates/>
     </div>
   </xsl:template>
@@ -263,13 +262,22 @@ Split a single TEI file in a multi-pages site
   </xsl:template>
   
   <xsl:template match="tei:milestone">
+    <xsl:param name="class"/>
+    <xsl:param name="diff"/>
     <span>
       <xsl:attribute name="class">
-        <xsl:value-of select="normalize-space(concat('milestone ', @unit))"/>
+        <xsl:value-of select="normalize-space(concat('milestone ', @unit, ' ', $class))"/>
       </xsl:attribute>
       <xsl:if test="@n">
         <xsl:attribute name="data-n">
-          <xsl:value-of select="@n"/>
+          <xsl:choose>
+            <xsl:when test="string($diff) != ''">
+              <xsl:value-of select="number(@n) + number($diff)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="@n"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:attribute>
       </xsl:if>
       <xsl:if test="@unit">
@@ -306,13 +314,14 @@ Split a single TEI file in a multi-pages site
         <xsl:when test="tei:lb[@n]"/>
         <!-- text between <p> and first <lb/> -->
         <xsl:when test="tei:lb[1]/preceding-sibling::text()[normalize-space(.)] != ''">
-          <xsl:call-template name="data-line"/>
+          <xsl:call-template name="lb"/>
         </xsl:when>
       </xsl:choose>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
-  
+
+
   <xsl:template match="tei:orgName">
     <a class="{local-name()}">
       <xsl:apply-templates/>
@@ -323,39 +332,77 @@ Split a single TEI file in a multi-pages site
     <xsl:apply-templates/>
   </xsl:template>
   
+  <!-- Get page number -->
+  <xsl:template name="data-page">
+    <xsl:variable name="n">
+      <xsl:choose>
+        <xsl:when test="self::tei:pb">
+          <xsl:value-of select="@n"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="preceding::tei:pb[1]/@n"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:choose>
+      <xsl:when test="$n = ''"/>
+      <xsl:when test="contains($n, '.')">
+        <xsl:value-of select="substring-after($n, '.')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$n"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
   <xsl:template match="tei:pb">
     <xsl:param name="class"/>
     <xsl:text>&#10;</xsl:text>
+    <!-- Do not try to count <pb/> if no @n -->
+    <xsl:variable name="n">
+      <xsl:call-template name="data-page"/>
+    </xsl:variable>
     <span class="pb">
       <xsl:attribute name="class">
         <xsl:value-of select="normalize-space(concat('pb ', $class))"/>
       </xsl:attribute>
-      <xsl:if test="@n">
+      <xsl:if test="$n != ''">
         <xsl:attribute name="data-page">
-          <xsl:value-of select="@n"/>
+          <xsl:value-of select="$n"/>
+        </xsl:attribute>
+        <xsl:attribute name="id">
+          <xsl:text>p</xsl:text>
+          <xsl:value-of select="$n"/>
         </xsl:attribute>
       </xsl:if>
-      <xsl:if test="$class = ''">
-        <xsl:attribute name="data-line">1</xsl:attribute>
-      </xsl:if>
     </span>
-    <xsl:text>&#10;</xsl:text>
+    <!-- text between <p> and first <lb/> -->
+    <xsl:choose>
+      <!-- Do not add a line break for first page before a section -->
+      <xsl:when test="$class = 'page1'"/>
+      <!-- no line break for first line -->
+      <xsl:when test="(following::tei:lb)[1]/preceding-sibling::text()[normalize-space(.) != '']">
+        <xsl:call-template name="lb">
+          <xsl:with-param name="n" select="1"/>
+        </xsl:call-template>
+      </xsl:when>
+    </xsl:choose>
   </xsl:template>
   
   <xsl:template match="tei:persName">
     <a class="{local-name()}" type="{@type}" rel="{@nymRef}">
-		<a href="http://cahal.me/italikos/tablepers">
+    <a href="http://cahal.me/italikos/tablepers">
       <xsl:apply-templates/>
-	  </a>
+    </a>
     </a>
   </xsl:template>
   
   <xsl:template match="tei:cit">
-	<i>
-		<a href="http://cahal.me/italikos/tablequote">
-			<xsl:apply-templates/>
-		</a>
-	</i>
+  <i>
+    <a href="http://cahal.me/italikos/tablequote">
+      <xsl:apply-templates/>
+    </a>
+  </i>
   </xsl:template>
   
   <xsl:template match="tei:placeName">

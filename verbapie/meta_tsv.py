@@ -31,6 +31,27 @@ etree.set_default_parser(
     )
 )
 
+def json(paths_file: str):
+    """Load a file with a list of paths, get a json record of some things"""
+    tei_list = verbapie.tei_list(paths_file)
+    sys.stdout.buffer.write("{\n".encode('utf8'))
+    xsl_file = os.path.join(os.path.dirname(__file__), 'cts_json.xsl')
+    xsl_dom = etree.parse(xsl_file)
+    transfo = etree.XSLT(xsl_dom)
+    for tei_file in tei_list:
+        tei_name = os.path.splitext(os.path.basename(tei_file))[0]
+        with open(tei_file, 'r', encoding="utf-8") as f:
+            xml = f.read()
+        tei_dom = etree.XML(bytes(xml, encoding='utf-8'), base_url=tei_file)
+        dst_dom = transfo(
+            tei_dom,
+            src_name = etree.XSLT.strparam(tei_name)
+        )
+        line = etree.tounicode(dst_dom, method='text', pretty_print=True)
+        # ensure output in utf8, even on windows
+        sys.stdout.buffer.write(line.encode('utf8') + b'\n')
+    sys.stdout.buffer.write("}\n".encode('utf8'))
+
 def corpus(paths_file: str, force=True):
     """Load a file with a list of paths, and process them"""
     cts_list = verbapie.cts_list(paths_file)
@@ -63,7 +84,7 @@ def main() -> int:
         help="""ex: ../tests/galenus.txt"""
     )
     args = parser.parse_args()
-    corpus(args.paths_file[0])
+    json(args.paths_file[0])
 
 
 if __name__ == '__main__':
