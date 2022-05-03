@@ -13,7 +13,7 @@ import os
 import re
 import sys
 # local
-import verbapie
+import ../verbapie
 
 """
 Detail metadata of cts files

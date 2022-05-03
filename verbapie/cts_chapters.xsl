@@ -439,16 +439,16 @@ Split a single TEI file in a multi-pages site
     {</xsl:text>
     <xsl:if test="true()">
       "clavis": "<xsl:value-of select="$dst_name"/>"</xsl:if>
-    <xsl:if test="$titulus != ''">,
-      "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
+    <xsl:if test="$volumen != ''">,
+      "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
     <xsl:if test="$pagde != ''">,
       "pagde": "<xsl:value-of select="$pagde"/>",
       "linde": "<xsl:value-of select="$linde"/>"</xsl:if>
     <xsl:if test="$pagad != ''">,
       "pagad": "<xsl:value-of select="$pagad"/>",
       "linad": "<xsl:value-of select="$linad"/>"</xsl:if>
-    <xsl:if test="$volumen != ''">,
-      "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
+    <xsl:if test="$titulus != ''">,
+      "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='book']/@n">,
       "liber": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='book'][1]/@n"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='chapter']/@n">,
