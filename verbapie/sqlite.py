@@ -228,14 +228,17 @@ def toks(tsv_path: str, doc_id: int):
             if not lem:
                 lem_id = 0
             elif (lem_key) not in lem_dic:
+                flag = 0
+                if lem[0].isupper():
+                    flag = 64
                 deform = lem.translate(tr_deform)
                 empty = deform.translate(tr_nat)
                 if empty:
                     print(lem + " " + deform + " " 
                     + str(empty.encode("unicode_escape")))
                 cur.execute(
-                    "INSERT INTO lem (form, deform, cat) VALUES (?, ?, ?)",
-                    (lem, deform, cat)
+                    "INSERT INTO lem (form, deform, cat, flag) VALUES (?, ?, ?, ?)",
+                    (lem, deform, cat, flag)
                 )
                 lem_id = cur.lastrowid
                 lem_dic[lem_key] = lem_id
@@ -244,11 +247,13 @@ def toks(tsv_path: str, doc_id: int):
             # get orth_id
             orth_key = orth + '_' + str(lem_id)
             if (orth_key) not in orth_dic:
+                flag = 0
+                if orth[0].isupper():
+                    flag = 64
                 deform = orth.translate(tr_deform)
-
                 cur.execute(
-                    "INSERT INTO orth (form, deform, cat, lem) VALUES (?, ?, ?, ?)",
-                    (orth, deform, cat, lem_id)
+                    "INSERT INTO orth (form, deform, lem, cat, flag) VALUES (?, ?, ?, ?, ?)",
+                    (orth, deform, lem_id, cat, flag)
                 )
                 orth_id = cur.lastrowid
                 orth_dic[orth_key] = orth_id

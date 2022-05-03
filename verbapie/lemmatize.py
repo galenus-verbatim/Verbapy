@@ -57,12 +57,13 @@ def crawl(html_dir: str, torch: bool=False, force: bool=False):
             html_file = os.path.join(root, f)
             html_name = os.path.splitext(os.path.basename(html_file))[0]
             csv_file = os.path.join(root, html_name+'.csv');
-            if force:
+            if force: # always do
                 pass
-            elif not os.path.exists(csv_file):
+            elif not os.path.exists(csv_file): # not exists, do
                 pass
-            elif os.path.getmtime(html_file) < os.path.getmtime(csv_file):
+            else: # no date test, just continue
                 continue
+            # elif os.path.getmtime(html_file) < os.path.getmtime(csv_file):
             logging.debug(html_name)
             lemmatize(html_file, csv_file)
 
@@ -121,7 +122,7 @@ def main() -> int:
     parser.add_argument('-t', '--torch', action='store_true',
         help='use GPU for tagging, much more efficient')
     parser.add_argument('-f', '--force', action='store_true',
-        help='force deletion of identifier.csv file of lemma, even newer that identifier.html')
+        help='force generation identifier.csv even if exists')
 
     args = parser.parse_args()
     crawl(args.html_dir[0], torch=args.torch, force=args.force)

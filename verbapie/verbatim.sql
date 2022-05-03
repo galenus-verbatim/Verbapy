@@ -37,11 +37,12 @@ CREATE table doc (
 -- an indexed HTML document
     id          INTEGER, -- rowid auto
     -- must, file infos and content
-    clavis      TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
+    clavis      TEXT UNIQUE NOT NULL, -- ! identifier for section
     html        BLOB NOT NULL,        -- ! html text ready to display
     edition     INTEGER NOT NULL,     -- ! link to the edition
     ante        INTEGER, -- ? previous document
     post        INTEGER, -- ? next document
+
     -- should, bibliographic info
     editor      TEXT,    -- ? replicated from edition, for efficient filtering
     titulus     TEXT,    -- ? title of the document if relevant
@@ -89,14 +90,15 @@ CREATE TABLE orth (
     id          INTEGER, -- rowid auto
     form        TEXT NOT NULL,     -- ! the letters
     deform      TEXT NOT NULL,     -- ! letters without accents
-    cat         INTEGER,           -- ! word category id
     lem         INTEGER,           -- ! (form, cat) -> lemma
-
+    cat         TEXT,              -- ! word category from leammatizer
+    flag        INTEGER,           -- ? local flag
     PRIMARY KEY(id ASC)
 );
 CREATE INDEX IF NOT EXISTS orth_deform ON orth(deform);
 CREATE UNIQUE INDEX IF NOT EXISTS orth_form ON orth(form, lem);
 CREATE INDEX IF NOT EXISTS orth_lem ON orth(lem);
+CREATE INDEX IF NOT EXISTS orth_flag ON orth(flag);
 
 DROP TABLE IF EXISTS lem;
 CREATE TABLE lem (
@@ -104,8 +106,10 @@ CREATE TABLE lem (
     id          INTEGER, -- rowid auto
     form        TEXT NOT NULL,     -- ! the letters
     deform      TEXT NOT NULL,     -- ! letters without accents
-    cat         INTEGER,           -- ! word category id
+    cat         TEXT,              -- ! word category id
+    flag        INTEGER,           -- ? local flag
     PRIMARY KEY(id ASC)
 );
 CREATE INDEX IF NOT EXISTS lem_deform ON lem(deform);
-CREATE UNIQUE INDEX IF NOT EXISTS lem_form ON lem(form, cat);
+CREATE UNIQUE INDEX IF NOT EXISTS lem_form ON lem(form);
+CREATE INDEX IF NOT EXISTS lem_flag ON lem(flag);
