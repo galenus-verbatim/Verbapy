@@ -7,6 +7,7 @@ Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 
 import argparse
 import glob
+import os
 import re
 import sys
 
@@ -16,6 +17,7 @@ import sys
 Output a verticalize list of tokens, with offsets
 """
 LINE = 'LINE'
+NOTE = 'NOTE'
 NUM = 'NUM'
 PAGE = 'PAGE'
 SENT = 'SENT'
@@ -23,7 +25,8 @@ WORD = 'WORD'
 XML = 'XML'
 XMLENT = 'XMLENT'
 token_specification = [
-    (WORD,      r'\w+'),         # letters
+    (NOTE,      r'<(note|teiHeader)[^>]*>.*?</\2>'),  # pass notes, headers, and things like that, be careful of \2, keep 2
+    (WORD,      r'[^\W\d_]+'),         # letters
     (PAGE,      r'<[^>]+ data-page="[^"]+"[^>]*>'),  # html specific, element with a page number
     (LINE,      r'<[^>]+ data-line="[^"]+"[^>]*>'),  # html specific, element with a line number
     (NUM,       r'\d+'),         # numbers, ex: page
@@ -32,7 +35,7 @@ token_specification = [
     (SENT,      r'[\.?!]'),      # should break on sentence
 ]
 dre = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
-tokenizer = re.compile(dre)
+tokenizer = re.compile(dre, re.MULTILINE | re.UNICODE | re.DOTALL)
 page_re = re.compile(r'data-page="([^"]+)"')
 line_re = re.compile(r'data-line="([^"]+)"')
 
@@ -71,6 +74,9 @@ def listing(text) :
         # filter numbers
         if (match.lastgroup == NUM):
             continue
+        # filter notes (??)
+        if (match.lastgroup == NOTE):
+            continue
 
         # break sentences for pie
         if (match.lastgroup == SENT):
@@ -85,10 +91,37 @@ def listing(text) :
     toks[-1] = toks[-1].strip()
     return toks, starts, ends, pages, lines
 
-def freqlist(dir):
+def freqlist(paths):
     """Buid a list of most frequent forms from a set of XML files"""
-    for filename in glob.iglob(dir, recursive=True):
-        print(filename)
+    counts = dict()
+    for path in paths:
+        path = os.path.abspath(path)
+        print(path, file=sys.stderr)
+        no = 1
+        for file in glob.iglob(path, recursive=True):
+            basename = os.path.basename(file)
+            if (basename[0] == '_'):
+                continue
+            with open(file, mode="r", encoding="utf-8") as f:
+                xml = f.read()
+                toks, *_ = listing(xml)
+                count = len(toks)
+                for i in range(0, count):
+                    word = toks[i].strip()
+                    if word in counts:
+                        counts[word] += 1
+                    else:
+                        counts[word] = 1
+            print(str(no) + ". " + file + " (" + str(count) + ")", file=sys.stderr)
+            no = no + 1
+    counts_sorted = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+    i = 2000
+    for item in counts_sorted:
+        print(item[0] + "\t(" + str(item[1]) + ")")
+        i = i -1
+        if i <= 0:
+            break
+
 
 def vert(files):
     for ml_file in files:
