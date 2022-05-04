@@ -55,4 +55,4 @@ def norm_dir(file: str) -> str:
     return dir
 
 if __name__ == '__main__':
-    print(cts_list('tests/galenus.txt'))
+    print(tei_list('tests/galenus.txt'))

@@ -33,6 +33,13 @@ def crawl(html_dir: str, torch: bool=False, force: bool=False):
     global tagger, iterator, processor, con, cur
     html_dir = os.path.abspath(html_dir).replace('\\', '/').rstrip('/') + '/'
 
+    # delete old lemma files if force
+    if force:
+        for root, dirs, files in os.walk(html_dir):
+            for f in files:
+                if f.endswith(".csv"):
+                    os.remove(os.path.join(root,f)) 
+
     # pie stuff
     # load that now, can take time
     from pie_extended.cli.utils import get_tagger, get_model, download
@@ -48,6 +55,8 @@ def crawl(html_dir: str, torch: bool=False, force: bool=False):
     tagger = get_tagger(model_name, batch_size=batch_size, device=device, model_path=None)
     iterator, processor = get_iterator_and_processor()
 
+
+
     for root, dirs, files in os.walk(html_dir):
         for f in files:
             if not f.endswith(".html"):
@@ -56,7 +65,7 @@ def crawl(html_dir: str, torch: bool=False, force: bool=False):
                 continue
             html_file = os.path.join(root, f)
             html_name = os.path.splitext(os.path.basename(html_file))[0]
-            csv_file = os.path.join(root, html_name+'.csv');
+            csv_file = os.path.join(root, html_name+'.csv')
             if force: # always do
                 pass
             elif not os.path.exists(csv_file): # not exists, do
