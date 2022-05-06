@@ -29,7 +29,7 @@ XML = 'XML'
 XMLENT = 'XMLENT'
 token_specification = [
     (NOTE,      r'<(note|teiHeader)[^>]*>.*?</\2>'),  # pass notes, headers, and things like that, be careful of \2, keep 2
-    (WORD,      r'[^\W\d_]+'),         # letters
+    (WORD,      r'([^\W\d_]|[΄])+'),         # letters
     (PAGE,      r'<[^>]+ data-page="[^"]+"[^>]*>'),  # html specific, element with a page number
     (LINE,      r'<[^>]+ data-line="[^"]+"[^>]*>'),  # html specific, element with a line number
     (NUM,       r'\d+'),         # numbers, ex: page

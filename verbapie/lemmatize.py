@@ -11,6 +11,7 @@ from typing import List
 import logging
 import os
 import sys
+import unicodedata
 # local
 import config
 import verbatoks
@@ -76,6 +77,9 @@ def crawl(html_dir: str, torch: bool=False, force: bool=False):
             logging.debug(html_name)
             lemmatize(html_file, csv_file)
 
+def lem_num(orth: str):
+    """Return a nice lemma for a thing supposed to be a number"""
+    return "NUM"
 
 def lemmatize(html_file: str, csv_file:str):
     """Parse tokens"""
@@ -101,11 +105,23 @@ def lemmatize(html_file: str, csv_file:str):
         """ json.dumps(word, ensure_ascii=False)
         {"form": "πλήθει", "case": "-", "degree": "-", "gend": "-", "lemma": "πλῆθος", "mood": "-", "num": "s", "pers": "-", "pos": "n", "tense": "-", "voice": "-", "treated": "πλήθει"}
         """
-        # here it could be possible to concat a better string for category
+        # take orginal form, lower case it (titles)
         orth = toks[i].lower().strip().translate(tsv_esc)
-        if not orth.isalpha():
-            continue
-        lem = word['lemma'].strip().translate(tsv_esc)
+        lem = "?"
+        if orth[-1] == '΄':
+            # should be a number
+            # do not normalize, get a lemma from a hook
+            lem = lem_num(orth)
+        else:
+            orth = unicodedata.normalize('NFKC', orth)
+            lem = unicodedata.normalize(
+                'NFKC',
+                word['lemma'].strip().translate(tsv_esc)
+            )
+            # normalize proper names
+            if len(lem) > 0 and lem[0].isupper():
+                orth = orth.capitalize()
+        # maybe better could be found for pos
         cat = word['pos']
 
         csv += (
@@ -113,7 +129,7 @@ def lemmatize(html_file: str, csv_file:str):
             + "\t" + str(starts[i])
             + "\t" + str(ends[i])
             + "\t" + cat
-            + "\t" + lem # strip \n in
+            + "\t" + lem
             + "\t" + str(pages[i])
             + "\t" + str(lines[i])
         + "\n")
