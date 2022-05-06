@@ -1,3 +1,4 @@
+-- Part of verbapie https://github.com/galenus-verbatim/verbapie
 PRAGMA encoding = 'UTF-8'; -- W. encoding used for output
 PRAGMA page_size = 32768; -- W. said as best for perfs
 PRAGMA mmap_size = 1073741824; -- W/R. should be more efficient

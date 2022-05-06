@@ -1,5 +1,5 @@
 """
-Part of verbapy https://github.com/galenus-verbatim/verbapy
+Part of verbapie https://github.com/galenus-verbatim/verbapie
 Copyright (c) 2021 Nathalie Rousseau
 MIT License https://opensource.org/licenses/mit-license.php
 Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
@@ -28,6 +28,11 @@ import res  # relative-import the *package* containing resources
 con = cur = None
 # dictionnaries of form ids
 orth_dic = lem_dic = {}
+# dictionnary of stopwords
+stopwords = verbapie.word_list(
+    os.path.join(os.path.dirname(__file__), 'grc1k_stopwords.tsv')
+)
+
 
 
 def trans(path):
@@ -229,7 +234,9 @@ def toks(tsv_path: str, doc_id: int):
                 lem_id = 0
             elif (lem_key) not in lem_dic:
                 flag = 0
-                if lem[0].isupper():
+                if lem in stopwords:
+                    flag = 16
+                elif lem[0].isupper():
                     flag = 64
                 deform = lem.translate(tr_deform)
                 empty = deform.translate(tr_nat)
@@ -248,6 +255,8 @@ def toks(tsv_path: str, doc_id: int):
             orth_key = orth + '_' + str(lem_id)
             if (orth_key) not in orth_dic:
                 flag = 0
+                if orth in stopwords:
+                    flag = 16
                 if orth[0].isupper():
                     flag = 64
                 deform = orth.translate(tr_deform)

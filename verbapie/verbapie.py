@@ -1,12 +1,12 @@
 """
-Part of verbapy https://github.com/galenus-verbatim/verbapy
+Part of verbapie https://github.com/galenus-verbatim/verbapie
 Copyright (c) 2021 Nathalie Rousseau
 MIT License https://opensource.org/licenses/mit-license.php
 Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
 """
 import csv
 import os
-from typing import List
+from typing import List, Dict
 
 
 """Shared functions between scripts, especially to ensure same file paths"""
@@ -19,6 +19,29 @@ def html_dir(corpus_conf: str) -> str:
     dir = norm_dir(corpus_conf)
     html_dir = os.path.join(dir, paths_name) + '/'
     return html_dir
+
+def word_list(tsv_file: str) -> Dict:
+    """Get words with possible infos"""
+    if not os.path.isfile(tsv_file):
+        raise Exception("File not found for a tei list:\"" + tsv_file + "\"")
+    words = {}
+    with open(tsv_file, 'r', encoding="utf-8") as f:
+        tsv_reader = csv.reader(f, delimiter="\t")
+        # next(tsv_reader) # pass first line ?
+        for row in tsv_reader:
+            if len(row) < 1:
+                continue
+            word = row[0].strip()
+            if not word:
+                continue
+            if word[0] == '#':
+                continue
+            val = -1
+            if len(row) > 1:
+                val = row[1].strip()
+            words[word] = val
+    return words
+
 
 def tei_list(tsv_file: str) -> List:
     """List file inside the conf"""

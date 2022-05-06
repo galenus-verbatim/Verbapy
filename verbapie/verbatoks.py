@@ -1,5 +1,5 @@
 """
-Part of verbapy https://github.com/galenus-verbatim/verbapy
+Part of verbapie https://github.com/galenus-verbatim/verbapie
 Copyright (c) 2021 Nathalie Rousseau
 MIT License https://opensource.org/licenses/mit-license.php
 Code policy PEP8 https://www.python.org/dev/peps/pep-0008/
@@ -10,6 +10,9 @@ import glob
 import os
 import re
 import sys
+# local
+import verbapie
+
 
 
 """Tokenizer for languages with roman alphabet punctuation
@@ -38,6 +41,10 @@ dre = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
 tokenizer = re.compile(dre, re.MULTILINE | re.UNICODE | re.DOTALL)
 page_re = re.compile(r'data-page="([^"]+)"')
 line_re = re.compile(r'data-line="([^"]+)"')
+
+stopwords = verbapie.word_list(
+    os.path.join(os.path.dirname(__file__), 'grc1k_stopwords.tsv')
+)
 
 def listing(text) :
     tokenizer.finditer(text)
@@ -91,8 +98,9 @@ def listing(text) :
     toks[-1] = toks[-1].strip()
     return toks, starts, ends, pages, lines
 
-def freqlist(paths):
+def freqlist(paths, size=2000, nostops=False, nolatin=False):
     """Buid a list of most frequent forms from a set of XML files"""
+    lat = re.compile("[a-zA-Z]+")
     counts = dict()
     for path in paths:
         path = os.path.abspath(path)
@@ -108,6 +116,10 @@ def freqlist(paths):
                 count = len(toks)
                 for i in range(0, count):
                     word = toks[i].strip()
+                    if nostops and word in stopwords:
+                        continue
+                    if nolatin and lat.fullmatch(word):
+                        continue
                     if word in counts:
                         counts[word] += 1
                     else:
@@ -115,11 +127,10 @@ def freqlist(paths):
             print(str(no) + ". " + file + " (" + str(count) + ")", file=sys.stderr)
             no = no + 1
     counts_sorted = sorted(counts.items(), key=lambda x: x[1], reverse=True)
-    i = 2000
     for item in counts_sorted:
-        print(item[0] + "\t(" + str(item[1]) + ")")
-        i = i -1
-        if i <= 0:
+        print(item[0] + "\t" + str(item[1]))
+        size = size -1
+        if size <= 0:
             break
 
 
