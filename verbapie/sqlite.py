@@ -255,7 +255,7 @@ def toks(tsv_path: str, doc_id: int):
             orth_key = orth + '_' + str(lem_id)
             if (orth_key) not in orth_dic:
                 flag = 0
-                if orth in stopwords:
+                if orth in stopwords or lem in stopwords:
                     flag = 16
                 if orth[0].isupper():
                     flag = 64

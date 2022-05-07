@@ -106,7 +106,7 @@ def lemmatize(html_file: str, csv_file:str):
         {"form": "πλήθει", "case": "-", "degree": "-", "gend": "-", "lemma": "πλῆθος", "mood": "-", "num": "s", "pers": "-", "pos": "n", "tense": "-", "voice": "-", "treated": "πλήθει"}
         """
         # take orginal form, lower case it (titles)
-        orth = toks[i].lower().strip().translate(tsv_esc)
+        orth = word['treated'].lower().strip().translate(tsv_esc)
         lem = "?"
         if orth[-1] == '΄':
             # should be a number
