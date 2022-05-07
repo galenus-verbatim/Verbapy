@@ -108,9 +108,11 @@ def lemmatize(html_file: str, csv_file:str):
         # take orginal form, lower case it (titles)
         orth = word['treated'].lower().strip().translate(tsv_esc)
         lem = "?"
-        if orth[-1] == '΄':
-            # should be a number
-            # do not normalize, get a lemma from a hook
+        if toks[i][-1] == '΄':
+            orth = toks[i].strip().translate(tsv_esc)
+            # should be a number, do not normalize
+            # "treated" will decompose and add a space before accent  α ΄
+            # get a lemma from a hook
             lem = lem_num(orth)
         else:
             orth = unicodedata.normalize('NFKC', orth)
