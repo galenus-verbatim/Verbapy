@@ -7,12 +7,23 @@ PRAGMA foreign_keys = 0; -- W. for efficiency
 -- PRAGMA journal_mode = OFF; -- W. Dangerous, no roll back, maybe efficient
 -- PRAGMA synchronous = OFF; -- W. Dangerous, but no parallel write check
 
-DROP TABLE IF EXISTS edition;
-CREATE table edition (
+DROP TABLE IF EXISTS opus;
+CREATE table opus (
+-- Opus when more than one edition of same text
+    id          INTEGER, -- rowid auto
+    clavis      TEXT UNIQUE NOT NULL, -- ! identifier
+    bibl        BLOB,                 -- ! html bibl record
+    PRIMARY KEY(id ASC)
+);
+CREATE UNIQUE INDEX opus_clavis ON opus(clavis);
+
+DROP TABLE IF EXISTS editio;
+CREATE table editio (
 -- Source XML file
     id          INTEGER, -- rowid auto
     -- must, file infos and content
     clavis      TEXT UNIQUE NOT NULL, -- ! source filename without extension, unique for base
+    bibl        BLOB,                 -- ! html text ready to display
     epoch       INTEGER NOT NULL,     -- ! file modified time
     octets      INTEGER NOT NULL,     -- ! filesize
     titulus     TEXT NOT NULL,        -- ! title of an edition
@@ -29,7 +40,7 @@ CREATE table edition (
     annuscrea   INTEGER, -- ? creation year
     PRIMARY KEY(id ASC)
 );
-CREATE UNIQUE INDEX IF NOT EXISTS edition_code ON edition(clavis);
+CREATE UNIQUE INDEX IF NOT EXISTS editio_clavis ON editio(clavis);
 
 
 -- Schema to store lemmatized texts
@@ -40,7 +51,7 @@ CREATE table doc (
     -- must, file infos and content
     clavis      TEXT UNIQUE NOT NULL, -- ! identifier for section
     html        BLOB NOT NULL,        -- ! html text ready to display
-    edition     INTEGER NOT NULL,     -- ! link to the edition
+    editio      INTEGER NOT NULL,     -- ! link to the edition
     ante        INTEGER, -- ? previous document
     post        INTEGER, -- ? next document
 

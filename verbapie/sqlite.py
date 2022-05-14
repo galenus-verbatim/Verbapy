@@ -89,8 +89,8 @@ def crawl(corpus_conf: str, sqlite_file=None):
 def docs(json_file: str):
     """Insert a record for a file"""
     logging.info(json_file)
-    edition_sql = """
-INSERT INTO edition(
+    editio_sql = """
+INSERT INTO editio(
 
     clavis,
     epoch,
@@ -111,35 +111,35 @@ INSERT INTO edition(
     json_dir = os.path.dirname(json_file)
     with open(json_file, 'r', encoding="utf-8") as fread:
         data = json.load(fread)
-    edition_json = data[0]
+    editio_json = data[0]
     toc_file = os.path.join(json_dir, "toc.html")
     nav = None
     if os.path.isfile(toc_file):
         with open(toc_file, mode="r", encoding="utf-8") as f:
             nav = f.read()
-    editor = edition_json.get('editor')
-    cur.execute(edition_sql, (
-        edition_json['clavis'],
+    editor = editio_json.get('editor')
+    cur.execute(editio_sql, (
+        editio_json['clavis'],
         os.path.getmtime(json_file),
         os.path.getsize(json_file),
-        edition_json['titulus'],
+        editio_json['titulus'],
         nav,
 
-        edition_json.get('auctor'),
+        editio_json.get('auctor'),
         editor,
-        edition_json.get('annuspub'),
-        edition_json.get('volumen'),
-        edition_json.get('pagde'),
-        edition_json.get('pagad'),
+        editio_json.get('annuspub'),
+        editio_json.get('volumen'),
+        editio_json.get('pagde'),
+        editio_json.get('pagad'),
     ))
-    edition_id = cur.lastrowid
+    editio_id = cur.lastrowid
 
 
     doc_sql = """
 INSERT INTO doc(
     clavis,
     html,
-    edition,
+    editio,
     editor,
 
     ante,
@@ -176,7 +176,7 @@ INSERT INTO doc(
         cur.execute(doc_sql, (
             clavis,
             html,
-            edition_id,
+            editio_id,
             editor,
 
             ante,
