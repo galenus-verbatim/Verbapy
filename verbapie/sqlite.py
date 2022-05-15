@@ -118,6 +118,9 @@ INSERT INTO editio(
         with open(toc_file, mode="r", encoding="utf-8") as f:
             nav = f.read()
     editor = editio_json.get('editor')
+    pagde = editio_json.get('pagde');
+    pagad = editio_json.get('pagad', pagde);
+
     cur.execute(editio_sql, (
         editio_json['clavis'],
         os.path.getmtime(json_file),
@@ -129,8 +132,8 @@ INSERT INTO editio(
         editor,
         editio_json.get('annuspub'),
         editio_json.get('volumen'),
-        editio_json.get('pagde'),
-        editio_json.get('pagad'),
+        pagde,
+        pagad,
     ))
     editio_id = cur.lastrowid
 
@@ -173,6 +176,9 @@ INSERT INTO doc(
         if i < len(data)-1:
             post = data[i+1]['clavis']
 
+        pagde = doc_json.get('pagde');
+        pagad = doc_json.get('pagad', pagde);
+
         cur.execute(doc_sql, (
             clavis,
             html,
@@ -183,9 +189,9 @@ INSERT INTO doc(
             post,
 
             doc_json.get('volumen'),
-            doc_json.get('pagde'),
+            pagde,
             doc_json.get('linde'),
-            doc_json.get('pagad'),
+            pagad,
             doc_json.get('linad'),
 
             doc_json.get('liber'),
