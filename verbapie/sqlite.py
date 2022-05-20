@@ -15,6 +15,7 @@ import logging
 import os
 import sqlite3
 import sys
+import unicodedata
 import zlib
 # local
 import config
@@ -244,11 +245,10 @@ def toks(tsv_path: str, doc_id: int):
                     flag = 16
                 elif lem[0].isupper():
                     flag = 64
-                deform = lem.translate(tr_deform)
-                empty = deform.translate(tr_nat)
-                if empty:
-                    print(lem + " " + deform + " " 
-                    + str(empty.encode("unicode_escape")))
+                deform = ''.join(c for c 
+                    in unicodedata.normalize('NFD', lem.casefold())
+                    if unicodedata.category(c) != 'Mn'
+                )
                 cur.execute(
                     "INSERT INTO lem (form, deform, cat, flag) VALUES (?, ?, ?, ?)",
                     (lem, deform, cat, flag)
@@ -265,7 +265,10 @@ def toks(tsv_path: str, doc_id: int):
                     flag = 16
                 if orth[0].isupper():
                     flag = 64
-                deform = orth.translate(tr_deform)
+                deform = ''.join(c for c 
+                    in unicodedata.normalize('NFD', orth.casefold())
+                    if unicodedata.category(c) != 'Mn'
+                )
                 cur.execute(
                     "INSERT INTO orth (form, deform, lem, cat, flag) VALUES (?, ?, ?, ?, ?)",
                     (orth, deform, lem_id, cat, flag)

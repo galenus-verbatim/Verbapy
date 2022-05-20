@@ -5,7 +5,7 @@ __pycache__/
 # LibreOdds
 .~*
 
-tests/play*
-tests/galenus/
+tests/*/
+tests/test*
 tests/*.db
 tests/*.db-*

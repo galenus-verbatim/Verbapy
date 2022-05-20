@@ -8,10 +8,14 @@ MIT License https://opensource.org/licenses/mit-license.php
 
 Split a single TEI file in a multi-pages site
 
+output method="html" for <span></span>
+
+
 -->
 <xsl:transform version="1.1"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns="http://www.w3.org/1999/xhtml"
+  
   xmlns:tei="http://www.tei-c.org/ns/1.0"
   xmlns:ti="http://chs.harvard.edu/xmlns/cts"
   exclude-result-prefixes="tei ti"
@@ -117,8 +121,6 @@ Split a single TEI file in a multi-pages site
   <xsl:variable name="ext">.html</xsl:variable>
   <!-- Output page numbers, if we have the -->
   <xsl:variable name="pb" select="count(.//pb)"/>
-  <!-- A handle on each line breaks by its page to count lines -->
-  <xsl:key name="line-by-page" match="tei:head|tei:item|tei:l|tei:lb|tei:p" use="generate-id(preceding::tei:pb[1])"/>
   
   <xsl:template match="/*">
     <xsl:if test="normalize-space($dst_dir) = ''">
@@ -393,8 +395,8 @@ Split a single TEI file in a multi-pages site
       </xsl:choose>
     </xsl:variable>
     <xsl:variable name="linde">
-      <xsl:for-each select="(.//*)[1]">
-        <xsl:call-template name="line"/>
+      <xsl:for-each select="(.//tei:lb[@n])[1]">
+        <xsl:value-of select="@n"/>
       </xsl:for-each>
     </xsl:variable>
     <xsl:variable name="pagad">
@@ -409,8 +411,8 @@ Split a single TEI file in a multi-pages site
       </xsl:choose>
     </xsl:variable>
     <xsl:variable name="linad">
-      <xsl:for-each select="(.//*)[last()]">
-        <xsl:call-template name="line"/>
+      <xsl:for-each select="(.//tei:lb[@n])[last()]">
+        <xsl:value-of select="@n"/>
       </xsl:for-each>
     </xsl:variable>
     
@@ -442,10 +444,12 @@ Split a single TEI file in a multi-pages site
     <xsl:if test="$volumen != ''">,
       "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
     <xsl:if test="$pagde != ''">,
-      "pagde": "<xsl:value-of select="$pagde"/>",
+      "pagde": "<xsl:value-of select="$pagde"/>"</xsl:if>
+    <xsl:if test="$linde != ''">,
       "linde": "<xsl:value-of select="$linde"/>"</xsl:if>
     <xsl:if test="$pagad != ''">,
-      "pagad": "<xsl:value-of select="$pagad"/>",
+      "pagad": "<xsl:value-of select="$pagad"/>"</xsl:if>
+    <xsl:if test="$linad != ''">,
       "linad": "<xsl:value-of select="$linad"/>"</xsl:if>
     <xsl:if test="$titulus != ''">,
       "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
@@ -468,6 +472,7 @@ Split a single TEI file in a multi-pages site
       encoding="UTF-8"
       >
       <article id="{$dst_name}">
+        <xsl:text>&#10;</xsl:text>
         <xsl:if test="$text-before != '' or not(.//tei:pb)">
           <xsl:apply-templates select="preceding::tei:pb[1]">
             <xsl:with-param name="class">page1</xsl:with-param>
@@ -520,76 +525,10 @@ Split a single TEI file in a multi-pages site
         </xsl:choose>
         <!-- Content -->
         <xsl:apply-templates/>
-        <xsl:text>&#10;</xsl:text>
       </article>
     </xsl:document>
   </xsl:template>
 
-  <!-- 
-  Big hack to generate a line number from different line break cases
-  -->
-  <xsl:template name="line">
-    <!-- Count lines from the last page break. If no <pb> before…? not predicted -->
-    <xsl:variable name="pb" select="generate-id((self::tei:pb|preceding::tei:pb[1])[last()])"/>
-    <!--
-    <xsl:value-of select="
-      name((
-      preceding::tei:item[1]
-      | preceding::tei:l[1]
-      | preceding::tei:lb[1]
-      | preceding::tei:p[1]
-      )[last()])"/>
-      -->
-    <xsl:variable name="id">
-      <xsl:choose>
-        <xsl:when test="ancestor-or-self::tei:lb">
-          <xsl:value-of select="generate-id(ancestor-or-self::tei:lb)"/>
-        </xsl:when>
-        <xsl:when test="ancestor-or-self::tei:l">
-          <xsl:value-of select="generate-id(ancestor-or-self::tei:l)"/>
-        </xsl:when>
-        <xsl:when test="ancestor-or-self::tei:head">
-          <xsl:value-of select="generate-id(ancestor-or-self::tei:head)"/>
-        </xsl:when>
-        <xsl:when test="ancestor-or-self::tei:p">
-          <xsl:value-of select="generate-id(ancestor-or-self::tei:p)"/>
-        </xsl:when>
-        <xsl:when test="ancestor-or-self::tei:item">
-          <xsl:value-of select="generate-id(ancestor-or-self::tei:item)"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="
-            generate-id((
-                preceding::tei:head[1]
-              | preceding::tei:item[1]
-              | preceding::tei:l[1]
-              | preceding::tei:lb[1]
-              | preceding::tei:p[1]
-            )[last()])"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <!-- Seems not efficient but is well compiled and do not fall in hyperspace like some weird xpath -->
-    <xsl:variable name="n">
-      <xsl:for-each select="key('line-by-page', $pb)">
-        <xsl:if test="generate-id(.) = $id">
-          <xsl:value-of select="position()"/>
-        </xsl:if>
-      </xsl:for-each>
-    </xsl:variable>
-    <xsl:choose>
-      <!-- something went wrong, let it go -->
-      <xsl:when test="string(number($n)) = 'NaN'"/>
-      <!-- ugly fix -->
-      <xsl:when test="self::tei:head">
-        <xsl:value-of select="$n"/>
-      </xsl:when>
-      <!-- supposed line number after page or section -->
-      <xsl:otherwise>
-        <xsl:value-of select="$n + 1"/>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
   
 
   <!-- For debug, a linear xpath for an element -->

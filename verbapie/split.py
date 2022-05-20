@@ -10,8 +10,9 @@ import glob
 import io
 import json
 import logging
-from typing import List
 from lxml import etree
+from typing import List
+# import moduleName
 import os
 import re
 import shutil
@@ -24,19 +25,35 @@ import verbapie
 
 """
 
-# compile xsl here, one time is enough
-xsl_file = os.path.join(os.path.dirname(__file__), 'cts_chapters.xsl')
-xsl_dom = etree.parse(xsl_file)
-xslt = etree.XSLT(xsl_dom)
+# URL resolver for xsl document()
+class FileResolver(etree.Resolver):
+    def __init__(self):
+        self.base_url = ''
+    def set_base(self, base_url):
+        self.base_url = base_url
+    def resolve(self, url, pubid, context):
+        if (self.base_url):
+            url = os.path.join(self.base_url, url)
+        return self.resolve_filename(url, context)
+
 # libxml options for dom document load
-etree.set_default_parser(
-    etree.XMLParser(
-        dtd_validation=False,
-        no_network=True,
-        ns_clean=True,
-        huge_tree=True,
-    )
+xml_parser = etree.XMLParser(
+    dtd_validation=False,
+    no_network=True,
+    ns_clean=True,
+    huge_tree=True,
 )
+xml_resolver = FileResolver()
+xml_parser.resolvers.add(xml_resolver)
+
+# compile xsl here, one time is enough
+xslt_lining = etree.XSLT(
+    etree.parse(os.path.join(os.path.dirname(__file__), 'cts_lining.xsl'), parser=xml_parser)
+)
+xslt_chapters = etree.XSLT(
+    etree.parse(os.path.join(os.path.dirname(__file__), 'cts_chapters.xsl'), parser=xml_parser)
+)
+
 # the default dir where to output files
 html_dir = None
 
@@ -65,20 +82,30 @@ def split(tei_file: str):
         xml = f.read()
     xml = re.sub(r"\s+", ' ', xml)
 
-    """
-    debug = os.path.join(html_dir, tei_name + ".xml")
-    with open(debug, 'w', encoding="utf-8") as f:
-        f.write(xml)
-    """
     # do not forget base_url, to resolve xslt document() for __cts__.xml
-    tei_dom = etree.XML(bytes(xml, encoding='utf-8'), base_url=tei_file)
+    tei_dom = etree.XML(
+        bytes(xml, encoding='utf-8'), 
+        parser=xml_parser, 
+        base_url=tei_file
+    )
+    # tei, normalize lining and 
+    tei_dom = xslt_lining(tei_dom)
+
+    fin = etree.tounicode(tei_dom, method='xml', pretty_print=True)
+    fout = open(os.path.join(html_dir, tei_name, tei_name+".xml"), 'w', encoding="utf-8")
+    fout.write(fin)
+
+
+    # check if transformatin can get metas from __cts__.xml
     if os.path.isfile(os.path.join(os.path.dirname(tei_file), '__cts__.xml')):
         __cts__ = 'true'
     else:
         __cts__ = ''
+
     dst_dom = None
     try:
-        dst_dom = xslt(
+        xml_resolver.set_base(os.path.dirname(tei_file))
+        dst_dom = xslt_chapters(
             tei_dom,
             # libxml do not like windows paths starting C:
             dst_dir = etree.XSLT.strparam(
@@ -89,12 +116,12 @@ def split(tei_file: str):
         )
     except:
         pass
-    for error in xslt.error_log:
+    for error in xslt_chapters.error_log:
         print(error.message + " l. " + str(error.line))
 
-    infile = etree.tounicode(dst_dom, method='text', pretty_print=True)
-    outfile = open(os.path.join(html_dir, tei_name, tei_name+".json"), 'w', encoding="utf-8")
-    outfile.write(infile)
+    fin = etree.tounicode(dst_dom, method='text', pretty_print=True)
+    fout = open(os.path.join(html_dir, tei_name, tei_name+".json"), 'w', encoding="utf-8")
+    fout.write(fin)
 
 def main() -> int:
     parser = argparse.ArgumentParser(
