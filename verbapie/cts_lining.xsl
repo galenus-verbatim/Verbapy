@@ -55,6 +55,7 @@ Specific Galenus, normalize line breaks.
     <xsl:choose>
       <xsl:when test="ancestor-or-self::tei:lg[tei:l]"/>
       <xsl:when test="$next = 'div'"/>
+      <xsl:when test="$next = 'p'"/>
       <xsl:when test="$next = 'l'"/>
       <xsl:when test="$lbs &lt; 10"/>
       <xsl:when test="(following::tei:lb)[1]/preceding-sibling::text()[normalize-space(.) != '']">
