@@ -63,7 +63,7 @@ def corpus(paths_file: str, force=False):
 
     html_dir = verbapie.html_dir(paths_file)
     logging.info(html_dir + " (html destination directory)")
-    # do not delete html_dir, let user, keep lemma
+    # do not delete html_dir by default, let user, keep lemma
     if force:
         shutil.rmtree(html_dir, ignore_errors=True)
     os.makedirs(html_dir, exist_ok=True)
@@ -76,6 +76,12 @@ def split(tei_file: str):
     tei_name = os.path.splitext(os.path.basename(tei_file))[0]
     # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
     os.makedirs(os.path.join(html_dir, tei_name), exist_ok=True)
+    json_file = os.path.join(html_dir, tei_name, tei_name+".json")
+
+    # dst_file newer than src_file, do nothing 
+    if os.path.getmtime(json_file) > os.path.getmtime(tei_file):
+        return
+
     logging.info(tei_name + " {:.0f} kb".format(os.path.getsize(tei_file) / 1024))
     # normalize spaces
     with open(tei_file, 'r', encoding="utf-8") as f:
@@ -120,7 +126,7 @@ def split(tei_file: str):
         print(error.message + " l. " + str(error.line))
 
     fin = etree.tounicode(dst_dom, method='text', pretty_print=True)
-    fout = open(os.path.join(html_dir, tei_name, tei_name+".json"), 'w', encoding="utf-8")
+    fout = open(json_file, 'w', encoding="utf-8")
     fout.write(fin)
 
 def main() -> int:
