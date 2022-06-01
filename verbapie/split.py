@@ -79,7 +79,7 @@ def split(tei_file: str):
     json_file = os.path.join(html_dir, tei_name, tei_name+".json")
 
     # dst_file newer than src_file, do nothing 
-    if os.path.getmtime(json_file) > os.path.getmtime(tei_file):
+    if os.path.isfile(json_file)  and os.path.getmtime(json_file) > os.path.getmtime(tei_file):
         return
 
     logging.info(tei_name + " {:.0f} kb".format(os.path.getsize(tei_file) / 1024))
