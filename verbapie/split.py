@@ -86,7 +86,7 @@ def split(tei_file: str):
     # normalize spaces
     with open(tei_file, 'r', encoding="utf-8") as f:
         xml = f.read()
-    xml = re.sub(r"\s+", ' ', xml)
+    xml = re.sub(r"\s+", ' ', xml, flags=re.M)
 
     # do not forget base_url, to resolve xslt document() for __cts__.xml
     tei_dom = etree.XML(
