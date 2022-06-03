@@ -20,6 +20,11 @@ exclude-result-prefixes="tei"
 >
   <!-- output html requested with xsltproc, < -->
   <xsl:output indent="yes" encoding="UTF-8" method="html" />
+  
+  <!-- To produce a normalised id without diacritics translate("Déjà vu, 4", $idfrom, $idto) = "dejavu4"  To produce a normalised id -->
+  <xsl:variable name="idfrom">ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÄÉÈÊÏÎÔÖÛÜÇàâäéèêëïîöôüû_ ,.'’ #()</xsl:variable>
+  <xsl:variable name="idto"  >abcdefghijklmnopqrstuvwxyzaaaeeeiioouucaaaeeeeiioouu_</xsl:variable>
+  
 
   <xsl:template match="tei:*">
     <xsl:message terminate="yes">
@@ -252,8 +257,9 @@ exclude-result-prefixes="tei"
     <xsl:param name="class"/>
     <xsl:param name="diff"/>
     <span>
+      <xsl:variable name="unit" select="translate(@unit, $idfrom, $idto)"/>
       <xsl:attribute name="class">
-        <xsl:value-of select="normalize-space(concat('milestone ', @unit, ' ', $class))"/>
+        <xsl:value-of select="normalize-space(concat('milestone ', $unit, ' ', $class))"/>
       </xsl:attribute>
       <xsl:if test="@n">
         <xsl:attribute name="data-n">
@@ -267,11 +273,11 @@ exclude-result-prefixes="tei"
           </xsl:choose>
         </xsl:attribute>
       </xsl:if>
-      <xsl:if test="@unit">
-        <xsl:attribute name="data-unit">
-          <xsl:value-of select="@unit"/>
+      <xsl:for-each select="@corresp|@facs|@source|@unit">
+        <xsl:attribute name="data-{name()}">
+          <xsl:value-of select="."/>
         </xsl:attribute>
-      </xsl:if>
+      </xsl:for-each>
     </span>
   </xsl:template>
   
