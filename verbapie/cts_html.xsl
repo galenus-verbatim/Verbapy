@@ -75,7 +75,7 @@ exclude-result-prefixes="tei"
   </xsl:template>
   
   <xsl:template match="tei:date">
-    <span class="{local-name()}" rel="{@notBefore}-{@notAfter}">
+    <span class="{local-name()}" rel="{@when}{@notBefore}-{@notAfter}">
       <xsl:apply-templates/>
     </span>
   </xsl:template>
