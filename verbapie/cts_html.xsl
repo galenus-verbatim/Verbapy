@@ -361,7 +361,7 @@ exclude-result-prefixes="tei"
   </xsl:template>
   
   <xsl:template match="tei:persName">
-    <a class="{local-name()}" type="{@type}" rel="{@nymRef}">
+    <a class="{local-name()}" type="{@type}" subtype="{@subtype}" rel="{@nymRef}">
     <a href="http://cahal.me/italikos/tablepers">
       <xsl:apply-templates/>
     </a>
@@ -370,7 +370,8 @@ exclude-result-prefixes="tei"
   
   <xsl:template match="tei:cit">
   <i>
-    <a href="http://cahal.me/italikos/tablequote">
+    <xsl:variable name="CTSURN" select="concat('https://scaife.perseus.org/reader/', descendant::tei:title/@key)"/>
+    <a href="{$CTSURN}" >
       <xsl:apply-templates/>
     </a>
   </i>
