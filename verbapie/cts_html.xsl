@@ -397,10 +397,10 @@ exclude-result-prefixes="tei"
   
   <!-- Will produce bad html for p/quote -->
   <xsl:template match="tei:quote">
-  <xsl:variable name="CTSURN2" select="concat('https://scaife.perseus.org/reader/', descendant::tei:title/@key)"/>
+  <!--need to fix the quote code becaause it doubles the text<xsl:variable name="CTSURN2" select="concat('https://scaife.perseus.org/reader/', descendant::tei:title/@key)"/>
     <a href="{$CTSURN2}" >
 		<xsl:apply-templates/>
-    </a>
+    </a>-->
     <xsl:variable name="class" select="normalize-space(concat('quote ', @rend, ' ', @type))"/>
     <xsl:choose>
       <!-- level block -->
