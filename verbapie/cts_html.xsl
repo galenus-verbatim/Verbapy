@@ -361,7 +361,7 @@ exclude-result-prefixes="tei"
   </xsl:template>
   
   <xsl:template match="tei:persName">
-    <a class="{local-name()}" type="{@type}" rel="{@nymRef}">
+    <a class="{local-name()}" type="{@type}" subtype="{@subtype}" rel="{@nymRef}">
     <a href="http://cahal.me/italikos/tablepers">
       <xsl:apply-templates/>
     </a>
@@ -370,7 +370,8 @@ exclude-result-prefixes="tei"
   
   <xsl:template match="tei:cit">
   <i>
-    <a href="http://cahal.me/italikos/tablequote">
+    <xsl:variable name="CTSURN" select="concat('https://scaife.perseus.org/reader/', descendant::tei:title/@key)"/>
+    <a href="{$CTSURN}" >
       <xsl:apply-templates/>
     </a>
   </i>
@@ -396,6 +397,10 @@ exclude-result-prefixes="tei"
   
   <!-- Will produce bad html for p/quote -->
   <xsl:template match="tei:quote">
+  <!--need to fix the quote code becaause it doubles the text<xsl:variable name="CTSURN2" select="concat('https://scaife.perseus.org/reader/', descendant::tei:title/@key)"/>
+    <a href="{$CTSURN2}" >
+		<xsl:apply-templates/>
+    </a>-->
     <xsl:variable name="class" select="normalize-space(concat('quote ', @rend, ' ', @type))"/>
     <xsl:choose>
       <!-- level block -->
