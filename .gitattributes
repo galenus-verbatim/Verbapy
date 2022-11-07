@@ -1,12 +1,25 @@
 * text eol=lf
 *.tsv text
-
 # Specific Windows
 *.bat text eol=crlf
 
-# Sqlite files, truly binary and should not be modified.
+# truly binary and should not be modified.
 *.db binary
+*.docx binary
+*.jar binary
+*.jpg binary
+*.odg binary
+*.odt binary
+*.otf binary
+*.oxt binary
 *.pdf binary
 *.png binary
-*.jpg binary
+*.pptx binary
+*.ttf binary
+*.xlsx binary
+*.woff binary
+*.woff2 binary
+*.zip binary
 
+
+data/* filter=lfs diff=lfs merge=lfs -text
