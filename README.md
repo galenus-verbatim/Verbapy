@@ -32,7 +32,7 @@ For a faster lemmatisation, if you have an Nvidia graphic card, you can use it f
 Installation for Windows
 * Install [nvidia cuda pilots](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html)
 * Install [PyTorch 1.7.1](https://pytorch.org/get-started/previous-versions/#linux-and-windows-7), lemmatization with papie 0.3.9 requires torch<=1.7.1,>=1.3.1, chose the torch version according to your cuda pilot version
-
+(the full lematization of the Iliad and the Odyssey takes about 5 minute with cuda on rtx 3060ti and about 13 minute without)
 ## Install Python for Windows 10
 
 A python package suppose usually that you have already a running Python installation, but if not, and if you are on windows, the system will not help vou to make good choices like linux. Here some hints that may save you time, at least at date (2022-01).
