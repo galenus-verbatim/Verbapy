@@ -60,6 +60,8 @@ def tei_list(tsv_file: str) -> List:
                 continue
             if tei_file[0] == '#':
                 continue
+            if tei_file[0] == '':
+                continue
             if not os.path.isabs(tei_file):
                 tei_file = os.path.join(tsv_dir, tei_file)
             tei_file = os.path.normpath(tei_file)
