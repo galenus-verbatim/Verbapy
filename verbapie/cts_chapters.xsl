@@ -8,7 +8,7 @@ MIT License https://opensource.org/licenses/mit-license.php
 
 Split a single TEI file in a multi-pages site
 
-output method="html" for <span></span>
+
 
 
 -->
@@ -165,12 +165,12 @@ output method="html" for <span></span>
 </root>
   </xsl:template>
   
-  <xsl:template match="tei:text">
-    <xsl:apply-templates select="*"/>
+  <xsl:template match="tei:text | tei:body">
+    <xsl:apply-templates/>
   </xsl:template>
 
   <!-- chaptering -->
-  <xsl:template match="tei:div[@type='edition'] | tei:body">
+  <xsl:template match="tei:div[@type='edition'] ">
     <xsl:choose>
       <!-- chapters may be children of book -->
       <xsl:when test="count(.//tei:div[@type='textpart'][@subtype='chapter']) &gt; 1">
@@ -248,6 +248,9 @@ output method="html" for <span></span>
 
   <xsl:template match="tei:div" mode="toc">
     <xsl:choose>
+      <xsl:when test="@type = 'edition'">
+        <xsl:apply-templates select="tei:div" mode="toc"/>
+      </xsl:when>
       <xsl:when test="@n and tei:div[@type='textpart'][@subtype='chapter']">
         <li>
           <span>Liber <xsl:value-of select="@n"/></span>
@@ -306,8 +309,13 @@ output method="html" for <span></span>
         <xsl:message terminate="yes">
           <xsl:text>[cts_chapter.xsl] file:</xsl:text>
           <xsl:value-of select="$src_name"/>
-          <xsl:text> toc pb in element </xsl:text>
-          <xsl:value-of select="name()"/>
+          <xsl:text> toc pb in </xsl:text>
+          <xsl:for-each select="ancestor-or-self::tei:div">
+            <xsl:value-of select="@subtype"/>
+            <xsl:text>.</xsl:text>
+            <xsl:value-of select="@n"/>
+            <xsl:text>/</xsl:text>
+          </xsl:for-each>
         </xsl:message>
       </xsl:otherwise>
     </xsl:choose>
@@ -482,12 +490,14 @@ output method="html" for <span></span>
         <xsl:variable name="ed1" select="preceding::tei:milestone[@unit='ed1page'][1]"/>
         <xsl:choose>
           <xsl:when test="$ed1">
+            <xsl:text>&#10;</xsl:text>
             <xsl:apply-templates select="$ed1">
               <xsl:with-param name="class">page1</xsl:with-param>
             </xsl:apply-templates>
           </xsl:when>
           <!-- first section with a milestone in it -->
           <xsl:when test=".//tei:milestone[@unit='ed1page']">
+            <xsl:text>&#10;</xsl:text>
             <xsl:apply-templates select="(.//tei:milestone[@unit='ed1page'])[1]">
               <xsl:with-param name="class">page1</xsl:with-param>
               <xsl:with-param name="diff" select="-1"/>
@@ -495,6 +505,7 @@ output method="html" for <span></span>
           </xsl:when>
           <!-- following axis excludes descendants -->
           <xsl:otherwise>
+            <xsl:text>&#10;</xsl:text>
             <xsl:apply-templates select="following::tei:milestone[@unit='ed1page'][1]">
               <xsl:with-param name="class">page1</xsl:with-param>
               <xsl:with-param name="diff" select="-1"/>
@@ -504,12 +515,14 @@ output method="html" for <span></span>
         <xsl:variable name="ed2" select="preceding::tei:milestone[@unit='ed2page'][1]"/>
         <xsl:choose>
           <xsl:when test="$ed2">
+            <xsl:text>&#10;</xsl:text>
             <xsl:apply-templates select="$ed2">
               <xsl:with-param name="class">page1</xsl:with-param>
             </xsl:apply-templates>
           </xsl:when>
           <!-- first section with a milestone in it -->
           <xsl:when test=".//tei:milestone[@unit='ed2page']">
+            <xsl:text>&#10;</xsl:text>
             <xsl:apply-templates select="(.//tei:milestone[@unit='ed2page'])[1]">
               <xsl:with-param name="diff" select="-1"/>
               <xsl:with-param name="class">page1</xsl:with-param>
@@ -517,6 +530,7 @@ output method="html" for <span></span>
           </xsl:when>
           <!-- following axis excludes descendants -->
           <xsl:otherwise>
+            <xsl:text>&#10;</xsl:text>
             <xsl:apply-templates select="following::tei:milestone[@unit='ed2page'][1]">
               <xsl:with-param name="diff" select="-1"/>
               <xsl:with-param name="class">page1</xsl:with-param>

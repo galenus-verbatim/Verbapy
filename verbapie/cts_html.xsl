@@ -18,15 +18,31 @@ output method="html" for <span></span>
 
 exclude-result-prefixes="tei"
 >
+  <xsl:include href="tei_header_html.xsl"/>
   <!-- output html requested with xsltproc, < -->
-  <xsl:output indent="yes" encoding="UTF-8" method="html" />
+  <xsl:output 
+    indent="yes" 
+    encoding="UTF-8"
+    method="html"
+    omit-xml-declaration="yes"
+    doctype-public="HTML"
+    doctype-system=""
+  />
   
   <!-- To produce a normalised id without diacritics translate("Déjà vu, 4", $idfrom, $idto) = "dejavu4"  To produce a normalised id -->
   <xsl:variable name="idfrom">ABCDEFGHIJKLMNOPQRSTUVWXYZÀÂÄÉÈÊÏÎÔÖÛÜÇàâäéèêëïîöôüû_ ,.'’ #()</xsl:variable>
   <xsl:variable name="idto"  >abcdefghijklmnopqrstuvwxyzaaaeeeiioouucaaaeeeeiioouu_</xsl:variable>
   
+  <xsl:template match="/">
+    <article>
+      <header>
+        <xsl:apply-templates select="/tei:TEI/tei:teiHeader"/>
+      </header>
+      <xsl:apply-templates select="/tei:TEI/tei:text"/>
+    </article>
+  </xsl:template>
 
-  <xsl:template match="tei:*">
+  <xsl:template match="tei:*" priority="-5">
     <xsl:message terminate="yes">
       <xsl:text>[cts_html.xsl] </xsl:text>
       <xsl:text>&lt;</xsl:text>
@@ -37,7 +53,6 @@ exclude-result-prefixes="tei"
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="tei:teiHeader"/>
 
   <xsl:template match="tei:TEI | tei:text | tei:body">
     <xsl:apply-templates/>
@@ -95,6 +110,24 @@ exclude-result-prefixes="tei"
   
   <xsl:template match="tei:div">
     <section>
+      <xsl:variable name="path">
+        <xsl:for-each select="ancestor-or-self::tei:div[@type='textpart']">
+          <xsl:if test="position() != 1">.</xsl:if>
+          <xsl:value-of select="@n"/>
+        </xsl:for-each>
+      </xsl:variable>
+      <xsl:attribute name="id">
+        <xsl:text>s</xsl:text>
+        <xsl:value-of select="$path"/>
+      </xsl:attribute>
+      <xsl:if test="$path != ''">
+        <xsl:attribute name="title">
+          <xsl:value-of select="translate(substring(@subtype, 1, 1), $low, $up)"/>
+          <xsl:value-of select="substring(@subtype, 2)"/>
+          <xsl:text> </xsl:text>
+          <xsl:value-of select="$path"/>
+        </xsl:attribute>
+      </xsl:if>
       <xsl:apply-templates/>
     </section>
   </xsl:template>
@@ -116,15 +149,10 @@ exclude-result-prefixes="tei"
     </span>
   </xsl:template>
   
-  <!-- Graphic founds seem links 
+  <!-- Graphic founds were links and not images, no output for Galen
   <graphic url="https://babel.hathitrust.org/cgi/pt?id=hvd.hxpp8p;view=2up;seq=514"/>
   -->
   <xsl:template match="tei:graphic">
-    <a href="{@url}">
-      <xsl:text>[p. </xsl:text>
-      <xsl:value-of select="(preceding::tei:pb)[1]/@n"/>
-      <xsl:text>]</xsl:text>
-    </a>
   </xsl:template>
   
   
@@ -150,7 +178,10 @@ exclude-result-prefixes="tei"
     </xsl:variable>
     <xsl:choose>
       <xsl:when test="$n != ''">
-        <span class="lb">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:value-of select="normalize-space(concat('lb ', @rend))"/>
+          </xsl:attribute>
           <xsl:attribute name="data-page">
             <xsl:value-of select="$page"/>
           </xsl:attribute>
@@ -158,15 +189,22 @@ exclude-result-prefixes="tei"
             <xsl:value-of select="$n"/>
           </xsl:attribute>
           <xsl:attribute name="id">
-            <xsl:text>p</xsl:text>
-            <xsl:value-of select="$page"/>
-            <xsl:text>.</xsl:text>
-            <xsl:value-of select="$n"/>
+            <xsl:choose>
+              <xsl:when test="@xml:id">
+                <xsl:value-of select="@xml:id"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>l</xsl:text>
+                <xsl:value-of select="$page"/>
+                <xsl:text>.</xsl:text>
+                <xsl:value-of select="$n"/>
+              </xsl:otherwise>
+            </xsl:choose>
           </xsl:attribute>
         </span>
       </xsl:when>
       <xsl:otherwise>
-        <!-- xmlns="http://www.w3.org/1999/xhtml" prodce <br></br> -->
+        <!-- xmlns="http://www.w3.org/1999/xhtml" produce <br></br> -->
         <xsl:text disable-output-escaping="yes">&lt;br/&gt;</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
@@ -196,51 +234,68 @@ exclude-result-prefixes="tei"
     <xsl:apply-templates/>
   </xsl:template>
 
-  <xsl:template match="tei:item">
-    <li>
-      <xsl:apply-templates/>
-    </li>
-  </xsl:template>
-  
-  <xsl:template match="tei:list">
-    <ul>
-      <xsl:apply-templates/>
-    </ul>
-  </xsl:template>
-  
-  <xsl:template match="tei:list[@rend='table']">
-    <table>
-      <xsl:apply-templates/>
+  <xsl:template match="tei:list[@rend = 'table']">
+    <table class="list">
+      <!-- No page breaks between table rows --> 
+      <xsl:choose>
+        <xsl:when test="count(tei:item) &gt; 1">
+          <thead>
+            <xsl:apply-templates select="tei:item[1]/tei:list"/>
+          </thead>
+          <tbody>
+            <xsl:apply-templates select="tei:item[position() &gt; 1]/tei:list"/>
+          </tbody>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="tei:item/tei:list"/>
+        </xsl:otherwise>
+      </xsl:choose>
     </table>
   </xsl:template>
   
-  <xsl:template match="tei:list[@rend='table']/tei:item">
-    <tbody>
-      <xsl:apply-templates/>
-    </tbody>
-  </xsl:template>
-  
-  <xsl:template match="tei:list[@rend='table']/tei:item[1]">
-    <thead>
-      <xsl:apply-templates/>
-    </thead>
-  </xsl:template>
-  
-  <xsl:template match="tei:list[@rend='row']">
+  <!-- table row from list  -->
+  <xsl:template match="tei:list[@rend='row'] | tei:list[@rend='table']/tei:item/tei:list">
     <tr>
-      <xsl:apply-templates/>
+      <xsl:if test="@n">
+        <td class="lb" data-line="{@n}"/>
+      </xsl:if>
+      <xsl:apply-templates>
+        <xsl:with-param name="pb" select="preceding-sibling::tei:*[1][self::tei:pb]"/>
+      </xsl:apply-templates>
     </tr>
   </xsl:template>
+ 
   
   <xsl:template match="tei:list[@rend='row']/tei:item">
+    <xsl:param name="pb"/>
+    <xsl:variable name="page">
+      <xsl:variable name="nb">
+        <xsl:number/>
+      </xsl:variable>
+      <xsl:choose>
+        <xsl:when test="$nb != 1"/>
+        <xsl:otherwise>
+          <xsl:apply-templates select="$pb"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
     <xsl:choose>
+      <xsl:when test="ancestor::tei:item[@rend = 'header']">
+        <th>
+          <xsl:copy-of select="$page"/>
+          <xsl:apply-templates/>
+        </th>
+      </xsl:when>
       <xsl:when test="tei:label and count(*) = 1 and not(text()[normalize-space(.) != ''])">
         <th>
+          <xsl:copy-of select="$page"/>
           <xsl:apply-templates select="tei:label/node()"/>
         </th>
       </xsl:when>
       <xsl:otherwise>
         <td>
+          <xsl:copy-of select="$page"/>
           <xsl:apply-templates/>
         </td>
       </xsl:otherwise>
@@ -252,7 +307,8 @@ exclude-result-prefixes="tei"
       <xsl:apply-templates/>
     </div>
   </xsl:template>
-  
+
+
   <xsl:template match="tei:milestone">
     <xsl:param name="class"/>
     <xsl:param name="diff"/>
@@ -278,6 +334,19 @@ exclude-result-prefixes="tei"
           <xsl:value-of select="."/>
         </xsl:attribute>
       </xsl:for-each>
+      <!-- required for empty tag -->
+      <xsl:attribute name="id">
+        <xsl:choose>
+          <xsl:when test="@xml:id">
+            <xsl:value-of select="@xml:id"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="@unit"/>
+            <xsl:text>.</xsl:text>
+            <xsl:value-of select="@n"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
     </span>
   </xsl:template>
   
@@ -329,9 +398,11 @@ exclude-result-prefixes="tei"
     </xsl:variable>
     <xsl:choose>
       <xsl:when test="$n = ''"/>
+      <!-- give volume number
       <xsl:when test="contains($n, '.')">
         <xsl:value-of select="substring-after($n, '.')"/>
       </xsl:when>
+      -->
       <xsl:otherwise>
         <xsl:value-of select="$n"/>
       </xsl:otherwise>
@@ -352,11 +423,19 @@ exclude-result-prefixes="tei"
         <xsl:attribute name="data-page">
           <xsl:value-of select="$n"/>
         </xsl:attribute>
-        <xsl:attribute name="id">
-          <xsl:text>p</xsl:text>
-          <xsl:value-of select="$n"/>
-        </xsl:attribute>
       </xsl:if>
+      <!-- required for empty tag -->
+      <xsl:attribute name="id">
+        <xsl:choose>
+          <xsl:when test="@xml:id">
+            <xsl:value-of select="@xml:id"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>p</xsl:text>
+            <xsl:value-of select="$n"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
     </span>
   </xsl:template>
   
@@ -445,4 +524,7 @@ exclude-result-prefixes="tei"
     </em>
   </xsl:template>
   
+  <xsl:template match="tei:space">
+    <xsl:text> </xsl:text>
+  </xsl:template>
 </xsl:transform>

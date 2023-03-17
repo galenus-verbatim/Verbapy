@@ -46,10 +46,6 @@ xml_parser = etree.XMLParser(
 xml_resolver = FileResolver()
 xml_parser.resolvers.add(xml_resolver)
 
-# compile xsl here, one time is enough
-xslt_lining = etree.XSLT(
-    etree.parse(os.path.join(os.path.dirname(__file__), 'cts_lining.xsl'), parser=xml_parser)
-)
 xslt_chapters = etree.XSLT(
     etree.parse(os.path.join(os.path.dirname(__file__), 'cts_chapters.xsl'), parser=xml_parser)
 )
@@ -76,7 +72,7 @@ def split(tei_file: str):
     tei_name = os.path.splitext(os.path.basename(tei_file))[0]
     # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
     os.makedirs(os.path.join(html_dir, tei_name), exist_ok=True)
-    json_file = os.path.join(html_dir, tei_name, tei_name+".json")
+    json_file = os.path.join(html_dir, tei_name, tei_name + ".json")
 
     # dst_file newer than src_file, do nothing 
     if os.path.isfile(json_file)  and os.path.getmtime(json_file) > os.path.getmtime(tei_file):
@@ -86,7 +82,7 @@ def split(tei_file: str):
     # normalize spaces
     with open(tei_file, 'r', encoding="utf-8") as f:
         xml = f.read()
-    xml = re.sub(r"\s+", ' ', xml, flags=re.M)
+    # xml = re.sub(r"\s+", ' ', xml, flags=re.M)
 
     # do not forget base_url, to resolve xslt document() for __cts__.xml
     tei_dom = etree.XML(
@@ -94,12 +90,6 @@ def split(tei_file: str):
         parser=xml_parser, 
         base_url=tei_file
     )
-    # tei, normalize lining and 
-    tei_dom = xslt_lining(tei_dom)
-
-    fin = etree.tounicode(tei_dom, method='xml', pretty_print=True)
-    fout = open(os.path.join(html_dir, tei_name, tei_name+".xml"), 'w', encoding="utf-8")
-    fout.write(fin)
 
 
     # check if transformatin can get metas from __cts__.xml
