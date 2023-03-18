@@ -122,7 +122,7 @@ Split a single TEI file in a multi-pages site
   <!-- Output page numbers, if we have the -->
   <xsl:variable name="pb" select="count(.//pb)"/>
   
-  <xsl:template match="/*">
+  <xsl:template match="/" priority="5">
     <xsl:if test="normalize-space($dst_dir) = ''">
       <xsl:message terminate="yes">[cts_chapter.xsl] $dst_dir param is required to output files</xsl:message>
     </xsl:if>
