@@ -277,7 +277,8 @@ def toks(tsv_path: str, doc_id: int):
                 orth_dic[orth_key] = orth_id
             else:
                 orth_id = orth_dic[orth_key]
-
+            # if line number has a volume number like for Galen
+            linea = ("." + linea).split(".")[-1]
             cur.execute(tok_sql,
                 (doc_id, orth_id, charde, charad, cat, lem_id, pag, linea)
             )
