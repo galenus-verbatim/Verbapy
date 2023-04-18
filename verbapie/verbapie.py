@@ -11,6 +11,15 @@ from typing import List, Dict
 
 """Shared functions between scripts, especially to ensure same file paths"""
 
+def tei_list_help() -> str:
+    return  """ex: ../tests/galenus.txt
+a file with a list of file/glob path of xml files to process, one per line:
+../../First1KGreek/data/tlg0052/*/tlg*.xml
+../../First1KGreek/data/tlg0057/*/tlg*.xml
+(relative paths resolved from the file they come from)
+"""
+
+
 def html_dir(corpus_conf: str) -> str:
     """Get the path of an html dir build from a list of cts paths"""
     if not os.path.isfile(corpus_conf):

@@ -84,7 +84,7 @@ CREATE TABLE tok (
     charad      INTEGER NOT NULL,  -- ! size of token, utf8 chars
     cat         TEXT    NOT NULL,  -- ! word category id
     lem         INTEGER NOT NULL,  -- ! lemma form id
-    pag         INTEGER,           -- ? page number
+    pag         TEXT,              -- ? page number, maybe not int, ex: 8.410
     linea       INTEGER,           -- ? line number
     PRIMARY KEY(id ASC)
 );
