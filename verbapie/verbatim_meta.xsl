@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-Part of verbapy https://github.com/galenus-verbatim/verbapy
+Part of verbapie https://github.com/galenus-verbatim/verbapie
 Copyright (c) 2021 Nathalie Rousseau
 MIT License https://opensource.org/licenses/mit-license.php
 

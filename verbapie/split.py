@@ -46,8 +46,8 @@ xml_parser = etree.XMLParser(
 xml_resolver = FileResolver()
 xml_parser.resolvers.add(xml_resolver)
 
-xslt_chapters = etree.XSLT(
-    etree.parse(os.path.join(os.path.dirname(__file__), 'cts_chapters.xsl'), parser=xml_parser)
+xslt_split = etree.XSLT(
+    etree.parse(os.path.join(os.path.dirname(__file__), 'verbatim_split.xsl'), parser=xml_parser)
 )
 
 # the default dir where to output files
@@ -101,7 +101,7 @@ def split(tei_file: str):
     dst_dom = None
     try:
         xml_resolver.set_base(os.path.dirname(tei_file))
-        dst_dom = xslt_chapters(
+        dst_dom = xslt_split(
             tei_dom,
             # libxml do not like windows paths starting C:
             dst_dir = etree.XSLT.strparam(
@@ -112,7 +112,7 @@ def split(tei_file: str):
         )
     except:
         pass
-    for error in xslt_chapters.error_log:
+    for error in xslt_split.error_log:
         print(error.message + " l. " + str(error.line))
 
     fin = etree.tounicode(dst_dom, method='text', pretty_print=True)

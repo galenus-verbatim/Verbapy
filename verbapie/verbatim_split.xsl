@@ -20,7 +20,7 @@ Split a single TEI file in a multi-pages site
   xmlns:ti="http://chs.harvard.edu/xmlns/cts"
   exclude-result-prefixes="tei ti"
 >
-  <xsl:import href="cts_html.xsl"/>
+  <xsl:import href="verbatim_html.xsl"/>
   <xsl:output encoding="UTF-8" method="text"/>
   <!-- Required, folder where to project the generated files -->
   <xsl:param name="dst_dir"/>
@@ -124,16 +124,20 @@ Split a single TEI file in a multi-pages site
   
   <xsl:template match="/" priority="5">
     <xsl:if test="normalize-space($dst_dir) = ''">
-      <xsl:message terminate="yes">[cts_chapter.xsl] $dst_dir param is required to output files</xsl:message>
+      <xsl:message terminate="yes">[verbatim_split.xsl] $dst_dir param is required to output files</xsl:message>
     </xsl:if>
     <xsl:if test="normalize-space($src_name) = ''">
-      <xsl:message terminate="yes">[cts_chapter.xsl] $src_name param is required to output files</xsl:message>
+      <xsl:message terminate="yes">[verbatim_split.xsl] $src_name param is required to output files</xsl:message>
+    </xsl:if>
+    <xsl:if test="normalize-space($cts) = ''">
+      <xsl:message terminate="yes">[verbatim_split.xsl] $cts is required for an urn:cts:… identifier for the edition. Default is found in /TEI/text/body/div[@type = 'edition'][1]/@n</xsl:message>
     </xsl:if>
     <root>
       <xsl:text>[
     {</xsl:text>
       <xsl:if test="$src_name != ''">
-        "clavis": "<xsl:value-of select="$src_name"/>"</xsl:if>
+        "file": "<xsl:value-of select="$src_name"/>",
+        "cts": "<xsl:value-of select="$cts"/>"</xsl:if>
       <xsl:if test="$titulus != ''">,
         "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
       <xsl:if test="$auctor != ''">,
@@ -237,91 +241,36 @@ Split a single TEI file in a multi-pages site
     </xsl:document>
   </xsl:template>
 
-  <!-- Should I go now ? La, la, la -->
-  <xsl:template match="tei:back | tei:body | tei:front | tei:group" mode="toc">
-    <xsl:apply-templates select="tei:div" mode="toc"/>
-  </xsl:template>
-  
-  <xsl:template match="tei:text " mode="toc">
-    <xsl:apply-templates select="*" mode="toc"/>
-  </xsl:template>
-
   <xsl:template match="tei:div" mode="toc">
     <xsl:choose>
       <xsl:when test="@type = 'edition'">
-        <xsl:apply-templates select="tei:div" mode="toc"/>
-      </xsl:when>
-      <xsl:when test="@n and tei:div[@type='textpart'][@subtype='chapter']">
-        <li>
-          <span>Liber <xsl:value-of select="@n"/></span>
-          <ul>
-            <xsl:apply-templates select="tei:div[@type='textpart'][@subtype='chapter']" mode="toc"/>
-          </ul>
-        </li>
-      </xsl:when>
-      <xsl:when test="@type='textpart' and @subtype='chapter' and @n">
-        <li>
-          <a>
-            <xsl:attribute name="href">
-              <xsl:call-template name="dst_name"/>
-            </xsl:attribute>
-            <xsl:choose>
-              <xsl:when test="number(@n) &gt; 0">
-                <xsl:text>Capitulum </xsl:text>
-                <xsl:value-of select="@n"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="@n"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </a>
-        </li>
-      </xsl:when>
-      <xsl:when test="@type='textpart' and @subtype='section' and @n">
-        <li>
-          <a>
-            <xsl:attribute name="href">
-              <xsl:call-template name="dst_name"/>
-            </xsl:attribute>
-            <xsl:choose>
-              <xsl:when test="number(@n) &gt; 0">
-                <xsl:text>Sectio </xsl:text>
-                <xsl:value-of select="@n"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="@n"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </a>
-        </li>
-      </xsl:when>
-      <xsl:when test="@type='textpart' and @n">
-        <li>
-          <a>
-            <xsl:attribute name="href">
-              <xsl:call-template name="dst_name"/>
-            </xsl:attribute>
-            <xsl:value-of select="@n"/>
-          </a>
-        </li>
+        <ul class="tree">
+          <xsl:apply-templates select="tei:div" mode="toc"/>
+        </ul>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:message terminate="yes">
-          <xsl:text>[cts_chapter.xsl] file:</xsl:text>
-          <xsl:value-of select="$src_name"/>
-          <xsl:text> toc pb in </xsl:text>
-          <xsl:for-each select="ancestor-or-self::tei:div">
-            <xsl:value-of select="@subtype"/>
-            <xsl:text>.</xsl:text>
-            <xsl:value-of select="@n"/>
-            <xsl:text>/</xsl:text>
-          </xsl:for-each>
-        </xsl:message>
+        <li>
+          <a>
+            <xsl:attribute name="href">
+              <!--
+              <xsl:text>#</xsl:text>
+              <xsl:call-template name="id"/>
+              -->
+              <xsl:call-template name="dst_name"/>
+            </xsl:attribute>
+            <xsl:call-template name="titulus"/>
+          </a>
+          <xsl:if test="tei:div">
+            <ul>
+              <xsl:apply-templates select="tei:div" mode="toc"/>
+            </ul>
+          </xsl:if>
+        </li>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
-  <!-- Calculate the destination file name of a chapter, maybe used for  -->
+  <!-- Calculate the destination file name of a chapter -->
   <xsl:template name="dst_name">
     <!-- First ancestor !! -->
     <xsl:choose>
@@ -436,37 +385,34 @@ Split a single TEI file in a multi-pages site
     </xsl:variable>
     <!-- In there are no notes in heading -->
     <xsl:variable name="titulus">
-      <xsl:choose>
-        <xsl:when test="not(tei:head)"/>
-        <!-- In Galenus, only first head has a title, not significant -->
-        <xsl:when test="not(../tei:div[2]/tei:head)"/>
-        <xsl:otherwise>
-          <xsl:value-of select="normalize-space(tei:head)"/>
-        </xsl:otherwise>
-      </xsl:choose>
+      <xsl:call-template name="titulus"/>
+    </xsl:variable>
+    <xsl:variable name="num">
+      
     </xsl:variable>
     <xsl:text>,
     {</xsl:text>
     <xsl:if test="true()">
-      "clavis": "<xsl:value-of select="$dst_name"/>"</xsl:if>
+        "file": "<xsl:value-of select="$dst_name"/>",
+        "cts": "<xsl:call-template name="cts"/>"</xsl:if>
     <xsl:if test="$volumen != ''">,
-      "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
+        "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
     <xsl:if test="$pagde != ''">,
-      "pagde": "<xsl:value-of select="$pagde"/>"</xsl:if>
+        "pagde": "<xsl:value-of select="$pagde"/>"</xsl:if>
     <xsl:if test="$linde != ''">,
-      "linde": "<xsl:value-of select="$linde"/>"</xsl:if>
+        "linde": "<xsl:value-of select="$linde"/>"</xsl:if>
     <xsl:if test="$pagad != ''">,
-      "pagad": "<xsl:value-of select="$pagad"/>"</xsl:if>
+        "pagad": "<xsl:value-of select="$pagad"/>"</xsl:if>
     <xsl:if test="$linad != ''">,
-      "linad": "<xsl:value-of select="$linad"/>"</xsl:if>
+        "linad": "<xsl:value-of select="$linad"/>"</xsl:if>
     <xsl:if test="$titulus != ''">,
-      "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
+        "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='book']/@n">,
-      "liber": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='book'][1]/@n"/>"</xsl:if>
+        "liber": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='book'][1]/@n"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='chapter']/@n">,
-      "capitulum": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='chapter'][1]/@n"/>"</xsl:if>
+        "capitulum": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='chapter'][1]/@n"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='section']/@n">,
-      "sectio": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='section'][1]/@n"/>"</xsl:if>
+        "sectio": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='section'][1]/@n"/>"</xsl:if>
     <xsl:text>
     }</xsl:text>
     <!--
@@ -544,19 +490,6 @@ Split a single TEI file in a multi-pages site
   </xsl:template>
 
   
-
-  <!-- For debug, a linear xpath for an element -->
-  <xsl:template name="idpath">
-    <xsl:for-each select="ancestor-or-self::*">
-      <xsl:text>/</xsl:text>
-      <xsl:value-of select="name()"/>
-      <xsl:if test="count(../*[name()=name(current())]) &gt; 1">
-        <xsl:text>[</xsl:text>
-        <xsl:number/>
-        <xsl:text>]</xsl:text>
-      </xsl:if>
-    </xsl:for-each>
-  </xsl:template>
 
 
 </xsl:transform>

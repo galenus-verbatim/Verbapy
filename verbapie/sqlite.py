@@ -13,6 +13,7 @@ import json
 from typing import List
 import logging
 import os
+from pathlib import Path
 import sqlite3
 import sys
 import unicodedata
@@ -92,8 +93,8 @@ def docs(json_file: str):
     logging.info(json_file)
     editio_sql = """
 INSERT INTO editio(
-
-    clavis,
+    file,
+    cts,
     epoch,
     octets,
     titulus,
@@ -107,8 +108,9 @@ INSERT INTO editio(
     pagad
 
 ) VALUES
-(?, ?, ?, ?, ?,    ?, ?, ?, ?, ?, ?)
+(?, ?, ?, ?, ?, ?,    ?, ?, ?, ?, ?, ?)
     """
+
     json_dir = os.path.dirname(json_file)
     with open(json_file, 'r', encoding="utf-8") as fread:
         data = json.load(fread)
@@ -123,7 +125,8 @@ INSERT INTO editio(
     pagad = editio_json.get('pagad', pagde);
 
     cur.execute(editio_sql, (
-        editio_json['clavis'],
+        Path(json_file).stem,
+        editio_json['cts'],
         os.path.getmtime(json_file),
         os.path.getsize(json_file),
         editio_json['titulus'],
@@ -141,7 +144,7 @@ INSERT INTO editio(
 
     doc_sql = """
 INSERT INTO doc(
-    clavis,
+    cts,
     html,
     editio,
     editor,
@@ -163,8 +166,8 @@ INSERT INTO doc(
     """
     for i in range(1, len(data)):
         doc_json = data[i]
-        clavis = doc_json['clavis']
-        html_file = os.path.join(json_dir, clavis + ".html")
+        file = doc_json['file']
+        html_file = os.path.join(json_dir, file + ".html")
         with open(html_file, mode="r", encoding="utf-8") as f:
             html = f.read()
             # works with php php:gzuncompress($html), but is not a real economy
@@ -172,16 +175,16 @@ INSERT INTO doc(
 
         ante = None
         if i > 1:
-            ante = data[i-1]['clavis']
+            ante = data[i-1]['cts']
         post = None
         if i < len(data)-1:
-            post = data[i+1]['clavis']
+            post = data[i+1]['cts']
 
+        cts = doc_json.get('cts');
         pagde = doc_json.get('pagde');
         pagad = doc_json.get('pagad', pagde);
-
         cur.execute(doc_sql, (
-            clavis,
+            cts,
             html,
             editio_id,
             editor,
@@ -200,7 +203,7 @@ INSERT INTO doc(
             doc_json.get('sectio')
         ))
         doc_id = cur.lastrowid
-        toks( os.path.join(json_dir, clavis + ".csv"), doc_id)
+        toks( os.path.join(json_dir, doc_json.get('file') + ".csv"), doc_id)
 
 
 def toks(tsv_path: str, doc_id: int):

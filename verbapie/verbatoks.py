@@ -154,11 +154,11 @@ def vert(files):
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description='Process an ML file (with <tag>), show tokenized words between tags, for search or linguistic',
+        description='Process an *ML file (with <tag>), show tokenized words between tags, for search or linguistic',
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument('files', nargs='+', type=str,
-        help="""One or mor *.ml file"""
+        help="""One or mor *.*ml file"""
     )
     args = parser.parse_args()
     freqlist(args.files)
