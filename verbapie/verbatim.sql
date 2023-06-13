@@ -17,31 +17,35 @@ CREATE table opus (
 );
 CREATE UNIQUE INDEX opus_cts ON opus(cts);
 
-DROP TABLE IF EXISTS editio;
-CREATE table editio (
+DROP TABLE IF EXISTS edition;
+CREATE table edition (
 -- Source XML file
     id                   INTEGER, -- rowid auto
     -- must, file infos and content
-    file    TEXT UNIQUE NOT NULL, -- ! source xml filename without extension
     cts     TEXT UNIQUE NOT NULL, -- ! cts identifier for url
-    bibl                    BLOB, -- ! html text ready to display
+    file    TEXT UNIQUE NOT NULL, -- ! source xml filename without extension
     epoch       INTEGER NOT NULL, -- ! file modified time
-    octets      INTEGER NOT NULL, -- ! filesize
-    titulus        TEXT NOT NULL, -- ! title of an edition
+    bytes       INTEGER NOT NULL, -- ! filesize
     nav                     BLOB, -- ? html table of contents
-    -- should, bibliographic info
-    auctor                  TEXT, -- ? name of an author
-    editor                  TEXT, -- ? name of an editor
-    editio                  TEXT, -- ? code for an edittion
-    volumen                 TEXT, -- ? volume
-    annuspub             INTEGER, -- ? publication year of the edition
-    pagde                INTEGER, -- ? page from
-    pagad                INTEGER, -- ? page to
-    titulbrev               TEXT,    -- ? title abbreviated
-    annuscrea            INTEGER, -- ? creation year
+    bibl                    BLOB, -- ! html text ready to display
+    -- bibliographic info as zotero codes for html meta
+    -- https://www.zotero.org/support/dev/exposing_metadata
+    title                   TEXT, -- 
+    date                    TEXT, -- 
+    authors                 TEXT, -- Surname, Given Name; Smith, Jane
+    editors                 TEXT, -- Surname, Given Name; Smith, Jane
+    language                TEXT, --
+    book_title              TEXT, --
+    volume                  TEXT,
+    series                  TEXT,
+    page_start              TEXT, -- 
+    page_end                TEXT, -- 
+    publisher               TEXT, -- 
+
+
     PRIMARY KEY(id ASC)
 );
-CREATE UNIQUE INDEX IF NOT EXISTS editio_cts ON editio(cts);
+CREATE UNIQUE INDEX IF NOT EXISTS edition_cts ON edition(cts);
 
 
 -- Schema to store lemmatized texts
@@ -52,19 +56,19 @@ CREATE table doc (
     -- must, file infos and content
     cts     TEXT UNIQUE NOT NULL, -- ! cts identifier for url
     html           BLOB NOT NULL, -- ! html text ready to display
-    editio      INTEGER NOT NULL, -- ! link to the edition
-    ante                 INTEGER, -- ? previous document
-    post                 INTEGER, -- ? next document
+    edition     INTEGER NOT NULL, -- ! link to the edition
+    prev                    TEXT, -- ? cts of previous document
+    next                    TEXT, -- ? cts of next document
 
     -- should, bibliographic info
-    editor                  TEXT, -- ? replicated from editio, for efficiency
-    titulus                 TEXT, -- ? title of the document if relevant
+    editors                 TEXT, -- ? replicated from editio, for efficiency
+    title                   TEXT, -- ? title of the document if relevant
     
-    volumen                 TEXT, -- ? analytic, for edition on more than one
-    pagde                INTEGER, -- ? page from
-    linde                INTEGER, -- ? first line of first page
-    pagad                INTEGER, -- ? page to
-    linad                INTEGER, -- ? last line of last page
+    volume                  TEXT, -- ? analytic, for edition on more than one
+    page_start              TEXT, -- ? page from
+    line_start           INTEGER, -- ? first line of first page
+    page_end             INTEGER, -- ? page to
+    line_end             INTEGER, -- ? last line of last page
 
     liber                   TEXT, -- ? analytic,
     capitulum               TEXT, -- ? analytic,
@@ -72,7 +76,7 @@ CREATE table doc (
     PRIMARY KEY(id ASC)
 );
 CREATE UNIQUE INDEX IF NOT EXISTS doc_cts ON doc(cts);
-CREATE INDEX IF NOT EXISTS doc_redir ON doc(editor, volumen, pagde, pagad);
+CREATE INDEX IF NOT EXISTS doc_redir ON doc(editors, volume, page_start, page_end);
 
 
 DROP TABLE IF EXISTS tok;
@@ -81,12 +85,12 @@ CREATE TABLE tok (
     id                   INTEGER, -- rowid auto
     doc         INTEGER NOT NULL, -- ! doc id
     orth        INTEGER NOT NULL, -- ! normalized orthographic form id
-    charde      INTEGER NOT NULL, -- ! start offset in source file, utf8 chars
-    charad      INTEGER NOT NULL, -- ! size of token, utf8 chars
+    offset      INTEGER NOT NULL, -- ! start offset in source file, utf8 chars
+    len         INTEGER NOT NULL, -- ! size of token, utf8 chars
     cat            TEXT NOT NULL, -- ! word category id
     lem         INTEGER NOT NULL, -- ! lemma form id
-    pag                     TEXT, -- ? page number, maybe not int, ex: 8.410 
-    linea                INTEGER, -- ? line number
+    page                    TEXT, -- ? page number, maybe not int, ex: 8.410 
+    line                 INTEGER, -- ? line number
     PRIMARY KEY(id ASC)
 );
  -- search an orthographic form in all or some documents

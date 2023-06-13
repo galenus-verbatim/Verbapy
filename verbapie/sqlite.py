@@ -92,23 +92,23 @@ def docs(json_file: str):
     """Insert a record for a file"""
     logging.info(json_file)
     editio_sql = """
-INSERT INTO editio(
-    file,
+INSERT INTO edition (
     cts,
+    file,
     epoch,
-    octets,
-    titulus,
+    bytes,
     nav,
 
-    auctor,
-    editor,
-    annuspub,
-    volumen,
-    pagde,
-    pagad
+    title,
+    date,
+    authors,
+    editors,
+    volume,
+    page_start,
+    page_end
 
 ) VALUES
-(?, ?, ?, ?, ?, ?,    ?, ?, ?, ?, ?, ?)
+(?,?,?,?,?  ,?,?,?,?,?,?,?)
     """
 
     json_dir = os.path.dirname(json_file)
@@ -120,49 +120,49 @@ INSERT INTO editio(
     if os.path.isfile(toc_file):
         with open(toc_file, mode="r", encoding="utf-8") as f:
             nav = f.read()
-    editor = editio_json.get('editor')
-    pagde = editio_json.get('pagde');
-    pagad = editio_json.get('pagad', pagde);
+    editors = editio_json.get('editors')
+    page_start = editio_json.get('page_start');
+    page_end = editio_json.get('page_end', page_start);
 
     cur.execute(editio_sql, (
-        Path(json_file).stem,
         editio_json['cts'],
+        Path(json_file).stem,
         os.path.getmtime(json_file),
         os.path.getsize(json_file),
-        editio_json['titulus'],
         nav,
 
-        editio_json.get('auctor'),
-        editor,
-        editio_json.get('annuspub'),
-        editio_json.get('volumen'),
-        pagde,
-        pagad,
+        editio_json['title'],
+        editio_json.get('date'),
+        editio_json.get('authors'),
+        editors,
+        editio_json.get('volume'),
+        page_start,
+        page_end,
     ))
-    editio_id = cur.lastrowid
+    edition_id = cur.lastrowid
 
 
     doc_sql = """
 INSERT INTO doc(
     cts,
     html,
-    editio,
-    editor,
+    edition,
 
-    ante,
-    post,
+    prev,
+    next,
 
-    volumen,
-    pagde,
-    linde,
-    pagad,
-    linad,
+    editors,
+    volume,
+    page_start,
+    line_start,
+    page_end,
+    line_end,
 
     liber,
     capitulum,
     sectio
 ) VALUES
-(?, ?, ?, ?,   ?, ?,   ?, ?, ?, ?, ?,   ?, ?, ?)
+(?,?,?   ,?,?   ,?,?,?,?,?,?   ,?,?,?)
     """
     for i in range(1, len(data)):
         doc_json = data[i]
@@ -173,30 +173,32 @@ INSERT INTO doc(
             # works with php php:gzuncompress($html), but is not a real economy
             # html = zlib.compress(bytes(html, 'utf-8'), level=9)
 
-        ante = None
+        prev = None
         if i > 1:
-            ante = data[i-1]['cts']
-        post = None
+            prev = data[i-1]['cts']
+        next = None
         if i < len(data)-1:
-            post = data[i+1]['cts']
+            next = data[i+1]['cts']
 
         cts = doc_json.get('cts');
-        pagde = doc_json.get('pagde');
-        pagad = doc_json.get('pagad', pagde);
+        page_start = doc_json.get('page_start');
+        page_end = doc_json.get('page_end', page_start);
         cur.execute(doc_sql, (
             cts,
             html,
-            editio_id,
-            editor,
+            edition_id,
 
-            ante,
-            post,
+            prev,
+            next,
 
-            doc_json.get('volumen'),
-            pagde,
-            doc_json.get('linde'),
-            pagad,
-            doc_json.get('linad'),
+            editors,
+
+
+            doc_json.get('volume'),
+            page_start,
+            doc_json.get('line_start'),
+            page_end,
+            doc_json.get('line_end'),
 
             doc_json.get('liber'),
             doc_json.get('capitulum'),
@@ -219,7 +221,7 @@ def toks(tsv_path: str, doc_id: int):
             i = i + 1
             tok_sql = """
             INSERT INTO tok
-                (doc, orth, charde, charad, cat, lem, pag, linea)
+                (doc, orth, offset, len, cat, lem, page, line)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?)
             """
@@ -227,12 +229,12 @@ def toks(tsv_path: str, doc_id: int):
                 orth = row[0]
                 if orth.isdigit(): # page numbers may have been tokenized
                     continue
-                charde = row[1]
-                charad = row[2]
+                offset = row[1]
+                len = row[2]
                 cat = row[3]
                 lem = row[4]
-                pag = row[5]
-                linea = row[6]
+                page = row[5]
+                line = row[6]
             except IndexError:
                 print("Column not found in \"" + tsv_path + "\" l." + str(i))
                 print(row)
@@ -281,9 +283,9 @@ def toks(tsv_path: str, doc_id: int):
             else:
                 orth_id = orth_dic[orth_key]
             # if line number has a volume number like for Galen
-            linea = ("." + linea).split(".")[-1]
+            line = ("." + line).split(".")[-1]
             cur.execute(tok_sql,
-                (doc_id, orth_id, charde, charad, cat, lem_id, pag, linea)
+                (doc_id, orth_id, offset, len, cat, lem_id, page, line)
             )
 
 def main() -> int:

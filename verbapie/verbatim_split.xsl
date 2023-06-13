@@ -29,7 +29,7 @@ Split a single TEI file in a multi-pages site
   <!-- Shall we allow __cts__.xml search ? Default is true(), caller should check if no -->
   <xsl:param name="__cts__" select="'true'"/>
   <!-- first dic, file meta, and ordered array of chapters -->
-  <xsl:variable name="titulus">
+  <xsl:variable name="title">
     <xsl:choose>
       <!-- avoid an xslt error if no cts file to get -->
       <xsl:when test="$__cts__ = ''">
@@ -52,21 +52,21 @@ Split a single TEI file in a multi-pages site
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-  <xsl:variable name="auctor">
+  <xsl:variable name="authors">
     <xsl:choose>
       <!-- avoid an xslt error if no cts file to get -->
       <xsl:when test="$__cts__ = ''">
         <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author)"/>
       </xsl:when>
       <xsl:otherwise>
-        <!-- Load cts for auctor -->
-        <xsl:variable name="cts_auctor" select="document('./../__cts__.xml', .)"/>
+        <!-- Load cts for author -->
+        <xsl:variable name="cts_author" select="document('./../__cts__.xml', .)"/>
         <xsl:choose>
-          <xsl:when test="$cts_auctor/*/ti:groupname[@xml:lang='lat']">
-            <xsl:value-of select="normalize-space($cts_auctor/*/ti:groupname[@xml:lang='lat'])"/>
+          <xsl:when test="$cts_author/*/ti:groupname[@xml:lang='lat']">
+            <xsl:value-of select="normalize-space($cts_author/*/ti:groupname[@xml:lang='lat'])"/>
           </xsl:when>
-          <xsl:when test="$cts_auctor/*/ti:groupname">
-            <xsl:value-of select="normalize-space($cts_auctor/*/ti:groupname)"/>
+          <xsl:when test="$cts_author/*/ti:groupname">
+            <xsl:value-of select="normalize-space($cts_author/*/ti:groupname)"/>
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of  select="normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author)"/>
@@ -75,21 +75,26 @@ Split a single TEI file in a multi-pages site
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-  <xsl:variable name="editor" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:editor"/>
-  <xsl:variable name="annuspub">
+  <xsl:variable name="editors">
+    <xsl:for-each select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:editor">
+      <xsl:value-of select="."/>
+      <xsl:if test="position() != last()">; </xsl:if>
+    </xsl:for-each>
+  </xsl:variable>
+  <xsl:variable name="date">
     <xsl:for-each select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc">
-      <xsl:variable name="annusde" select="*[1]//tei:date"/>
-      <xsl:value-of select="$annusde"/>
+      <xsl:variable name="date_start" select="*[1]//tei:date"/>
+      <xsl:value-of select="$date_start"/>
       <xsl:if test="*[2]">
-        <xsl:variable name="annusad" select="*[position() = last()]//tei:date"/>
-        <xsl:if test="$annusad != '' and $annusad != $annusde">
+        <xsl:variable name="date_end" select="*[position() = last()]//tei:date"/>
+        <xsl:if test="$date_end != '' and $date_end != $date_start">
           <xsl:text>-</xsl:text>
-          <xsl:value-of select="$annusad"/>
+          <xsl:value-of select="$date_end"/>
         </xsl:if>
       </xsl:if>
     </xsl:for-each>
   </xsl:variable>
-  <xsl:variable name="volumen">
+  <xsl:variable name="volume">
     <xsl:variable name="vols" select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='vol']"/>
     <xsl:value-of select="$vols[1]"/>
     <xsl:variable name="vol2" select="$vols[last()]"/>
@@ -98,7 +103,7 @@ Split a single TEI file in a multi-pages site
       <xsl:value-of select="$vol2"/>
     </xsl:if>
   </xsl:variable>
-  <xsl:variable name="pagde">
+  <xsl:variable name="page_start">
     <xsl:choose>
       <!-- more than one source volume, page number not relevant -->
       <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
@@ -107,7 +112,7 @@ Split a single TEI file in a multi-pages site
       </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-  <xsl:variable name="pagad">
+  <xsl:variable name="page_end">
     <xsl:choose>
       <!-- more than one source volume, page number not relevant -->
       <xsl:when test="count(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc//tei:biblScope[@unit='pp']) &gt; 1"/>
@@ -123,14 +128,29 @@ Split a single TEI file in a multi-pages site
   <xsl:variable name="pb" select="count(.//pb)"/>
   
   <xsl:template match="/" priority="5">
-    <xsl:if test="normalize-space($dst_dir) = ''">
-      <xsl:message terminate="yes">[verbatim_split.xsl] $dst_dir param is required to output files</xsl:message>
-    </xsl:if>
-    <xsl:if test="normalize-space($src_name) = ''">
-      <xsl:message terminate="yes">[verbatim_split.xsl] $src_name param is required to output files</xsl:message>
-    </xsl:if>
-    <xsl:if test="normalize-space($cts) = ''">
-      <xsl:message terminate="yes">[verbatim_split.xsl] $cts is required for an urn:cts:… identifier for the edition. Default is found in /TEI/text/body/div[@type = 'edition'][1]/@n</xsl:message>
+    <xsl:variable name="message">
+      <xsl:if test="normalize-space($dst_dir) = ''">
+        <xsl:text>[verbatim_split.xsl] $dst_dir param is required to output files&#10;</xsl:text>
+      </xsl:if>
+      <xsl:if test="normalize-space($src_name) = ''">
+        <xsl:text>[verbatim_split.xsl] $src_name param is required to output files&#10;</xsl:text>
+      </xsl:if>
+      <xsl:if test="normalize-space($cts) = ''">
+        <xsl:text>[verbatim_split.xsl] $cts is required for an urn:cts:… identifier for the edition. Default is found in /TEI/text/body/div[@type = 'edition'][1]/@n&#10;</xsl:text>
+      </xsl:if>
+      <xsl:variable name="filename" select="translate(substring-after($cts, 'urn:cts:greekLit:'), ':', '_')"/>
+      <xsl:if test="$filename != $src_name">
+        <xsl:text>[verbatim_split.xsl] Filename </xsl:text>
+        <xsl:value-of select="$src_name"/> 
+        <xsl:text> seems to not match CTS URN </xsl:text>
+        <xsl:value-of select="$cts"/> 
+        <xsl:text> (found in /TEI/text/body/div[@type = 'edition'][1]/@n, according to Epidoc)&#10;</xsl:text>
+      </xsl:if>
+    </xsl:variable>
+    <xsl:if test="$message != ''">
+      <xsl:message terminate="yes">
+        <xsl:value-of select="$message"/>
+      </xsl:message>
     </xsl:if>
     <root>
       <xsl:text>[
@@ -138,20 +158,20 @@ Split a single TEI file in a multi-pages site
       <xsl:if test="$src_name != ''">
         "file": "<xsl:value-of select="$src_name"/>",
         "cts": "<xsl:value-of select="$cts"/>"</xsl:if>
-      <xsl:if test="$titulus != ''">,
-        "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
-      <xsl:if test="$auctor != ''">,
-        "auctor": "<xsl:value-of select="$auctor"/>"</xsl:if>
-      <xsl:if test="$editor != ''">,
-        "editor": "<xsl:value-of select="$editor"/>"</xsl:if>
-      <xsl:if test="$annuspub != ''">,
-        "annuspub": "<xsl:value-of select="$annuspub"/>"</xsl:if>
-      <xsl:if test="$volumen != ''">,
-        "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
-      <xsl:if test="$pagde != ''">,
-        "pagde": "<xsl:value-of select="$pagde"/>"</xsl:if>
-      <xsl:if test="$pagad != ''">,
-        "pagad": "<xsl:value-of select="$pagad"/>"</xsl:if>
+      <xsl:if test="$title != ''">,
+        "title": "<xsl:value-of select="$title"/>"</xsl:if>
+      <xsl:if test="$authors != ''">,
+        "authors": "<xsl:value-of select="$authors"/>"</xsl:if>
+      <xsl:if test="$editors != ''">,
+        "editors": "<xsl:value-of select="$editors"/>"</xsl:if>
+      <xsl:if test="$date != ''">,
+        "date": "<xsl:value-of select="$date"/>"</xsl:if>
+      <xsl:if test="$volume != ''">,
+        "volume": "<xsl:value-of select="$volume"/>"</xsl:if>
+      <xsl:if test="$page_start != ''">,
+        "page_start": "<xsl:value-of select="$page_start"/>"</xsl:if>
+      <xsl:if test="$page_end != ''">,
+        "page_end": "<xsl:value-of select="$page_end"/>"</xsl:if>
       <xsl:text>
     }</xsl:text>
       <xsl:choose>
@@ -227,7 +247,7 @@ Split a single TEI file in a multi-pages site
       encoding="UTF-8"
       >
       <nav>
-        <ul>
+        <ul class="tree">
           <xsl:choose>
             <xsl:when test="/tei:TEI/tei:text[2]">
               <xsl:apply-templates select="/tei:TEI/tei:text" mode="toc"/>
@@ -252,13 +272,9 @@ Split a single TEI file in a multi-pages site
         <li>
           <a>
             <xsl:attribute name="href">
-              <!--
-              <xsl:text>#</xsl:text>
-              <xsl:call-template name="id"/>
-              -->
-              <xsl:call-template name="dst_name"/>
+              <xsl:call-template name="href"/>
             </xsl:attribute>
-            <xsl:call-template name="titulus"/>
+            <xsl:call-template name="title"/>
           </a>
           <xsl:if test="tei:div">
             <ul>
@@ -270,8 +286,22 @@ Split a single TEI file in a multi-pages site
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template name="href">
+    <xsl:text>./</xsl:text>
+    <xsl:for-each select="ancestor-or-self::tei:div[@subtype != 'section'][1]">
+      <xsl:call-template name="cts"/>
+    </xsl:for-each>
+    <xsl:if test="@subtype = 'section' or not(self::tei:div)">
+      <xsl:text>#</xsl:text>
+      <xsl:call-template name="cts"/>
+    </xsl:if>
+  </xsl:template>
+
   <!-- Calculate the destination file name of a chapter -->
   <xsl:template name="dst_name">
+    <xsl:variable name="cts">
+      <xsl:call-template name="cts"/>
+    </xsl:variable>
     <!-- First ancestor !! -->
     <xsl:choose>
       <xsl:when test="starts-with(@n, 'urn:cts:greekLit:')">
@@ -341,7 +371,7 @@ Split a single TEI file in a multi-pages site
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="pagde">
+    <xsl:variable name="page_start">
       <xsl:choose>
         <xsl:when test="contains($pbde, '.')">
           <xsl:value-of select="substring-after($pbde, '.')"/>
@@ -351,12 +381,12 @@ Split a single TEI file in a multi-pages site
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="linde">
+    <xsl:variable name="line_start">
       <xsl:for-each select="(.//tei:lb[@n])[1]">
         <xsl:value-of select="@n"/>
       </xsl:for-each>
     </xsl:variable>
-    <xsl:variable name="pagad">
+    <xsl:variable name="page_end">
       <xsl:variable name="pbad" select="(.//tei:pb)[last()]/@n"/>
       <xsl:choose>
         <xsl:when test="contains($pbad, '.')">
@@ -367,13 +397,13 @@ Split a single TEI file in a multi-pages site
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="linad">
+    <xsl:variable name="line_end">
       <xsl:for-each select="(.//tei:lb[@n])[last()]">
         <xsl:value-of select="@n"/>
       </xsl:for-each>
     </xsl:variable>
     
-    <xsl:variable name="volumen">
+    <xsl:variable name="volume">
       <xsl:choose>
         <xsl:when test="contains($pbde, '.')">
           <xsl:value-of select="substring-before($pbde, '.')"/>
@@ -384,29 +414,32 @@ Split a single TEI file in a multi-pages site
       </xsl:choose>
     </xsl:variable>
     <!-- In there are no notes in heading -->
-    <xsl:variable name="titulus">
-      <xsl:call-template name="titulus"/>
+    <xsl:variable name="title">
+      <xsl:call-template name="title"/>
     </xsl:variable>
     <xsl:variable name="num">
       
+    </xsl:variable>
+    <xsl:variable name="cts">
+      <xsl:call-template name="cts"/>
     </xsl:variable>
     <xsl:text>,
     {</xsl:text>
     <xsl:if test="true()">
         "file": "<xsl:value-of select="$dst_name"/>",
-        "cts": "<xsl:call-template name="cts"/>"</xsl:if>
-    <xsl:if test="$volumen != ''">,
-        "volumen": "<xsl:value-of select="$volumen"/>"</xsl:if>
-    <xsl:if test="$pagde != ''">,
-        "pagde": "<xsl:value-of select="$pagde"/>"</xsl:if>
-    <xsl:if test="$linde != ''">,
-        "linde": "<xsl:value-of select="$linde"/>"</xsl:if>
-    <xsl:if test="$pagad != ''">,
-        "pagad": "<xsl:value-of select="$pagad"/>"</xsl:if>
-    <xsl:if test="$linad != ''">,
-        "linad": "<xsl:value-of select="$linad"/>"</xsl:if>
-    <xsl:if test="$titulus != ''">,
-        "titulus": "<xsl:value-of select="$titulus"/>"</xsl:if>
+      "cts": "<xsl:value-of select="$cts"/>"</xsl:if>
+    <xsl:if test="$volume != ''">,
+        "volume": "<xsl:value-of select="$volume"/>"</xsl:if>
+    <xsl:if test="$page_start != ''">,
+        "page_start": "<xsl:value-of select="$page_start"/>"</xsl:if>
+    <xsl:if test="$line_start != ''">,
+        "line_start": "<xsl:value-of select="$line_start"/>"</xsl:if>
+    <xsl:if test="$page_end != ''">,
+        "page_end": "<xsl:value-of select="$page_end"/>"</xsl:if>
+    <xsl:if test="$line_end != ''">,
+        "line_end": "<xsl:value-of select="$line_end"/>"</xsl:if>
+    <xsl:if test="$title != ''">,
+        "title": "<xsl:value-of select="$title"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='book']/@n">,
         "liber": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='book'][1]/@n"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='chapter']/@n">,
@@ -425,7 +458,7 @@ Split a single TEI file in a multi-pages site
       omit-xml-declaration="yes"
       encoding="UTF-8"
       >
-      <article id="{$dst_name}">
+      <article id="{$cts}">
         <xsl:text>&#10;</xsl:text>
         <xsl:if test="$text-before != '' or not(.//tei:pb)">
           <xsl:apply-templates select="preceding::tei:pb[1]">
