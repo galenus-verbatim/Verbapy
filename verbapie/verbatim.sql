@@ -85,8 +85,8 @@ CREATE TABLE tok (
     id                   INTEGER, -- rowid auto
     doc         INTEGER NOT NULL, -- ! doc id
     orth        INTEGER NOT NULL, -- ! normalized orthographic form id
-    offset      INTEGER NOT NULL, -- ! start offset in source file, utf8 chars
-    len         INTEGER NOT NULL, -- ! size of token, utf8 chars
+    start       INTEGER NOT NULL, -- ! start index in source file, utf8 chars
+    end         INTEGER NOT NULL, -- ! end index
     cat            TEXT NOT NULL, -- ! word category id
     lem         INTEGER NOT NULL, -- ! lemma form id
     page                    TEXT, -- ? page number, maybe not int, ex: 8.410 

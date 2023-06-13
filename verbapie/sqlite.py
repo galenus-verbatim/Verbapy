@@ -214,14 +214,14 @@ def toks(tsv_path: str, doc_id: int):
         tsv_reader = csv.reader(f, delimiter="\t")
         next(tsv_reader)
         # quoting=csv.QUOTE_NONE
-        # orth	offset	length	cat	lem
+        # orth	start	end	cat	lem
         # ὧν	178 	2   	p	ὅς
         i = 0
         for row in tsv_reader:
             i = i + 1
             tok_sql = """
             INSERT INTO tok
-                (doc, orth, offset, len, cat, lem, page, line)
+                (doc, orth, start, end, cat, lem, page, line)
             VALUES
                 (?, ?, ?, ?, ?, ?, ?, ?)
             """
@@ -229,8 +229,8 @@ def toks(tsv_path: str, doc_id: int):
                 orth = row[0]
                 if orth.isdigit(): # page numbers may have been tokenized
                     continue
-                offset = row[1]
-                len = row[2]
+                start = row[1]
+                end = row[2]
                 cat = row[3]
                 lem = row[4]
                 page = row[5]
@@ -285,7 +285,7 @@ def toks(tsv_path: str, doc_id: int):
             # if line number has a volume number like for Galen
             line = ("." + line).split(".")[-1]
             cur.execute(tok_sql,
-                (doc_id, orth_id, offset, len, cat, lem_id, page, line)
+                (doc_id, orth_id, start, end, cat, lem_id, page, line)
             )
 
 def main() -> int:
