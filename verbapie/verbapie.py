@@ -58,6 +58,7 @@ def tei_list(tsv_file: str) -> List:
         raise Exception("File not found for a tei list:\"" + tsv_file + "\"")
     tsv_dir = norm_dir(tsv_file)
     tei_list = []
+    notfound = []
     with open(tsv_file, 'r', encoding="utf-8") as f:
         tsv_reader = csv.reader(f, delimiter="\t")
         next(tsv_reader)
@@ -76,8 +77,12 @@ def tei_list(tsv_file: str) -> List:
             tei_file = os.path.normpath(tei_file)
             tei_file = tei_file.replace('\\', '/')
             if not os.path.isfile(tei_file):
-                raise Exception("TEI file not found:\"" + tei_file + "\"\n in cts list:\"" + tsv_file + "\"")
+                notfound.append(tei_file)
+                continue
             tei_list.append(tei_file)
+        if notfound:
+            raise Exception("TEI files not found:\n" + '\n'.join(notfound) + "\n in cts list:\"" + tsv_file + "\"")
+
     return tei_list
 
 def norm_dir(file: str) -> str:
