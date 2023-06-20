@@ -165,7 +165,7 @@ output method="html" for <span></span>
           <xsl:variable name="level" select="count(ancestor-or-self::tei:div[@type='textpart'])"/>
           <xsl:element name="h{$level}">
             <xsl:text>[</xsl:text>
-            <xsl:call-template name="titulus"/>
+            <xsl:call-template name="title"/>
             <xsl:text>]</xsl:text>
           </xsl:element>
         </xsl:otherwise>
@@ -577,7 +577,7 @@ output method="html" for <span></span>
     <xsl:apply-templates select="tei:div" mode="toc"/>
   </xsl:template>
   
-  <xsl:template name="titulus">
+  <xsl:template name="title">
     <xsl:choose>
       <xsl:when test="@type='textpart' and @subtype='chapter'">
         <xsl:choose>
@@ -651,7 +651,7 @@ output method="html" for <span></span>
               <xsl:text>#</xsl:text>
               <xsl:call-template name="cts"/>
             </xsl:attribute>
-            <xsl:call-template name="titulus"/>
+            <xsl:call-template name="title"/>
           </a>
           <xsl:if test="tei:div">
             <ul>
