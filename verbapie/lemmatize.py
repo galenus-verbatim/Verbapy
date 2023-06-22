@@ -136,8 +136,8 @@ def lemmatize(html_file: str, csv_file:str):
             + "\t" + str(lines[i])
         + "\n")
     # write at the end, to be sure to not produce incomplete file
-    with open(csv_file, 'w', encoding="utf-8") as f:
-        f.write(csv)
+    with open(csv_file, 'wb') as f:
+        f.write(bytes(csv, "UTF-8"))
 
 def main() -> int:
     parser = argparse.ArgumentParser(
