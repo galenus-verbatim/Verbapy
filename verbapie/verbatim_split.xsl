@@ -159,11 +159,11 @@ Split a single TEI file in a multi-pages site
         "file": "<xsl:value-of select="$src_name"/>",
         "cts": "<xsl:value-of select="$cts"/>"</xsl:if>
       <xsl:if test="$title != ''">,
-        "title": "<xsl:value-of select="$title"/>"</xsl:if>
+        "title": "<xsl:value-of select="normalize-space($title)"/>"</xsl:if>
       <xsl:if test="$authors != ''">,
-        "authors": "<xsl:value-of select="$authors"/>"</xsl:if>
+        "authors": "<xsl:value-of select="normalize-space($authors)"/>"</xsl:if>
       <xsl:if test="$editors != ''">,
-        "editors": "<xsl:value-of select="$editors"/>"</xsl:if>
+        "editors": "<xsl:value-of select="normalize-space($editors)"/>"</xsl:if>
       <xsl:if test="$date != ''">,
         "date": "<xsl:value-of select="$date"/>"</xsl:if>
       <xsl:if test="$volume != ''">,
@@ -245,6 +245,7 @@ Split a single TEI file in a multi-pages site
       omit-xml-declaration="yes"
       indent="yes"
       encoding="UTF-8"
+      method="xml"
       >
       <nav>
         <ul class="tree">
@@ -439,7 +440,7 @@ Split a single TEI file in a multi-pages site
     <xsl:if test="$line_end != ''">,
         "line_end": "<xsl:value-of select="$line_end"/>"</xsl:if>
     <xsl:if test="$title != ''">,
-        "title": "<xsl:value-of select="$title"/>"</xsl:if>
+        "title": "<xsl:value-of select="normalize-space($title)"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='book']/@n">,
         "liber": "<xsl:value-of select="ancestor-or-self::tei:div[@subtype='book'][1]/@n"/>"</xsl:if>
     <xsl:if test="ancestor-or-self::tei:div[@subtype='chapter']/@n">,
@@ -449,12 +450,13 @@ Split a single TEI file in a multi-pages site
     <xsl:text>
     }</xsl:text>
     <!--
-    method html is needed to have <span></span> (and not <span/>)
+    if method="xml" ensure to put a char inside <span>ㅤ</span> (to avoir <span/>)
+    method="html" produce double <br></br>
     -->
     <xsl:document
       href="{$href}"
       indent="yes"
-      method="html"
+      method="xml"
       omit-xml-declaration="yes"
       encoding="UTF-8"
       >

@@ -70,13 +70,17 @@ def corpus(paths_file: str, force=False):
 def split(tei_file: str):
     global html_dir
     tei_name = os.path.splitext(os.path.basename(tei_file))[0]
-    # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
-    os.makedirs(os.path.join(html_dir, tei_name), exist_ok=True)
-    json_file = os.path.join(html_dir, tei_name, tei_name + ".json")
+    dst_dir = os.path.join(html_dir, tei_name)
+    json_file = os.path.join(dst_dir, tei_name + ".json")
 
     # dst_file newer than src_file, do nothing 
     if os.path.isfile(json_file)  and os.path.getmtime(json_file) > os.path.getmtime(tei_file):
         return
+    
+    # xslt needs a dir for file such: dst_dir/src_name/src_name.chapter.html
+    os.makedirs(dst_dir, exist_ok=True)
+    for f in glob.glob(dst_dir + '/*'):
+        os.remove(f)
 
     logging.info(tei_name + " {:.0f} kb".format(os.path.getsize(tei_file) / 1024))
     # normalize spaces
