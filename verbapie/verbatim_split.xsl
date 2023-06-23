@@ -262,31 +262,6 @@ Split a single TEI file in a multi-pages site
     </xsl:document>
   </xsl:template>
 
-  <xsl:template match="tei:div" mode="toc">
-    <xsl:choose>
-      <xsl:when test="@type = 'edition'">
-        <ul class="tree">
-          <xsl:apply-templates select="tei:div" mode="toc"/>
-        </ul>
-      </xsl:when>
-      <xsl:otherwise>
-        <li>
-          <a>
-            <xsl:attribute name="href">
-              <xsl:call-template name="href"/>
-            </xsl:attribute>
-            <xsl:call-template name="title"/>
-          </a>
-          <xsl:if test="tei:div">
-            <ul>
-              <xsl:apply-templates select="tei:div" mode="toc"/>
-            </ul>
-          </xsl:if>
-        </li>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
   <xsl:template name="href">
     <xsl:text>./</xsl:text>
     <xsl:for-each select="ancestor-or-self::tei:div[@subtype != 'section'][1]">

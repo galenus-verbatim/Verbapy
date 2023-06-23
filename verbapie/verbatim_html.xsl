@@ -709,9 +709,6 @@ output method="html" for <span></span>
   </xsl:template>
   
   <xsl:template match="tei:div" mode="toc">
-    <xsl:variable name="cts">
-      <xsl:call-template name="cts"/>
-    </xsl:variable>
     <xsl:choose>
       <xsl:when test="@type = 'edition'">
         <ul class="tree">
@@ -722,12 +719,11 @@ output method="html" for <span></span>
         <li>
           <a>
             <xsl:attribute name="href">
-              <xsl:text>#</xsl:text>
-              <xsl:value-of select="$cts"/>
+              <xsl:call-template name="href"/>
             </xsl:attribute>
             <xsl:attribute name="id">
               <xsl:text>tree_</xsl:text>
-              <xsl:value-of select="$cts"/>
+              <xsl:call-template name="cts"/>
             </xsl:attribute>
             <xsl:call-template name="title"/>
           </a>
@@ -739,6 +735,12 @@ output method="html" for <span></span>
         </li>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template name="href">
+    <xsl:text>#</xsl:text>
+    <xsl:value-of select="$cts"/>
+    <xsl:call-template name="cts"/>
   </xsl:template>
   
   <xsl:template match="tei:text " mode="toc">
