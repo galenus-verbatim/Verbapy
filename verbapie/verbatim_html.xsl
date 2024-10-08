@@ -294,10 +294,10 @@ output method="html" for <span></span>
   </xsl:template>
   
   <xsl:template match="tei:label">
-    <label>
+    <span class="label">
       <xsl:call-template name="class"/>
       <xsl:apply-templates/>
-    </label>
+    </span>
   </xsl:template>
 
   <xsl:template match="tei:label[@type = 'head']">
